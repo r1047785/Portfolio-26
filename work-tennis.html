@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  var isNav = sessionStorage.getItem("site-entered") === "1";
+  document.documentElement.classList.add(isNav ? "is-nav-load" : "is-first-load");
+  sessionStorage.setItem("site-entered", "1");
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Light Renders — Tennis | Yente Vanhoudt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <span class="loader-mark">Yente Vanhoudt</span>
+  <span class="loader-spinner"></span>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<header class="site-header reveal-up">
+  <a href="index.html" class="logo">YENTE<br>VANHOUDT</a>
+  <nav class="main-nav">
+    <a href="index.html#about" data-i18n="nav.about">About</a>
+    <span>/</span>
+    <a href="index.html#services" data-i18n="nav.services">Services</a>
+    <span>/</span>
+    <a href="index.html#work" data-i18n="nav.work">Work</a>
+    <span>/</span>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="lang-switch">
+    <button type="button" data-lang="en">EN</button>
+    <span>/</span>
+    <button type="button" data-lang="nl">NL</button>
+  </div>
+</header>
+
+<main>
+  <section class="project-hero reveal-up">
+    <p class="section-label" data-i18n="tennis.label"><strong>Work</strong><br>3D Light Renders</p>
+    <h1 class="project-title" data-i18n="tennis.title">Tennis — 3D Motion &amp; Style Frames</h1>
+    <p class="project-brief" data-i18n="tennis.brief">
+      An exam brief: produce a short 3D video, style frames and a moodboard
+      for a sport of my choice. I chose tennis — leaning into clay-court
+      tones, tactile materials and a single dramatic light source to make
+      a still tennis ball feel alive.
+    </p>
+  </section>
+
+  <figure class="project-image">
+    <img src="assets/work/tennis/styleframe-02.jpg" alt="Style frame of a tennis ball lit by a single warm light source on a clay court">
+  </figure>
+
+  <figure class="project-image">
+    <img src="assets/work/tennis/styleframe-01.jpg" alt="Style frame of two tennis rackets pinching a tennis ball, shot from above on a clay court">
+  </figure>
+
+  <section class="project-video-section">
+    <p class="section-label" data-i18n="tennis.motion_label"><strong>Motion</strong><br>The animation</p>
+    <video class="project-video" controls preload="metadata" poster="assets/work/tennis/styleframe-02.jpg">
+      <source src="assets/work/tennis/animation.mp4" type="video/mp4">
+    </video>
+    <p class="project-video-note" data-i18n="tennis.motion_note">My first ever animation in Blender — it isn't my best work
+      out there, but we all start somewhere.</p>
+  </section>
+
+  <section class="project-moodboard-section">
+    <p class="section-label" data-i18n="tennis.direction_label"><strong>Direction</strong><br>Moodboard</p>
+    <p class="project-brief project-brief--narrow" data-i18n="tennis.moodboard_brief">
+      The reference board that shaped the direction before opening
+      Blender — sun-warmed clay courts, minimal editorial styling and
+      close, tactile shots of rackets and balls.
+    </p>
+    <img class="project-moodboard" src="assets/work/tennis/moodboard.jpg" alt="Tennis moodboard collage of court, racket and editorial reference photography">
+  </section>
+
+  <a href="index.html#work" class="back-link reveal-up" data-i18n="backlink">&larr; Back to Work</a>
+</main>
+
+<footer class="site-footer" id="contact">
+  <p class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</p>
+  <a class="footer-email" href="mailto:yentevanhoudt@icloud.com">yentevanhoudt@icloud.com</a>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

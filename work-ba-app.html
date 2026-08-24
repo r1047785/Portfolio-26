@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  var isNav = sessionStorage.getItem("site-entered") === "1";
+  document.documentElement.classList.add(isNav ? "is-nav-load" : "is-first-load");
+  sessionStorage.setItem("site-entered", "1");
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BA App development | Yente Vanhoudt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <span class="loader-mark">Yente Vanhoudt</span>
+  <span class="loader-spinner"></span>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<header class="site-header reveal-up">
+  <a href="index.html" class="logo">YENTE<br>VANHOUDT</a>
+  <nav class="main-nav">
+    <a href="index.html#about" data-i18n="nav.about">About</a>
+    <span>/</span>
+    <a href="index.html#services" data-i18n="nav.services">Services</a>
+    <span>/</span>
+    <a href="index.html#work" data-i18n="nav.work">Work</a>
+    <span>/</span>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="lang-switch">
+    <button type="button" data-lang="en">EN</button>
+    <span>/</span>
+    <button type="button" data-lang="nl">NL</button>
+  </div>
+</header>
+
+<main>
+  <section class="project-hero reveal-up">
+    <p class="section-label" data-i18n="ba.label"><strong>Work</strong><br>BA App development</p>
+    <h1 class="project-title" data-i18n="ba.title">A New App for a Real School</h1>
+    <p class="project-brief" data-i18n="ba.brief">
+      An exam brief: design and build a mobile app (and site) for Busleyden
+      Atheneum, a school that genuinely needed one. We had freedom over the
+      layout and interaction design, but not a blank canvas — the color
+      palette and core design system were already set by the school's
+      existing brand guidelines, so every screen had to work within that,
+      not around it.
+    </p>
+  </section>
+
+  <section class="screens-section">
+    <div class="screens-grid">
+      <figure class="screen-card">
+        <img src="assets/work/ba-app/webshop.webp" alt="Webshop screen listing BA branded merchandise with search, filters and sorting">
+        <figcaption data-i18n="ba.caption_webshop">Webshop</figcaption>
+      </figure>
+      <figure class="screen-card">
+        <img src="assets/work/ba-app/campus.webp" alt="Campus detail screen for BA Pitzemburg with description and student quote">
+        <figcaption data-i18n="ba.caption_campus">Campus detail</figcaption>
+      </figure>
+      <figure class="screen-card">
+        <img src="assets/work/ba-app/news.webp" alt="News detail screen showing a school event article">
+        <figcaption data-i18n="ba.caption_news">News</figcaption>
+      </figure>
+      <figure class="screen-card">
+        <img src="assets/work/ba-app/game.webp" alt="Mini-game screen, Boeken vangen, a book-catching game for students">
+        <figcaption data-i18n="ba.caption_game">Mini-game</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project-video-section">
+    <p class="section-label" data-i18n="ba.motion_label"><strong>Motion</strong><br>Full walkthrough</p>
+    <video class="project-video project-video--portrait" controls preload="metadata" poster="assets/work/ba-app/webshop.webp">
+      <source src="assets/work/ba-app/walkthrough.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <section class="project-stack-section">
+    <p class="section-label" data-i18n="ba.builtwith_label"><strong>Built with</strong><br>Under the hood</p>
+    <ul class="stack-list">
+      <li>React Native + Expo</li>
+      <li>React Navigation</li>
+      <li>Live CMS integration</li>
+      <li>Search, filter &amp; sort</li>
+      <li>Custom mini-game</li>
+    </ul>
+  </section>
+
+  <a href="index.html#work" class="back-link reveal-up" data-i18n="backlink">&larr; Back to Work</a>
+</main>
+
+<footer class="site-footer" id="contact">
+  <p class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</p>
+  <a class="footer-email" href="mailto:yentevanhoudt@icloud.com">yentevanhoudt@icloud.com</a>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

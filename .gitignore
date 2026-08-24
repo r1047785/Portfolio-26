@@ -1,0 +1,12 @@
+# Unrelated project sharing this folder
+koekenbak-website/
+
+# Raw/unoptimized source photos — the site uses the processed copies in assets/
+Photos/
+
+# Local Claude Code settings (machine-specific, not meant to be shared)
+.claude/settings.local.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
