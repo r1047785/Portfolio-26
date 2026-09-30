@@ -471,36 +471,140 @@ body.is-loaded .scroll-cue { transition-delay: 0.6s; }
 
 .work-label {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .work-list {
   list-style: none;
-  max-width: var(--container);
+  max-width: 1180px;
   margin: 0 auto;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 36px);
+  align-items: start;
 }
 
-.work-item {
-  border-bottom: 1px solid var(--line);
+.work-item:nth-child(2) {
+  margin-top: 48px;
 }
 
-.work-item a {
+.work-card {
+  position: relative;
   display: block;
-  text-align: center;
-  padding: 30px 0;
+  min-width: 0;
+}
+
+.work-card-image {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(18, 18, 16, 0.28);
+  border: 1px solid var(--line);
+}
+
+.work-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1), filter 0.5s ease;
+  filter: saturate(0.82);
+}
+
+.work-card-image--contain img {
+  object-fit: contain;
+  padding: 12px;
+}
+
+.work-card:hover .work-card-image img,
+.work-card:focus-visible .work-card-image img {
+  transform: scale(1.045);
+  filter: saturate(1);
+}
+
+.work-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.work-card-title {
+  display: block;
+  max-width: calc(100% - 28px);
+  margin-top: 10px;
   font-family: var(--font-display);
+  font-size: clamp(23px, 2.7vw, 36px);
   font-weight: 400;
-  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.15;
   transition: opacity 0.25s ease;
 }
 
-.work-list:hover .work-item a {
-  opacity: 0.4;
+.work-card-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  color: var(--ink-dim);
+  font-size: 18px;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.work-list .work-item:hover a {
-  opacity: 1;
+.work-card:hover .work-card-arrow,
+.work-card:focus-visible .work-card-arrow {
+  color: var(--ink);
+  transform: translate(3px, -3px);
+}
+
+.work-card:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 8px;
+}
+
+@media (max-width: 800px) {
+  .work-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 44px;
+  }
+
+  .work-item:nth-child(2) {
+    margin-top: 34px;
+  }
+
+  .work-item:nth-child(3) {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 540px) {
+  .work {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .work-label {
+    margin-bottom: 48px;
+  }
+
+  .work-list {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    max-width: 420px;
+  }
+
+  .work-item:nth-child(2),
+  .work-item:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .work-card-title {
+    font-size: clamp(28px, 8vw, 36px);
+  }
 }
 
 .see-all {
@@ -516,56 +620,6 @@ body.is-loaded .scroll-cue { transition-delay: 0.6s; }
 
 .see-all:hover {
   color: var(--ink);
-}
-
-.work-preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 190px;
-  border-radius: 4px;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(18, 18, 16, 0.15), rgba(18, 18, 16, 0.55)),
-    radial-gradient(120% 120% at 70% 20%, #6b7a70 0%, #23231e 55%, #16160f 100%);
-  border: 1px solid var(--line);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 5;
-}
-
-.work-preview span {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.work-preview.has-image {
-  filter: grayscale(15%) contrast(1.05) brightness(0.95);
-}
-
-.work-preview.has-image span {
-  display: none;
-}
-
-.work-preview.visible {
-  opacity: 1;
-}
-
-@media (max-width: 720px) {
-  .work-preview {
-    display: none;
-  }
 }
 
 /* ---------- Footer ---------- */

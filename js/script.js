@@ -52,32 +52,3 @@ if (window.matchMedia("(pointer: fine)").matches) {
   };
   followCursor();
 }
-
-// Work section: thumbnail preview follows the cursor while hovering a project row.
-const workList = document.querySelector(".work-list");
-const workPreview = document.querySelector(".work-preview");
-
-if (workList && workPreview) {
-  workList.addEventListener("mousemove", (event) => {
-    const bounds = workList.parentElement.getBoundingClientRect();
-    workPreview.style.left = `${event.clientX - bounds.left}px`;
-    workPreview.style.top = `${event.clientY - bounds.top}px`;
-  });
-
-  workList.querySelectorAll(".work-item").forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      workPreview.classList.add("visible");
-      const previewImage = item.dataset.preview;
-      if (previewImage) {
-        workPreview.style.backgroundImage = `linear-gradient(180deg, rgba(18, 18, 16, 0.1), rgba(18, 18, 16, 0.4)), url("${previewImage}")`;
-        workPreview.style.backgroundSize = item.dataset.previewFit === "contain" ? "80%" : "cover";
-        workPreview.classList.add("has-image");
-      } else {
-        workPreview.style.backgroundImage = "";
-        workPreview.style.backgroundSize = "";
-        workPreview.classList.remove("has-image");
-      }
-    });
-    item.addEventListener("mouseleave", () => workPreview.classList.remove("visible"));
-  });
-}

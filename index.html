@@ -1,135 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<script>
-(function () {
-  var isNav = sessionStorage.getItem("site-entered") === "1";
-  document.documentElement.classList.add(isNav ? "is-nav-load" : "is-first-load");
-  sessionStorage.setItem("site-entered", "1");
-})();
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yente Vanhoudt — Digital Experience Design</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<div class="loader" id="loader">
-  <span class="loader-mark">Yente Vanhoudt</span>
-  <span class="loader-spinner"></span>
-</div>
-
-<div class="cursor-dot" id="cursorDot"></div>
-
-<header class="site-header reveal-up">
-  <a href="#" class="logo">YENTE<br>VANHOUDT</a>
-  <nav class="main-nav">
-    <a href="#about" data-i18n="nav.about">About</a>
-    <span>/</span>
-    <a href="#services" data-i18n="nav.services">Services</a>
-    <span>/</span>
-    <a href="#work" data-i18n="nav.work">Work</a>
-    <span>/</span>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-  </nav>
-  <div class="lang-switch">
-    <button type="button" data-lang="en">EN</button>
-    <span>/</span>
-    <button type="button" data-lang="nl">NL</button>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="hero">
-    <h1 class="hero-name">
-      <span class="reveal-up">Yente</span>
-      <span class="reveal-up">Vanhoudt</span>
-    </h1>
-
-    <div class="hero-photo reveal-up">
-      <img src="assets/hero.jpg" alt="Yente standing on a rock overlooking a mountain valley">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var isNav = sessionStorage.getItem("site-entered") === "1";
+        document.documentElement.classList.add(
+          isNav ? "is-nav-load" : "is-first-load",
+        );
+        sessionStorage.setItem("site-entered", "1");
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yente Vanhoudt — Digital Experience Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <span class="loader-mark">Yente Vanhoudt</span>
+      <span class="loader-spinner"></span>
     </div>
 
-    <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
-      A passionate Digital Experience Design student<br>
-      exploring web, graphic &amp; 3D design.
-    </p>
+    <div class="cursor-dot" id="cursorDot"></div>
 
-    <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue">Scroll down</a>
-  </section>
+    <header class="site-header reveal-up">
+      <a href="#" class="logo">YENTE<br />VANHOUDT</a>
+      <nav class="main-nav">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <span>/</span>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <span>/</span>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <span>/</span>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button type="button" data-lang="en">EN</button>
+        <span>/</span>
+        <button type="button" data-lang="nl">NL</button>
+      </div>
+    </header>
 
-  <section class="about" id="about">
-    <div class="about-photo"></div>
+    <main>
+      <section class="hero" id="hero">
+        <h1 class="hero-name">
+          <span class="reveal-up">Yente</span>
+          <span class="reveal-up">Vanhoudt</span>
+        </h1>
 
-    <div class="about-content">
-      <p class="section-label" data-i18n="about.label"><strong>About</strong><br>Yente</p>
+        <div class="hero-photo reveal-up">
+          <img
+            src="assets/hero.jpg"
+            alt="Yente standing on a rock overlooking a mountain valley"
+          />
+        </div>
 
-      <h2 class="about-statement" data-i18n="about.statement">
-        A drive to design digital experiences that feel
-        thoughtful, intuitive and alive.
-      </h2>
-    </div>
+        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
+          A passionate Digital Experience Design student<br />
+          exploring web, graphic &amp; 3D design.
+        </p>
 
-    <p class="about-bio" data-i18n="about.bio">
-      As a Digital Experience Design student, I've built a broad
-      foundation across web design, graphic design and 3D design —
-      learning to move fluidly between screen, print and space
-      while keeping every detail intentional.
-    </p>
-  </section>
+        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue"
+          >Scroll down</a
+        >
+      </section>
 
-  <section class="services" id="services">
-    <p class="section-label services-label" data-i18n="services.label"><strong>Services</strong><br>What I do</p>
+      <section class="about" id="about">
+        <div class="about-photo"></div>
 
-    <div class="services-inner">
-      <ul class="services-list">
-        <li class="service-item">
-          <span class="service-index">01</span>
-          <h3 data-i18n="service1.title">3D Design</h3>
-          <p data-i18n="service1.desc">I love working with light and objects in Blender,
-            building scenes and renders that feel alive.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-index">02</span>
-          <h3 data-i18n="service2.title">Web Design</h3>
-          <p data-i18n="service2.desc">I design and build websites that balance clean layout,
-            smooth interaction and considered front-end detail.</p>
-        </li>
-        <li class="service-item">
-          <span class="service-index">03</span>
-          <h3 data-i18n="service3.title">UI/UX Design</h3>
-          <p data-i18n="service3.desc">I design interfaces that are easy to use and pleasant
-            to spend time in, grounded in how people actually behave.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+        <div class="about-content">
+          <p class="section-label" data-i18n="about.label">
+            <strong>About</strong><br />Yente
+          </p>
 
-  <section class="work" id="work">
-    <p class="section-label work-label" data-i18n="work.label"><strong>Work</strong><br>Latest Projects</p>
+          <h2 class="about-statement" data-i18n="about.statement">
+            A drive to design digital experiences that feel thoughtful,
+            intuitive and alive.
+          </h2>
+        </div>
 
-    <ul class="work-list">
-      <li class="work-item" data-preview="assets/work/tennis/styleframe-02.jpg"><a href="work-tennis.html">Tennis Blender Project</a></li>
-      <li class="work-item" data-preview="assets/work/next/hero-collage.webp" data-preview-fit="contain"><a href="work-next.html">NEXT</a></li>
-      <li class="work-item" data-preview="assets/work/ba-app/campus.webp"><a href="work-ba-app.html">BA App development</a></li>
-    </ul>
+        <p class="about-bio" data-i18n="about.bio">
+          As a Digital Experience Design student, I've built a broad foundation
+          across web design, graphic design and 3D design — learning to move
+          fluidly between screen, print and space while keeping every detail
+          intentional.
+        </p>
+      </section>
 
-    <a href="#" class="see-all" data-i18n="work.seeall">Soon more!</a>
+      <section class="services" id="services">
+        <p class="section-label services-label" data-i18n="services.label">
+          <strong>Services</strong><br />What I do
+        </p>
 
-    <div class="work-preview"><span data-i18n="work.photoplaceholder">photo</span></div>
-  </section>
-</main>
+        <div class="services-inner">
+          <ul class="services-list">
+            <li class="service-item">
+              <span class="service-index">01</span>
+              <h3 data-i18n="service1.title">3D Design</h3>
+              <p data-i18n="service1.desc">
+                I love working with light and objects in Blender, building
+                scenes and renders that feel alive.
+              </p>
+            </li>
+            <li class="service-item">
+              <span class="service-index">02</span>
+              <h3 data-i18n="service2.title">Web Design</h3>
+              <p data-i18n="service2.desc">
+                I design and build websites that balance clean layout, smooth
+                interaction and considered front-end detail.
+              </p>
+            </li>
+            <li class="service-item">
+              <span class="service-index">03</span>
+              <h3 data-i18n="service3.title">UI/UX Design</h3>
+              <p data-i18n="service3.desc">
+                I design interfaces that are easy to use and pleasant to spend
+                time in, grounded in how people actually behave.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-<footer class="site-footer" id="contact">
-  <p class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</p>
-  <a class="footer-email" href="mailto:yentevanhoudt@icloud.com">yentevanhoudt@icloud.com</a>
-</footer>
+      <section class="work" id="work">
+        <p class="section-label work-label" data-i18n="work.label">
+          <strong>Work</strong><br />Latest Projects
+        </p>
 
-<script src="js/i18n.js"></script>
-<script src="js/script.js"></script>
-</body>
+        <ul class="work-list">
+          <li class="work-item">
+            <a class="work-card" href="work-tennis.html">
+              <span class="work-card-image"
+                ><img
+                  src="assets/work/tennis/styleframe-02.jpg"
+                  alt="Tennisbal in een dramatische 3D-lichtscène"
+                  loading="lazy"
+              /></span>
+              <span class="work-card-meta"
+                ><span data-i18n="work.category3d">3D &amp; Motion</span
+                ><span>01</span></span
+              >
+              <span class="work-card-title" data-i18n="work.tennis"
+                >Tennis Blender Project</span
+              >
+              <span class="work-card-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a class="work-card" href="work-next.html">
+              <span class="work-card-image work-card-image--contain"
+                ><img
+                  src="assets/work/next/hero-collage.webp"
+                  alt="Visuele collage van het NEXT-platform"
+                  loading="lazy"
+              /></span>
+              <span class="work-card-meta"
+                ><span data-i18n="work.categoryweb"
+                  >Webdesign &amp; Development</span
+                ><span>02</span></span
+              >
+              <span class="work-card-title" data-i18n="work.next">NEXT</span>
+              <span class="work-card-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a class="work-card" href="work-ba-app.html">
+              <span class="work-card-image"
+                ><img
+                  src="assets/work/ba-app/campus.webp"
+                  alt="Campusdetail uit de Busleyden Atheneum-app"
+                  loading="lazy"
+              /></span>
+              <span class="work-card-meta"
+                ><span data-i18n="work.categoryui">UI/UX &amp; App</span
+                ><span>03</span></span
+              >
+              <span class="work-card-title" data-i18n="work.ba"
+                >BA App development</span
+              >
+              <span class="work-card-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="#" class="see-all" data-i18n="work.seeall">Soon more!</a>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <p class="section-label" data-i18n="footer.label">
+        <strong>Contact</strong><br />Let's talk
+      </p>
+      <a class="footer-email" href="mailto:yentevanhoudt@icloud.com"
+        >yentevanhoudt@icloud.com</a
+      >
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
