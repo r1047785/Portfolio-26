@@ -13,6 +13,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yente Vanhoudt — Digital Experience Design</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -49,6 +50,7 @@
 
     <main>
       <section class="hero" id="hero">
+        <canvas class="hero-stars" aria-hidden="true"></canvas>
         <h1 class="hero-name">
           <span class="reveal-up">Yente</span>
           <span class="reveal-up">Vanhoudt</span>
@@ -56,7 +58,7 @@
 
         <div class="hero-photo reveal-up">
           <img
-            src="assets/hero.jpg"
+            src="assets/hero.webp"
             alt="Yente standing on a rock overlooking a mountain valley"
           />
         </div>
@@ -72,7 +74,12 @@
       </section>
 
       <section class="about" id="about">
-        <div class="about-photo"></div>
+        <div class="about-photo">
+          <img
+            src="assets/about.webp"
+            alt="Silhouette of Yente looking across St Mark's Square in Venice at night"
+          />
+        </div>
 
         <div class="about-content">
           <p class="section-label" data-i18n="about.label">
@@ -132,64 +139,48 @@
         <p class="section-label work-label" data-i18n="work.label">
           <strong>Work</strong><br />Latest Projects
         </p>
+        <p class="work-hint" data-i18n="work.hint">Choose a star to discover a project</p>
 
-        <ul class="work-list">
-          <li class="work-item">
-            <a class="work-card" href="work-tennis.html">
-              <span class="work-card-image"
-                ><img
-                  src="assets/work/tennis/styleframe-02.jpg"
-                  alt="Tennisbal in een dramatische 3D-lichtscène"
-                  loading="lazy"
-              /></span>
-              <span class="work-card-meta"
-                ><span data-i18n="work.category3d">3D &amp; Motion</span
-                ><span>01</span></span
-              >
-              <span class="work-card-title" data-i18n="work.tennis"
-                >Tennis Blender Project</span
-              >
-              <span class="work-card-arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li class="work-item">
-            <a class="work-card" href="work-next.html">
-              <span class="work-card-image work-card-image--contain"
-                ><img
-                  src="assets/work/next/hero-collage.webp"
-                  alt="Visuele collage van het NEXT-platform"
-                  loading="lazy"
-              /></span>
-              <span class="work-card-meta"
-                ><span data-i18n="work.categoryweb"
-                  >Webdesign &amp; Development</span
-                ><span>02</span></span
-              >
-              <span class="work-card-title" data-i18n="work.next">NEXT</span>
-              <span class="work-card-arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li class="work-item">
-            <a class="work-card" href="work-ba-app.html">
-              <span class="work-card-image"
-                ><img
-                  src="assets/work/ba-app/campus.webp"
-                  alt="Campusdetail uit de Busleyden Atheneum-app"
-                  loading="lazy"
-              /></span>
-              <span class="work-card-meta"
-                ><span data-i18n="work.categoryui">UI/UX &amp; App</span
-                ><span>03</span></span
-              >
-              <span class="work-card-title" data-i18n="work.ba"
-                >BA App development</span
-              >
-              <span class="work-card-arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-        </ul>
+        <div class="star-map">
+          <svg class="star-map-constellation" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M165 145 C290 160 405 315 535 325 S735 250 815 145" />
+            <circle cx="318" cy="220" r="1.5" />
+            <circle cx="425" cy="287" r="1.2" />
+            <circle cx="680" cy="301" r="1.4" />
+          </svg>
+          <span class="map-dust map-dust--one" aria-hidden="true"></span>
+          <span class="map-dust map-dust--two" aria-hidden="true"></span>
+          <span class="map-dust map-dust--three" aria-hidden="true"></span>
+          <span class="map-dust map-dust--four" aria-hidden="true"></span>
+          <span class="map-dust map-dust--five" aria-hidden="true"></span>
 
-        <a href="#" class="see-all" data-i18n="work.seeall">Soon more!</a>
+          <a class="project-star project-star--tennis" href="work-tennis.html">
+            <span class="project-star-core" aria-hidden="true"></span>
+            <span class="project-star-label">
+              <span class="project-star-meta"><span>01</span><span data-i18n="work.category3d">3D &amp; Motion</span></span>
+              <strong data-i18n="work.tennis">Tennis Blender Project</strong>
+              <span class="project-star-cta" data-i18n="work.open">Explore project ↗</span>
+            </span>
+          </a>
+
+          <a class="project-star project-star--next" href="work-next.html">
+            <span class="project-star-core" aria-hidden="true"></span>
+            <span class="project-star-label">
+              <span class="project-star-meta"><span>02</span><span data-i18n="work.categoryweb">Web Design &amp; Development</span></span>
+              <strong data-i18n="work.next">NEXT</strong>
+              <span class="project-star-cta" data-i18n="work.open">Explore project ↗</span>
+            </span>
+          </a>
+
+          <a class="project-star project-star--ba" href="work-ba-app.html">
+            <span class="project-star-core" aria-hidden="true"></span>
+            <span class="project-star-label">
+              <span class="project-star-meta"><span>03</span><span data-i18n="work.categoryui">UI/UX &amp; App</span></span>
+              <strong data-i18n="work.ba">BA App Development</strong>
+              <span class="project-star-cta" data-i18n="work.open">Explore project ↗</span>
+            </span>
+          </a>
+        </div>
       </section>
     </main>
 
