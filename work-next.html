@@ -1,193 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<script>
-(function () {
-  var isNav = sessionStorage.getItem("site-entered") === "1";
-  if (new URLSearchParams(window.location.search).get("lang") === "nl") {
-    document.documentElement.lang = "nl";
-  }
-  document.documentElement.classList.add(isNav ? "is-nav-load" : "is-first-load");
-  sessionStorage.setItem("site-entered", "1");
-})();
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXT: Custom-Built Platform and Website | Yente Vanhoudt</title>
-<meta name="description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-next.html">
-<link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-next.html?lang=nl">
-<link rel="alternate" hreflang="x-default" href="https://yentevanhoudt.be/work-next.html">
-<meta property="og:site_name" content="Yente Vanhoudt">
-<meta property="og:type" content="website">
-<meta property="og:title" content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt">
-<meta property="og:description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
-<meta property="og:url" content="https://yentevanhoudt.be/work-next.html">
-<meta property="og:image" content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp">
-<meta property="og:image:alt" content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="nl_BE">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt">
-<meta name="twitter:description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
-<meta name="twitter:image" content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp">
-<meta name="twitter:image:alt" content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script>
-(function(){if(new URLSearchParams(location.search).get('lang')!=='nl')return;var seo={"title":"NEXT: Website en platform op maat | Yente Vanhoudt","description":"Ontdek NEXT, een website en contentplatform op maat voor een echte organisatie in de jeugdzorg, gebouwd door Yente en haar projectteam."};document.title=seo.title;var d=document.querySelector('meta[name="description"]');if(d)d.content=seo.description;})();
-</script>
-</head>
-<body data-seo-page="next">
-
-<div class="loader" id="loader">
-  <span class="loader-mark">Yente Vanhoudt</span>
-  <span class="loader-spinner"></span>
-</div>
-
-<div class="cursor-dot" id="cursorDot"></div>
-
-<header class="site-header reveal-up">
-  <a href="index.html" class="logo">YENTE<br>VANHOUDT</a>
-  <nav class="main-nav">
-    <a href="index.html#about" data-i18n="nav.about">About</a>
-    <span>/</span>
-    <a href="index.html#services" data-i18n="nav.services">Services</a>
-    <span>/</span>
-    <a href="index.html#work" data-i18n="nav.work">Work</a>
-    <span>/</span>
-    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
-  </nav>
-  <div class="lang-switch">
-    <button type="button" data-lang="en">EN</button>
-    <span>/</span>
-    <button type="button" data-lang="nl">NL</button>
-  </div>
-</header>
-
-<main>
-  <section class="project-hero reveal-up">
-    <p class="section-label" data-i18n="next.label"><strong>Work</strong><br>NEXT</p>
-    <h1 class="project-title" data-i18n="next.title">A Custom-Built Website for NEXT</h1>
-    <p class="project-brief" data-i18n="next.brief">
-      A real client, a real brief, no template. My team of four was handed
-      a client and a goal — we ran our own meetings, did our own research,
-      and made every decision ourselves. Most teams reached for a free CMS.
-      We hand-coded the site and built a fully custom admin from scratch,
-      so the client got an editing experience shaped directly around what
-      they asked for in our feedback sessions.
-    </p>
-  </section>
-
-  <figure class="project-image project-image--collage">
-    <img src="assets/work/next/hero-collage.webp" data-i18n-alt="image.next_hero" alt="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
-  </figure>
-
-  <section class="process-section">
-    <h2 class="section-label" data-i18n="next.process_label"><strong>Process</strong><br>How we got there</h2>
-
-    <div class="process-list">
-      <div class="process-track"></div>
-
-      <div class="process-item process-item--left">
-        <span class="process-dot"></span>
-        <div class="process-card">
-          <h3 data-i18n="next.process1_title">1. Then vs Now — Analysis</h3>
-          <p data-i18n="next.process1_desc">We started by mapping the client's current situation —
-            how young people and parents found information about NEXT
-            today — against the experience we wanted to create: calm,
-            clear and easy to navigate.</p>
-        </div>
-      </div>
-
-      <div class="process-item process-item--right">
-        <span class="process-dot"></span>
-        <div class="process-card">
-          <h3 data-i18n="next.process2_title">2. Branding — Colour &amp; Typography</h3>
-          <p data-i18n="next.process2_desc">For the visual identity, we chose a colour palette and
-            typography that feel warm and approachable — reflecting
-            NEXT's role as a safe, judgment-free space for young
-            people, not a clinical institution.</p>
-        </div>
-      </div>
-
-      <div class="process-item process-item--left">
-        <span class="process-dot"></span>
-        <div class="process-card">
-          <h3 data-i18n="next.process3_title">3. Research &amp; Inspiration</h3>
-          <p data-i18n="next.process3_desc">We looked at comparable youth-care and day-program
-            organisations, studying how they build trust and stay
-            approachable online, before settling on our own
-            direction.</p>
-        </div>
-      </div>
-
-      <div class="process-item process-item--right">
-        <span class="process-dot"></span>
-        <div class="process-card">
-          <h3 data-i18n="next.process4_title">4. Flowchart &amp; Low-fidelity Wireframes</h3>
-          <p data-i18n="next.process4_desc">Based on that research, we mapped the full site
-            structure and sketched low-fidelity wireframes for every
-            page, built around getting a young visitor to sign up as
-            simply as possible.</p>
-        </div>
-      </div>
-
-      <div class="process-item process-item--left">
-        <span class="process-dot"></span>
-        <div class="process-card">
-          <h3 data-i18n="next.process5_title">5. High-fidelity Prototype &amp; Delivery</h3>
-          <p data-i18n="next.process5_desc">Every earlier decision came together in a fully
-            worked-out prototype — which we then built for real,
-            custom backend and admin included, and handed over to
-            the client.</p>
-        </div>
-      </div>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5DHD7QBN");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var isNav = sessionStorage.getItem("site-entered") === "1";
+        if (new URLSearchParams(window.location.search).get("lang") === "nl") {
+          document.documentElement.lang = "nl";
+        }
+        document.documentElement.classList.add(
+          isNav ? "is-nav-load" : "is-first-load",
+        );
+        sessionStorage.setItem("site-entered", "1");
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXT: Custom-Built Platform and Website | Yente Vanhoudt</title>
+    <meta
+      name="description"
+      content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://yentevanhoudt.be/work-next.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nl-BE"
+      href="https://yentevanhoudt.be/work-next.html?lang=nl"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://yentevanhoudt.be/work-next.html"
+    />
+    <meta property="og:site_name" content="Yente Vanhoudt" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt"
+    />
+    <meta
+      property="og:description"
+      content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team."
+    />
+    <meta property="og:url" content="https://yentevanhoudt.be/work-next.html" />
+    <meta
+      property="og:image"
+      content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="nl_BE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        if (new URLSearchParams(location.search).get("lang") !== "nl") return;
+        var seo = {
+          title: "NEXT: Website en platform op maat | Yente Vanhoudt",
+          description:
+            "Ontdek NEXT, een website en contentplatform op maat voor een echte organisatie in de jeugdzorg, gebouwd door Yente en haar projectteam.",
+        };
+        document.title = seo.title;
+        var d = document.querySelector('meta[name="description"]');
+        if (d) d.content = seo.description;
+      })();
+    </script>
+  </head>
+  <body data-seo-page="next">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5DHD7QBN"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="loader" id="loader">
+      <span class="loader-mark">Yente Vanhoudt</span>
+      <span class="loader-spinner"></span>
     </div>
-  </section>
 
-  <section class="project-stack-section">
-    <h2 class="section-label" data-i18n="next.approach_label"><strong>Approach</strong><br>Code over CMS</h2>
-    <p class="project-brief project-brief--narrow" data-i18n="next.approach_brief">
-      We already had hours of experience wrangling free CMS platforms and
-      knew exactly where they fall short. So instead, we built NEXT's
-      backend and admin panel ourselves — a real login, a real database,
-      and content controls tailored to what the client actually wanted to
-      change, not what a template allowed.
-    </p>
+    <div class="cursor-dot" id="cursorDot"></div>
 
-    <ul class="stack-list">
-      <li>Node.js + Express</li>
-      <li>SQLite database</li>
-      <li>Custom admin &amp; CMS</li>
-      <li>Authenticated login</li>
-      <li>File uploads</li>
-      <li>Email notifications</li>
-    </ul>
-  </section>
+    <header class="site-header reveal-up">
+      <a href="index.html" class="logo">YENTE<br />VANHOUDT</a>
+      <nav class="main-nav">
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <span>/</span>
+        <a href="index.html#services" data-i18n="nav.services">Services</a>
+        <span>/</span>
+        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <span>/</span>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button type="button" data-lang="en">EN</button>
+        <span>/</span>
+        <button type="button" data-lang="nl">NL</button>
+      </div>
+    </header>
 
-  <section class="project-cta-section">
-    <h2 class="section-label" data-i18n="next.live_label"><strong>Live</strong><br>See it in action</h2>
-    <p class="project-brief project-brief--narrow" data-i18n="next.live_brief">
-      The site is live and deployed — built and shipped by the four of us,
-      start to finish.
-    </p>
-    <a class="project-cta" href="https://next-5fda.onrender.com/" target="_blank" rel="noopener" data-i18n="next.cta">Visit the live site &rarr;</a>
-    <p class="project-cta-note" data-i18n="next.cta_note">Hosted on a free tier, so the first load can take a few seconds to spin up.</p>
-  </section>
+    <main>
+      <section class="project-hero reveal-up">
+        <p class="section-label" data-i18n="next.label">
+          <strong>Work</strong><br />NEXT
+        </p>
+        <h1 class="project-title" data-i18n="next.title">
+          A Custom-Built Website for NEXT
+        </h1>
+        <p class="project-brief" data-i18n="next.brief">
+          A real client, a real brief, no template. My team of four was handed a
+          client and a goal — we ran our own meetings, did our own research, and
+          made every decision ourselves. Most teams reached for a free CMS. We
+          hand-coded the site and built a fully custom admin from scratch, so
+          the client got an editing experience shaped directly around what they
+          asked for in our feedback sessions.
+        </p>
+      </section>
 
-  <a href="index.html#work" class="back-link reveal-up" data-i18n="backlink">&larr; Back to Work</a>
-</main>
+      <figure class="project-image project-image--collage">
+        <img
+          src="assets/work/next/hero-collage.webp"
+          data-i18n-alt="image.next_hero"
+          alt="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero"
+        />
+      </figure>
 
-<footer class="site-footer" id="contact">
-  <h2 class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</h2>
-  <a class="footer-email" href="mailto:yentevanhoudt@icloud.com">yentevanhoudt@icloud.com</a>
-</footer>
+      <section class="process-section">
+        <h2 class="section-label" data-i18n="next.process_label">
+          <strong>Process</strong><br />How we got there
+        </h2>
 
-<script src="js/i18n.js"></script>
-<script src="js/script.js"></script>
-</body>
+        <div class="process-list">
+          <div class="process-track"></div>
+
+          <div class="process-item process-item--left">
+            <span class="process-dot"></span>
+            <div class="process-card">
+              <h3 data-i18n="next.process1_title">1. Then vs Now — Analysis</h3>
+              <p data-i18n="next.process1_desc">
+                We started by mapping the client's current situation — how young
+                people and parents found information about NEXT today — against
+                the experience we wanted to create: calm, clear and easy to
+                navigate.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item process-item--right">
+            <span class="process-dot"></span>
+            <div class="process-card">
+              <h3 data-i18n="next.process2_title">
+                2. Branding — Colour &amp; Typography
+              </h3>
+              <p data-i18n="next.process2_desc">
+                For the visual identity, we chose a colour palette and
+                typography that feel warm and approachable — reflecting NEXT's
+                role as a safe, judgment-free space for young people, not a
+                clinical institution.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item process-item--left">
+            <span class="process-dot"></span>
+            <div class="process-card">
+              <h3 data-i18n="next.process3_title">
+                3. Research &amp; Inspiration
+              </h3>
+              <p data-i18n="next.process3_desc">
+                We looked at comparable youth-care and day-program
+                organisations, studying how they build trust and stay
+                approachable online, before settling on our own direction.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item process-item--right">
+            <span class="process-dot"></span>
+            <div class="process-card">
+              <h3 data-i18n="next.process4_title">
+                4. Flowchart &amp; Low-fidelity Wireframes
+              </h3>
+              <p data-i18n="next.process4_desc">
+                Based on that research, we mapped the full site structure and
+                sketched low-fidelity wireframes for every page, built around
+                getting a young visitor to sign up as simply as possible.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item process-item--left">
+            <span class="process-dot"></span>
+            <div class="process-card">
+              <h3 data-i18n="next.process5_title">
+                5. High-fidelity Prototype &amp; Delivery
+              </h3>
+              <p data-i18n="next.process5_desc">
+                Every earlier decision came together in a fully worked-out
+                prototype — which we then built for real, custom backend and
+                admin included, and handed over to the client.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-stack-section">
+        <h2 class="section-label" data-i18n="next.approach_label">
+          <strong>Approach</strong><br />Code over CMS
+        </h2>
+        <p
+          class="project-brief project-brief--narrow"
+          data-i18n="next.approach_brief"
+        >
+          We already had hours of experience wrangling free CMS platforms and
+          knew exactly where they fall short. So instead, we built NEXT's
+          backend and admin panel ourselves — a real login, a real database, and
+          content controls tailored to what the client actually wanted to
+          change, not what a template allowed.
+        </p>
+
+        <ul class="stack-list">
+          <li>Node.js + Express</li>
+          <li>SQLite database</li>
+          <li>Custom admin &amp; CMS</li>
+          <li>Authenticated login</li>
+          <li>File uploads</li>
+          <li>Email notifications</li>
+        </ul>
+      </section>
+
+      <section class="project-cta-section">
+        <h2 class="section-label" data-i18n="next.live_label">
+          <strong>Live</strong><br />See it in action
+        </h2>
+        <p
+          class="project-brief project-brief--narrow"
+          data-i18n="next.live_brief"
+        >
+          The site is live and deployed — built and shipped by the four of us,
+          start to finish.
+        </p>
+        <a
+          class="project-cta"
+          href="https://next-5fda.onrender.com/"
+          target="_blank"
+          rel="noopener"
+          data-i18n="next.cta"
+          >Visit the live site &rarr;</a
+        >
+        <p class="project-cta-note" data-i18n="next.cta_note">
+          Hosted on a free tier, so the first load can take a few seconds to
+          spin up.
+        </p>
+      </section>
+
+      <a href="index.html#work" class="back-link reveal-up" data-i18n="backlink"
+        >&larr; Back to Work</a
+      >
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <h2 class="section-label" data-i18n="footer.label">
+        <strong>Contact</strong><br />Let's talk
+      </h2>
+      <a class="footer-email" href="mailto:yentevanhoudt@icloud.com"
+        >yentevanhoudt@icloud.com</a
+      >
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
