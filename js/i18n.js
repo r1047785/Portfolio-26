@@ -7,7 +7,7 @@ const translations = {
     "footer.label": "<strong>Contact</strong><br>Let's talk",
     "backlink": "&larr; Back to Work",
 
-    "hero.tagline": "A passionate Digital Experience Design student<br>exploring web, graphic &amp; 3D design.",
+    "hero.tagline": "Web designer &amp; Digital Experience Design student<br>building thoughtful websites, interfaces &amp; 3D experiences.",
     "hero.scrollcue": "Scroll down",
     "about.label": "<strong>About</strong><br>Yente",
     "about.statement": "A drive to design digital experiences that feel\n        thoughtful, intuitive and alive.",
@@ -88,7 +88,7 @@ const translations = {
     "footer.label": "<strong>Contact</strong><br>Laten we praten",
     "backlink": "&larr; Terug naar Werk",
 
-    "hero.tagline": "Een gedreven student Digital Experience Design<br>die webdesign, grafisch ontwerp &amp; 3D verkent.",
+    "hero.tagline": "Webdesigner en student Digital Experience Design<br>die doordachte websites, interfaces &amp; 3D ontwerpt.",
     "hero.scrollcue": "Scroll naar beneden",
     "about.label": "<strong>Over mij</strong><br>Yente",
     "about.statement": "Een drive om digitale ervaringen te ontwerpen die\n        doordacht, intuïtief en levendig aanvoelen.",
