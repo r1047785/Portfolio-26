@@ -29,6 +29,17 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA App Development",
 
+    "image.home_hero": "Yente standing on a rock overlooking a mountain valley",
+    "image.home_about": "Silhouette of Yente looking across St Mark's Square in Venice at night",
+    "image.tennis_style2": "Style frame of a tennis ball lit by a single warm light source on a clay court",
+    "image.tennis_style1": "Style frame of two tennis rackets pinching a tennis ball, shot from above on a clay court",
+    "image.tennis_moodboard": "Tennis moodboard collage of court, racket and editorial reference photography",
+    "image.next_hero": "Photo collage of a park path, trees and a lake, used in the NEXT homepage hero",
+    "image.ba_webshop": "Webshop screen listing BA branded merchandise with search, filters and sorting",
+    "image.ba_campus": "Campus detail screen for BA Pitzemburg with description and student quote",
+    "image.ba_news": "News detail screen showing a school event article",
+    "image.ba_game": "Mini-game screen, Boeken vangen, a book-catching game for students",
+
     "tennis.label": "<strong>Work</strong><br>3D Light Renders",
     "tennis.title": "Tennis — 3D Motion &amp; Style Frames",
     "tennis.brief": "An exam brief: produce a short 3D video, style frames and a moodboard\n      for a sport of my choice. I chose tennis — leaning into clay-court\n      tones, tactile materials and a single dramatic light source to make\n      a still tennis ball feel alive.",
@@ -38,7 +49,7 @@ const translations = {
     "tennis.moodboard_brief": "The reference board that shaped the direction before opening\n      Blender — sun-warmed clay courts, minimal editorial styling and\n      close, tactile shots of rackets and balls.",
 
     "next.label": "<strong>Work</strong><br>NEXT",
-    "next.title": "A Custom-Built Client Platform",
+    "next.title": "A Custom-Built Website for NEXT",
     "next.brief": "A real client, a real brief, no template. My team of four was handed\n      a client and a goal — we ran our own meetings, did our own research,\n      and made every decision ourselves. Most teams reached for a free CMS.\n      We hand-coded the site and built a fully custom admin from scratch,\n      so the client got an editing experience shaped directly around what\n      they asked for in our feedback sessions.",
     "next.process_label": "<strong>Process</strong><br>How we got there",
     "next.process1_title": "1. Then vs Now — Analysis",
@@ -59,7 +70,7 @@ const translations = {
     "next.cta_note": "Hosted on a free tier, so the first load can take a few seconds to spin up.",
 
     "ba.label": "<strong>Work</strong><br>BA App development",
-    "ba.title": "A New App for a Real School",
+    "ba.title": "A Mobile App for Busleyden Atheneum",
     "ba.brief": "An exam brief: design and build a mobile app (and site) for Busleyden\n      Atheneum, a school that genuinely needed one. We had freedom over the\n      layout and interaction design, but not a blank canvas — the color\n      palette and core design system were already set by the school's\n      existing brand guidelines, so every screen had to work within that,\n      not around it.",
     "ba.caption_webshop": "Webshop",
     "ba.caption_campus": "Campus detail",
@@ -99,6 +110,17 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA Appontwikkeling",
 
+    "image.home_hero": "Yente staat op een rots en kijkt uit over een bergdal",
+    "image.home_about": "Silhouet van Yente op het San Marcoplein in Venetië bij nacht",
+    "image.tennis_style2": "Stijlbeeld van een tennisbal op een gravelbaan, belicht met één warme lichtbron",
+    "image.tennis_style1": "Stijlbeeld van twee tennisrackets met een tennisbal ertussen, van bovenaf gefotografeerd op gravel",
+    "image.tennis_moodboard": "Tennis-moodboard met beelden van een tennisbaan, racket en redactionele fotografie",
+    "image.next_hero": "Fotocollage van een parkpad, bomen en een meer voor de hero van de NEXT-homepage",
+    "image.ba_webshop": "Webshopscherm met BA-merchandise, zoekfunctie, filters en sortering",
+    "image.ba_campus": "Campusscherm voor BA Pitzemburg met beschrijving en citaat van een leerling",
+    "image.ba_news": "Nieuwsscherm met een artikel over een schoolevenement",
+    "image.ba_game": "Scherm van de mini-game Boeken vangen voor leerlingen",
+
     "tennis.label": "<strong>Werk</strong><br>3D Light Renders",
     "tennis.title": "Tennis — 3D Beweging &amp; Stijlbeelden",
     "tennis.brief": "Een examenopdracht: maak een korte 3D-video, stijlbeelden en een\n      moodboard voor een sport naar keuze. Ik koos tennis — met\n      gravelkleuren, tactiele materialen en één dramatische lichtbron\n      om een stilstaande tennisbal tot leven te brengen.",
@@ -108,7 +130,7 @@ const translations = {
     "tennis.moodboard_brief": "Het referentiebord dat de richting bepaalde vóór ik Blender\n      opende — zonovergoten gravelbanen, minimale, redactionele\n      styling en close-up, tactiele shots van rackets en ballen.",
 
     "next.label": "<strong>Werk</strong><br>NEXT",
-    "next.title": "Een Op Maat Gebouwd Platform voor een Klant",
+    "next.title": "Een website op maat voor NEXT",
     "next.brief": "Een echte klant, een echte opdracht, geen template. Mijn team van\n      vier kreeg een klant en een doel — we planden onze eigen meetings,\n      deden ons eigen onderzoek en namen elke beslissing zelf. De meeste\n      teams grepen naar een gratis CMS. Wij codeerden de site helemaal\n      zelf en bouwden een volledig eigen adminpaneel, zodat de klant een\n      bewerkingservaring kreeg die rechtstreeks was afgestemd op wat ze\n      vroegen tijdens onze feedbacksessies.",
     "next.process_label": "<strong>Proces</strong><br>Hoe we er kwamen",
     "next.process1_title": "1. Toen vs Nu — Analyse",
@@ -129,7 +151,7 @@ const translations = {
     "next.cta_note": "Gehost op een gratis tier, dus de eerste keer laden kan enkele seconden duren.",
 
     "ba.label": "<strong>Werk</strong><br>BA App development",
-    "ba.title": "Een Nieuwe App voor een Echte School",
+    "ba.title": "Een mobiele app voor Busleyden Atheneum",
     "ba.brief": "Een examenopdracht: ontwerp en bouw een mobiele app (en site) voor\n      Busleyden Atheneum, een school die er écht een nodig had. We hadden\n      vrijheid over de lay-out en interactie, maar geen blanco canvas —\n      het kleurenpalet en het basisdesignsysteem lagen al vast in de\n      bestaande huisstijl van de school, dus elk scherm moest daarbinnen\n      werken, niet ernaast.",
     "ba.caption_webshop": "Webshop",
     "ba.caption_campus": "Campusdetail",
@@ -141,7 +163,72 @@ const translations = {
 };
 
 (function () {
-  const STORAGE_KEY = "site-lang";
+  const pageSeo = {
+    home: {
+      path: "/",
+      image: "/assets/hero.webp",
+      en: {
+        title: "Digital Experience Design Portfolio | Yente Vanhoudt",
+        description: "Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code.",
+        imageAlt: translations.en["image.home_hero"],
+      },
+      nl: {
+        title: "Portfolio Digital Experience Design | Yente Vanhoudt",
+        description: "Ontdek het portfolio van Yente Vanhoudt in webdesign, UI/UX en 3D, met doordachte digitale ervaringen van concept tot code.",
+        imageAlt: translations.nl["image.home_hero"],
+      },
+    },
+    tennis: {
+      path: "/work-tennis.html",
+      image: "/assets/work/tennis/styleframe-02.webp",
+      en: {
+        title: "Tennis Blender Project: 3D Motion | Yente Vanhoudt",
+        description: "Explore Yente Vanhoudt's tennis-themed Blender project through 3D renders, custom style frames and a short animation.",
+        imageAlt: translations.en["image.tennis_style2"],
+      },
+      nl: {
+        title: "Tennisproject in Blender: 3D Motion | Yente Vanhoudt",
+        description: "Bekijk Yentes tennisproject in Blender, met 3D-renders, eigen stijlbeelden en een korte animatie in warme gravelkleuren.",
+        imageAlt: translations.nl["image.tennis_style2"],
+      },
+    },
+    next: {
+      path: "/work-next.html",
+      image: "/assets/work/next/hero-collage.webp",
+      en: {
+        title: "NEXT: Custom-Built Platform and Website | Yente Vanhoudt",
+        description: "Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.",
+        imageAlt: translations.en["image.next_hero"],
+      },
+      nl: {
+        title: "NEXT: Website en platform op maat | Yente Vanhoudt",
+        description: "Ontdek NEXT, een website en contentplatform op maat voor een echte organisatie in de jeugdzorg, gebouwd door Yente en haar projectteam.",
+        imageAlt: translations.nl["image.next_hero"],
+      },
+    },
+    ba: {
+      path: "/work-ba-app.html",
+      image: "/assets/work/ba-app/campus.webp",
+      en: {
+        title: "Mobile App for Busleyden Atheneum | Yente Vanhoudt",
+        description: "Explore a mobile app concept for Busleyden Atheneum, with campus discovery, school news and a student mini-game.",
+        imageAlt: translations.en["image.ba_campus"],
+      },
+      nl: {
+        title: "Mobiele app voor Busleyden Atheneum | Yente Vanhoudt",
+        description: "Ontdek een appconcept voor Busleyden Atheneum met campusinformatie, schoolnieuws en een mini-game voor leerlingen.",
+        imageAlt: translations.nl["image.ba_campus"],
+      },
+    },
+  };
+
+  const page = pageSeo[document.body.dataset.seoPage] || pageSeo.home;
+  const lang = new URLSearchParams(window.location.search).get("lang") === "nl" ? "nl" : "en";
+
+  const setMeta = (selector, attribute, value) => {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute(attribute, value);
+  };
 
   const applyLang = (lang) => {
     document.documentElement.lang = lang;
@@ -152,17 +239,61 @@ const translations = {
       if (value !== undefined) el.innerHTML = value;
     });
 
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-alt");
+      const value = translations[lang][key] ?? translations.en[key];
+      if (value !== undefined) el.setAttribute("alt", value);
+    });
+
     document.querySelectorAll("[data-lang]").forEach((btn) => {
       btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
     });
 
-    localStorage.setItem(STORAGE_KEY, lang);
+    const metadata = page[lang];
+    const pageUrl = new URL(page.path, "https://yentevanhoudt.be");
+    if (lang === "nl") pageUrl.searchParams.set("lang", "nl");
+    document.title = metadata.title;
+    setMeta('meta[name="description"]', "content", metadata.description);
+    setMeta('meta[property="og:title"]', "content", metadata.title);
+    setMeta('meta[property="og:description"]', "content", metadata.description);
+    setMeta('meta[property="og:url"]', "content", pageUrl.href);
+    setMeta('meta[property="og:image"]', "content", new URL(page.image, "https://yentevanhoudt.be").href);
+    setMeta('meta[property="og:image:alt"]', "content", metadata.imageAlt);
+    setMeta('meta[property="og:locale"]', "content", lang === "nl" ? "nl_BE" : "en_US");
+    setMeta('meta[property="og:locale:alternate"]', "content", lang === "nl" ? "en_US" : "nl_BE");
+    setMeta('meta[name="twitter:title"]', "content", metadata.title);
+    setMeta('meta[name="twitter:description"]', "content", metadata.description);
+    setMeta('meta[name="twitter:image"]', "content", new URL(page.image, "https://yentevanhoudt.be").href);
+    setMeta('meta[name="twitter:image:alt"]', "content", metadata.imageAlt);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = pageUrl.href;
+
+    document.querySelectorAll('a[href]').forEach((anchor) => {
+      const href = anchor.getAttribute("href");
+      if (!href || href.startsWith("#") || /^(mailto:|tel:|javascript:)/i.test(href)) return;
+      const url = new URL(href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      if (lang === "nl") url.searchParams.set("lang", "nl");
+      else url.searchParams.delete("lang");
+      anchor.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
+    });
   };
 
-  const savedLang = localStorage.getItem(STORAGE_KEY) || "en";
-  applyLang(savedLang);
+  applyLang(lang);
 
   document.querySelectorAll("[data-lang]").forEach((btn) => {
-    btn.addEventListener("click", () => applyLang(btn.getAttribute("data-lang")));
+    btn.addEventListener("click", () => {
+      const nextLang = btn.getAttribute("data-lang");
+      const url = new URL(window.location.href);
+      if (nextLang === "nl") url.searchParams.set("lang", "nl");
+      else url.searchParams.delete("lang");
+      window.location.assign(url.href);
+    });
   });
 })();

@@ -406,6 +406,8 @@ body.is-loaded .scroll-cue { transition-delay: 0.6s; }
   text-transform: uppercase;
   color: var(--ink-dim);
   margin-bottom: 28px;
+  margin-top: 1em;
+  font-weight: 400;
 }
 
 .section-label strong {

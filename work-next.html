@@ -5,19 +5,43 @@
 <script>
 (function () {
   var isNav = sessionStorage.getItem("site-entered") === "1";
+  if (new URLSearchParams(window.location.search).get("lang") === "nl") {
+    document.documentElement.lang = "nl";
+  }
   document.documentElement.classList.add(isNav ? "is-nav-load" : "is-first-load");
   sessionStorage.setItem("site-entered", "1");
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXT — Custom-Built Client Platform | Yente Vanhoudt</title>
+<title>NEXT: Custom-Built Platform and Website | Yente Vanhoudt</title>
+<meta name="description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-next.html">
+<link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-next.html?lang=nl">
+<link rel="alternate" hreflang="x-default" href="https://yentevanhoudt.be/work-next.html">
+<meta property="og:site_name" content="Yente Vanhoudt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt">
+<meta property="og:description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
+<meta property="og:url" content="https://yentevanhoudt.be/work-next.html">
+<meta property="og:image" content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp">
+<meta property="og:image:alt" content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEXT: Custom-Built Platform and Website | Yente Vanhoudt">
+<meta name="twitter:description" content="Discover NEXT, a custom-built website and content platform created for a real youth-care client by Yente Vanhoudt's project team.">
+<meta name="twitter:image" content="https://yentevanhoudt.be/assets/work/next/hero-collage.webp">
+<meta name="twitter:image:alt" content="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>
+(function(){if(new URLSearchParams(location.search).get('lang')!=='nl')return;var seo={"title":"NEXT: Website en platform op maat | Yente Vanhoudt","description":"Ontdek NEXT, een website en contentplatform op maat voor een echte organisatie in de jeugdzorg, gebouwd door Yente en haar projectteam."};document.title=seo.title;var d=document.querySelector('meta[name="description"]');if(d)d.content=seo.description;})();
+</script>
 </head>
-<body>
+<body data-seo-page="next">
 
 <div class="loader" id="loader">
   <span class="loader-mark">Yente Vanhoudt</span>
@@ -47,7 +71,7 @@
 <main>
   <section class="project-hero reveal-up">
     <p class="section-label" data-i18n="next.label"><strong>Work</strong><br>NEXT</p>
-    <h1 class="project-title" data-i18n="next.title">A Custom-Built Client Platform</h1>
+    <h1 class="project-title" data-i18n="next.title">A Custom-Built Website for NEXT</h1>
     <p class="project-brief" data-i18n="next.brief">
       A real client, a real brief, no template. My team of four was handed
       a client and a goal — we ran our own meetings, did our own research,
@@ -59,11 +83,11 @@
   </section>
 
   <figure class="project-image project-image--collage">
-    <img src="assets/work/next/hero-collage.webp" alt="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
+    <img src="assets/work/next/hero-collage.webp" data-i18n-alt="image.next_hero" alt="Photo collage of a park path, trees and a lake, used in the NEXT homepage hero">
   </figure>
 
   <section class="process-section">
-    <p class="section-label" data-i18n="next.process_label"><strong>Process</strong><br>How we got there</p>
+    <h2 class="section-label" data-i18n="next.process_label"><strong>Process</strong><br>How we got there</h2>
 
     <div class="process-list">
       <div class="process-track"></div>
@@ -126,7 +150,7 @@
   </section>
 
   <section class="project-stack-section">
-    <p class="section-label" data-i18n="next.approach_label"><strong>Approach</strong><br>Code over CMS</p>
+    <h2 class="section-label" data-i18n="next.approach_label"><strong>Approach</strong><br>Code over CMS</h2>
     <p class="project-brief project-brief--narrow" data-i18n="next.approach_brief">
       We already had hours of experience wrangling free CMS platforms and
       knew exactly where they fall short. So instead, we built NEXT's
@@ -146,7 +170,7 @@
   </section>
 
   <section class="project-cta-section">
-    <p class="section-label" data-i18n="next.live_label"><strong>Live</strong><br>See it in action</p>
+    <h2 class="section-label" data-i18n="next.live_label"><strong>Live</strong><br>See it in action</h2>
     <p class="project-brief project-brief--narrow" data-i18n="next.live_brief">
       The site is live and deployed — built and shipped by the four of us,
       start to finish.
@@ -159,7 +183,7 @@
 </main>
 
 <footer class="site-footer" id="contact">
-  <p class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</p>
+  <h2 class="section-label" data-i18n="footer.label"><strong>Contact</strong><br>Let's talk</h2>
   <a class="footer-email" href="mailto:yentevanhoudt@icloud.com">yentevanhoudt@icloud.com</a>
 </footer>
 

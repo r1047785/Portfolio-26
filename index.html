@@ -5,6 +5,9 @@
     <script>
       (function () {
         var isNav = sessionStorage.getItem("site-entered") === "1";
+        if (new URLSearchParams(window.location.search).get("lang") === "nl") {
+          document.documentElement.lang = "nl";
+        }
         document.documentElement.classList.add(
           isNav ? "is-nav-load" : "is-first-load",
         );
@@ -12,8 +15,51 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yente Vanhoudt — Digital Experience Design</title>
+    <title>Digital Experience Design Portfolio | Yente Vanhoudt</title>
+    <meta
+      name="description"
+      content="Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code."
+    />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/" />
+    <link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/?lang=nl" />
+    <link rel="alternate" hreflang="x-default" href="https://yentevanhoudt.be/" />
+    <meta property="og:site_name" content="Yente Vanhoudt" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Digital Experience Design Portfolio | Yente Vanhoudt" />
+    <meta property="og:description" content="Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code." />
+    <meta property="og:url" content="https://yentevanhoudt.be/" />
+    <meta property="og:image" content="https://yentevanhoudt.be/assets/hero.webp" />
+    <meta property="og:image:alt" content="Yente standing on a rock overlooking a mountain valley" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="nl_BE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Digital Experience Design Portfolio | Yente Vanhoudt" />
+    <meta name="twitter:description" content="Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code." />
+    <meta name="twitter:image" content="https://yentevanhoudt.be/assets/hero.webp" />
+    <meta name="twitter:image:alt" content="Yente standing on a rock overlooking a mountain valley" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://yentevanhoudt.be/#person",
+            "name": "Yente Vanhoudt",
+            "url": "https://yentevanhoudt.be/",
+            "knowsAbout": ["Web design", "UI/UX design", "3D design"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://yentevanhoudt.be/#website",
+            "name": "Yente Vanhoudt — Digital Experience Design",
+            "url": "https://yentevanhoudt.be/",
+            "inLanguage": ["en", "nl-BE"],
+            "author": { "@id": "https://yentevanhoudt.be/#person" }
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,8 +67,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+  <script>
+(function(){if(new URLSearchParams(location.search).get('lang')!=='nl')return;var seo={"title":"Portfolio Digital Experience Design | Yente Vanhoudt","description":"Ontdek het portfolio van Yente Vanhoudt in webdesign, UI/UX en 3D, met doordachte digitale ervaringen van concept tot code."};document.title=seo.title;var d=document.querySelector('meta[name="description"]');if(d)d.content=seo.description;})();
+</script>
+</head>
+  <body data-seo-page="home">
     <div class="loader" id="loader">
       <span class="loader-mark">Yente Vanhoudt</span>
       <span class="loader-spinner"></span>
@@ -59,7 +108,7 @@
         <div class="hero-photo reveal-up">
           <img
             src="assets/hero.webp"
-            alt="Yente standing on a rock overlooking a mountain valley"
+            data-i18n-alt="image.home_hero" alt="Yente standing on a rock overlooking a mountain valley"
           />
         </div>
 
@@ -77,14 +126,14 @@
         <div class="about-photo">
           <img
             src="assets/about.webp"
-            alt="Silhouette of Yente looking across St Mark's Square in Venice at night"
+            data-i18n-alt="image.home_about" alt="Silhouette of Yente looking across St Mark's Square in Venice at night"
           />
         </div>
 
         <div class="about-content">
-          <p class="section-label" data-i18n="about.label">
+          <h2 class="section-label" data-i18n="about.label">
             <strong>About</strong><br />Yente
-          </p>
+          </h2>
 
           <h2 class="about-statement" data-i18n="about.statement">
             A drive to design digital experiences that feel thoughtful,
@@ -101,9 +150,9 @@
       </section>
 
       <section class="services" id="services">
-        <p class="section-label services-label" data-i18n="services.label">
+        <h2 class="section-label services-label" data-i18n="services.label">
           <strong>Services</strong><br />What I do
-        </p>
+        </h2>
 
         <div class="services-inner">
           <ul class="services-list">
@@ -136,9 +185,9 @@
       </section>
 
       <section class="work" id="work">
-        <p class="section-label work-label" data-i18n="work.label">
+        <h2 class="section-label work-label" data-i18n="work.label">
           <strong>Work</strong><br />Latest Projects
-        </p>
+        </h2>
         <p class="work-hint" data-i18n="work.hint">Choose a star to discover a project</p>
 
         <div class="star-map">
@@ -185,9 +234,9 @@
     </main>
 
     <footer class="site-footer" id="contact">
-      <p class="section-label" data-i18n="footer.label">
+      <h2 class="section-label" data-i18n="footer.label">
         <strong>Contact</strong><br />Let's talk
-      </p>
+      </h2>
       <a class="footer-email" href="mailto:yentevanhoudt@icloud.com"
         >yentevanhoudt@icloud.com</a
       >

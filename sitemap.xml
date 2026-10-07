@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yentevanhoudt.be/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/?lang=nl</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-tennis.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-tennis.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-tennis.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-tennis.html?lang=nl</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-tennis.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-tennis.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-next.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-next.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-next.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-next.html?lang=nl</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-next.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-next.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-ba-app.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-ba-app.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-ba-app.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/work-ba-app.html?lang=nl</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/work-ba-app.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/work-ba-app.html?lang=nl" />
+  </url>
+</urlset>
