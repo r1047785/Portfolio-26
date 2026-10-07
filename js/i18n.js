@@ -168,12 +168,12 @@ const translations = {
       path: "/",
       image: "/assets/hero.webp",
       en: {
-        title: "Digital Experience Design Portfolio | Yente Vanhoudt",
+        title: "Yente Vanhoudt | Web Design Portfolio",
         description: "Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code.",
         imageAlt: translations.en["image.home_hero"],
       },
       nl: {
-        title: "Portfolio Digital Experience Design | Yente Vanhoudt",
+        title: "Yente Vanhoudt | Webdesignportfolio",
         description: "Ontdek het portfolio van Yente Vanhoudt in webdesign, UI/UX en 3D, met doordachte digitale ervaringen van concept tot code.",
         imageAlt: translations.nl["image.home_hero"],
       },
