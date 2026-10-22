@@ -363,15 +363,15 @@ body.is-loaded .scroll-cue {
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@media (hover: hover) and (pointer: fine) and (min-width: 721px) {
+@media (hover: hover) and (pointer: fine) {
   body.is-loaded .hero-photo:hover {
-    translate: 0 -7px;
-    scale: 1.045;
+    translate: 0 -9px;
+    scale: 1.07;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
   }
 
   .hero-photo:hover img {
-    transform: scale(1.96);
+    transform: scale(2.02);
   }
 }
 
