@@ -132,7 +132,13 @@ body.is-loaded .hero-name span:nth-child(2) {
   transition-delay: 0.22s;
 }
 body.is-loaded .hero-photo {
-  transition-delay: 0.4s;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    translate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    scale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s ease;
+  transition-delay: 0.4s, 0.4s, 0s, 0s, 0s;
 }
 body.is-loaded .hero-tagline {
   transition-delay: 0.5s;
@@ -323,6 +329,14 @@ body.is-loaded .scroll-cue {
   background: linear-gradient(155deg, #3a3a35, #1c1c19);
   border: 1px solid var(--line);
   isolation: isolate;
+  translate: 0 0;
+  scale: 1;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    translate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    scale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s ease;
 }
 
 .hero-photo::after {
@@ -346,6 +360,36 @@ body.is-loaded .scroll-cue {
   transform-origin: 54% 32%;
   filter: grayscale(25%) saturate(0.75) contrast(1.08) brightness(0.94)
     sepia(8%);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 721px) {
+  body.is-loaded .hero-photo:hover {
+    translate: 0 -7px;
+    scale: 1.045;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-photo:hover img {
+    transform: scale(1.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo,
+  .hero-photo img {
+    transition: none;
+  }
+
+  body.is-loaded .hero-photo:hover {
+    translate: 0 0;
+    scale: 1;
+    box-shadow: none;
+  }
+
+  .hero-photo:hover img {
+    transform: scale(1.9);
+  }
 }
 
 .hero-tagline {
