@@ -10,7 +10,6 @@ const translations = {
 
     "hero.tagline": "Web designer &amp; Digital Experience Design student<br>building thoughtful websites, interfaces &amp; 3D experiences.",
     "hero.scrollcue": "Scroll down",
-    "about.label": "<strong>About</strong><br>Yente",
     "about.statement": "A drive to design digital experiences that feel\n        thoughtful, intuitive and alive.",
     "about.bio": "As a Digital Experience Design student, I've built a broad\n      foundation across web design, graphic design and 3D design —\n      learning to move fluidly between screen, print and space\n      while keeping every detail intentional.",
     "services.label": "<strong>Services</strong><br>What I do",
@@ -92,7 +91,6 @@ const translations = {
 
     "hero.tagline": "Webdesigner en student Digital Experience Design<br>die doordachte websites, interfaces &amp; 3D ontwerpt.",
     "hero.scrollcue": "Scroll naar beneden",
-    "about.label": "<strong>Over mij</strong><br>Yente",
     "about.statement": "Een drive om digitale ervaringen te ontwerpen die\n        doordacht, intuïtief en levendig aanvoelen.",
     "about.bio": "Als student Digital Experience Design bouwde ik een brede\n      basis op in webdesign, grafisch ontwerp en 3D-ontwerp —\n      ik leerde vloeiend schakelen tussen scherm, print en ruimte,\n      met oog voor ieder detail.",
     "services.label": "<strong>Diensten</strong><br>Wat ik doe",
