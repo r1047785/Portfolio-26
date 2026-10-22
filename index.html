@@ -583,7 +583,13 @@
         function openPreferences() {
           banner.hidden = true;
           preferences.hidden = false;
-          analyticsCheckbox.checked = false;
+          try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const choice = saved ? JSON.parse(saved) : null;
+            analyticsCheckbox.checked = choice?.analytics === true;
+          } catch (error) {
+            analyticsCheckbox.checked = false;
+          }
           analyticsCheckbox.focus();
         }
 

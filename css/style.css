@@ -1000,40 +1000,43 @@ body.is-loaded .scroll-cue {
 }
 
 .footer-cookie-settings {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: fit-content;
-  min-height: 44px;
-  margin: 32px auto 0;
-  padding: 10px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(244, 241, 234, 0.025);
+  min-height: 36px;
+  margin: 28px auto 0;
+  padding: 7px 10px;
+  border: 1px solid rgba(244, 241, 234, 0.1);
+  border-radius: 6px;
+  background: rgba(244, 241, 234, 0.018);
   color: var(--ink-dim);
   font: inherit;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1.4;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
   transition:
     color 0.25s ease,
     background-color 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .footer-cookie-settings svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
+  opacity: 0.8;
 }
 
 .footer-cookie-settings:hover,
 .footer-cookie-settings:focus-visible {
   color: var(--ink);
-  background: rgba(244, 241, 234, 0.06);
-  border-color: rgba(244, 241, 234, 0.3);
+  background: rgba(244, 241, 234, 0.055);
+  border-color: rgba(244, 241, 234, 0.24);
+  transform: translateY(-1px);
 }
 
 .footer-cookie-settings:focus-visible {
