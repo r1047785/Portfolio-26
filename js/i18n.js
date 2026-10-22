@@ -1,5 +1,6 @@
 const translations = {
   en: {
+    "footer.cookies": "Cookie settings",
     "nav.about": "About",
     "nav.services": "Services",
     "nav.work": "Work",
@@ -81,6 +82,7 @@ const translations = {
   },
 
   nl: {
+    "footer.cookies": "Cookie-instellingen",
     "nav.about": "Over mij",
     "nav.services": "Diensten",
     "nav.work": "Werk",

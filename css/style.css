@@ -999,6 +999,32 @@ body.is-loaded .scroll-cue {
   transform: translate(2px, -2px);
 }
 
+.footer-cookie-settings {
+  display: block;
+  margin: 32px auto 0;
+  padding: 10px 12px;
+  border: 0;
+  background: none;
+  color: var(--ink-dim);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.footer-cookie-settings:hover,
+.footer-cookie-settings:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-cookie-settings:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
 /* ---------- Custom cursor ---------- */
 .cursor-dot {
   position: fixed;
