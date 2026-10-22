@@ -1000,24 +1000,40 @@ body.is-loaded .scroll-cue {
 }
 
 .footer-cookie-settings {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 44px;
   margin: 32px auto 0;
-  padding: 10px 12px;
-  border: 0;
-  background: none;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(244, 241, 234, 0.025);
   color: var(--ink-dim);
   font: inherit;
   font-size: 11px;
-  letter-spacing: 0.04em;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
   cursor: pointer;
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.footer-cookie-settings svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .footer-cookie-settings:hover,
 .footer-cookie-settings:focus-visible {
   color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  background: rgba(244, 241, 234, 0.06);
+  border-color: rgba(244, 241, 234, 0.3);
 }
 
 .footer-cookie-settings:focus-visible {
