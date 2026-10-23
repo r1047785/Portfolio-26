@@ -168,11 +168,16 @@ loader.load(
     scene.add(avatar);
     wrapper.classList.add("is-ready");
     wake();
+    window.dispatchEvent(new CustomEvent("avatar-progress", { detail: { progress: 100, ready: true } }));
   },
-  undefined,
+  (event) => {
+    const progress = event.lengthComputable ? 25 + (event.loaded / event.total) * 65 : 45;
+    window.dispatchEvent(new CustomEvent("avatar-progress", { detail: { progress } }));
+  },
   (error) => {
     console.error("Could not load the 3D portrait.", error);
     wrapper.classList.add("has-error");
+    window.dispatchEvent(new CustomEvent("avatar-progress", { detail: { progress: 100, ready: true } }));
   },
 );
 

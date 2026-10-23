@@ -139,9 +139,31 @@
     </script>
   </head>
   <body data-seo-page="home">
-    <div class="loader" id="loader">
-      <span class="loader-mark">Yente Vanhoudt</span>
-      <span class="loader-spinner"></span>
+    <div class="loader walking-loader" id="loader" aria-label="Portfolio loading">
+      <span class="intro-name">YENTE VANHOUDT</span>
+      <div class="intro-stage">
+        <p class="intro-title" aria-hidden="true">On my way.</p>
+        <div class="intro-track">
+          <div class="intro-walker" aria-hidden="true">
+            <svg viewBox="0 0 100 150" fill="currentColor">
+              <g class="walker-body">
+                <g class="walker-arm walker-arm-back"><path d="M48 47Q35 47 33 61L30 91Q31 100 38 98L43 70 56 59Z"/></g>
+                <g class="walker-leg walker-leg-back"><path d="M43 86Q36 93 40 108L44 134Q39 142 43 146L64 146Q68 140 56 134L56 108 59 89Z"/></g>
+                <path d="M39 43Q31 53 35 73L40 94Q49 102 62 92L62 66Q65 48 55 43Z"/>
+                <path d="M43 36L35 34 40 27 33 21 42 19 40 10 48 14 53 5 57 15 66 12 63 22 71 27 62 31 64 38 56 37 55 44 46 44Z"/>
+                <g class="walker-leg walker-leg-front"><path d="M43 87Q39 98 44 112L45 134Q40 141 45 146L65 146Q71 140 57 133L58 109 61 88Z"/></g>
+                <g class="walker-arm walker-arm-front"><path d="M54 46Q62 44 65 55L69 76 78 90Q80 98 73 99L61 84Q58 80 56 70L48 56Z"/></g>
+              </g>
+            </svg>
+          </div>
+          <div class="intro-rail"><span class="intro-fill"></span></div>
+        </div>
+        <div class="intro-progress-row">
+          <span class="intro-caption" data-i18n="intro.caption">A little walk before we begin.</span>
+          <span class="intro-progress" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="intro-count">0</span><span>%</span></span>
+        </div>
+      </div>
+      <button class="intro-skip" type="button" data-i18n="intro.skip">Skip intro</button>
     </div>
 
     <div class="cursor-dot" id="cursorDot"></div>

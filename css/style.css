@@ -2027,3 +2027,50 @@ body[data-seo-page="home"] .avatar-travelling {
   .work-card-number { transition:none; }
   .work-card:hover .work-card-number { transform:none; }
 }
+
+/* A lightweight, hand-drawn walking intro. */
+.walking-loader { background:#fafafa; color:#111; display:flex; flex-direction:column; justify-content:center; padding:32px; transition:opacity .5s ease,visibility .5s ease; animation:intro-failsafe 0s 8s forwards; }
+.intro-name { position:absolute; top:8%; font-size:11px; letter-spacing:.2em; }
+.intro-stage { width:min(580px,100%); }
+.intro-title { text-align:center; font-family:"Great Vibes",Georgia,serif; font-weight:400; font-size:clamp(64px,10vw,108px); line-height:1.3; margin-bottom:24px; }
+.intro-track { position:relative; height:145px; margin:0 36px; }
+.intro-walker { position:absolute; bottom:3px; left:0; width:82px; height:123px; transform:translateX(-50%); will-change:left; }
+.intro-walker svg { display:block; width:100%; height:100%; overflow:visible; }
+.walker-body { animation:walker-bob .65s ease-in-out infinite; }
+.walker-arm,.walker-leg { transform-box:view-box; }
+.walker-arm { transform-origin:53px 51px; }
+.walker-leg { transform-origin:51px 91px; }
+.walker-arm-front { animation:walker-swing .85s ease-in-out infinite alternate; }
+.walker-arm-back { animation:walker-swing .85s ease-in-out infinite alternate-reverse; }
+.walker-leg-front { animation:walker-stride .85s ease-in-out infinite alternate-reverse; }
+.walker-leg-back { animation:walker-stride .85s ease-in-out infinite alternate; }
+.intro-rail { position:absolute; bottom:0; width:100%; height:2px; background:#d8d8d8; overflow:hidden; }
+.intro-fill { display:block; width:100%; height:100%; background:#111; transform:scaleX(0); transform-origin:left; }
+.intro-progress-row { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-top:22px; }
+.intro-caption { font-size:11px; letter-spacing:.04em; color:#666; }
+.intro-progress { font-size:32px; letter-spacing:-.06em; font-variant-numeric:tabular-nums; }
+.intro-progress > span:last-child { margin-left:4px; font-size:14px; }
+.intro-skip { position:absolute; bottom:7%; padding:12px 18px; background:none; border:0; border-bottom:1px solid #aaa; color:#555; font:11px var(--font-body); letter-spacing:.08em; cursor:pointer; }
+.intro-skip:focus-visible { outline:2px solid #111; outline-offset:4px; }
+html.is-nav-load .walking-loader { display:none; }
+@keyframes walker-swing { from { transform:rotate(-26deg); } to { transform:rotate(22deg); } }
+@keyframes walker-stride { from { transform:rotate(-24deg); } to { transform:rotate(24deg); } }
+@keyframes walker-bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
+@keyframes intro-failsafe { to { opacity:0; visibility:hidden; pointer-events:none; } }
+@media(max-width:480px) {
+  .walking-loader { padding:24px; }
+  .intro-track { margin:0 25px; height:130px; }
+  .intro-walker { width:70px; height:105px; }
+  .intro-caption { max-width:190px; line-height:1.6; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .walker-body,.walker-arm,.walker-leg { animation:none; }
+  .walking-loader { transition:none; }
+}
+
+/* Smaller, leaner silhouette with the pointed head from the reference. */
+.intro-walker { width:58px; height:94px; }
+.intro-walker svg { transform:scaleX(.78); transform-origin:50% 100%; }
+@media(max-width:480px) {
+  .intro-walker { width:49px; height:80px; }
+}

@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    "intro.caption": "A little walk before we begin.",
+    "intro.skip": "Skip intro",
     "work.galleryLabel": "Selected projects / 01—03",
     "work.galleryTitle": "A few things<br>I've made.",
     "work.galleryIntro": "From websites to 3D worlds. Explore the ideas and details behind my work.",
@@ -94,6 +96,8 @@ const translations = {
   },
 
   nl: {
+    "intro.caption": "Even een ommetje voor we beginnen.",
+    "intro.skip": "Intro overslaan",
     "work.galleryLabel": "Geselecteerde projecten / 01—03",
     "work.galleryTitle": "Een selectie<br>van mijn werk.",
     "work.galleryIntro": "Van websites tot 3D-werelden. Ontdek de ideeën en details achter mijn werk.",
