@@ -1,5 +1,21 @@
 const translations = {
   en: {
+    "about.note": "Always curious.<br>Always creating.",
+    "about.libraryJump": "Explore my creative library",
+    "about.personality": "I'm an outgoing young guy who's always open to learning something new. I like trying things out, following an idea and seeing where it takes me.",
+    "about.experiment": "Experimenting is how I learn. Whether something works straight away or takes a few attempts, I want to keep improving and discovering what I can make next.",
+    "about.offlineLabel": "Away from the screen",
+    "about.offlineTitle": "A little more<br>than pixels.",
+    "about.hobbies": "In my free time, I enjoy going to the gym and riding my motorcycle. I like making time for both, alongside my creative work.",
+    "about.gym": "Gym",
+    "about.motorcycle": "Motorcycle rides",
+    "about.libraryLabel": "02 / The creative library",
+    "about.libraryTitle": "Room to<br>experiment.",
+    "about.libraryIntro": "Between bigger projects, I also make smaller things just to try an idea out. This is where I'll share those experiments, mostly shaders and 3D scenes made in my free time.",
+    "about.shadersDescription": "Experiments with light, materials and movement.",
+    "about.librarySoon": "First experiments coming soon.",
+    "about.scenesTitle": "3D scenes",
+    "about.scenesDescription": "Small worlds, compositions and ideas in three dimensions.",
     "intro.caption": "A little walk before we begin.",
     "intro.skip": "Skip intro",
     "work.galleryLabel": "Selected projects / 01—03",
@@ -96,6 +112,22 @@ const translations = {
   },
 
   nl: {
+    "about.note": "Altijd nieuwsgierig.<br>Altijd iets aan het maken.",
+    "about.libraryJump": "Ontdek mijn creatieve library",
+    "about.personality": "Ik ben een spontane jonge gast die altijd openstaat om iets nieuws te leren. Ik probeer graag dingen uit, volg een idee en ontdek waar het me brengt.",
+    "about.experiment": "Door te experimenteren leer ik bij. Of iets meteen lukt of pas na een paar pogingen: ik wil blijven groeien, beter worden en ontdekken wat ik nog kan maken.",
+    "about.offlineLabel": "Naast het scherm",
+    "about.offlineTitle": "Meer dan<br>alleen pixels.",
+    "about.hobbies": "In mijn vrije tijd ga ik graag gymmen en motorrijden. Naast mijn creatieve werk maak ik daar graag tijd voor vrij.",
+    "about.gym": "Gymmen",
+    "about.motorcycle": "Motorrijden",
+    "about.libraryLabel": "02 / De creatieve library",
+    "about.libraryTitle": "Ruimte om<br>te experimenteren.",
+    "about.libraryIntro": "Tussen grotere projecten door maak ik ook kleine dingen, gewoon om een idee uit te proberen. Hieronder deel ik binnenkort die experimenten: vooral shaders en 3D-scenes die ik in mijn vrije tijd maak.",
+    "about.shadersDescription": "Experimenten met licht, materialen en beweging.",
+    "about.librarySoon": "Binnenkort de eerste experimenten.",
+    "about.scenesTitle": "3D-scenes",
+    "about.scenesDescription": "Kleine werelden, composities en ideeën in drie dimensies.",
     "intro.caption": "Even een ommetje voor we beginnen.",
     "intro.skip": "Intro overslaan",
     "work.galleryLabel": "Geselecteerde projecten / 01—03",
@@ -255,8 +287,8 @@ const translations = {
   pageSeo.about = {
     path: "/about.html",
     image: "/assets/about.webp",
-    en: { title: "About | Yente Vanhoudt", description: "About Yente Vanhoudt.", imageAlt: translations.en["image.home_about"] },
-    nl: { title: "Over mij | Yente Vanhoudt", description: "Over Yente Vanhoudt.", imageAlt: translations.nl["image.home_about"] },
+    en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_about"] },
+    nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_about"] },
   };
   const page = pageSeo[document.body.dataset.seoPage] || pageSeo.home;
   const lang = new URLSearchParams(window.location.search).get("lang") === "nl" ? "nl" : "en";

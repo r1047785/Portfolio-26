@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, follow" />
+
   <title>About | Yente Vanhoudt</title>
-  <meta name="description" content="About Yente Vanhoudt." />
+  <link rel="canonical" href="https://yentevanhoudt.be/about.html" />
+  <link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/about.html" />
+  <link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/about.html?lang=nl" />
+  <meta name="description" content="Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,9 +26,54 @@
     </div>
   </header>
   <main class="about-page">
-    <p class="about-preview-eyebrow">Yente Vanhoudt</p>
-    <h1 data-i18n="about.pageTitle">About me.</h1>
-    <a class="about-preview-link" href="index.html#about"><span aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M19 12H5m7-7-7 7 7 7'/></svg></span><span data-i18n="about.backHome">Back to home</span></a>
+    <section class="about-story" aria-labelledby="about-title">
+      <p class="about-preview-eyebrow">01 / Yente Vanhoudt</p>
+      <h1 id="about-title" data-i18n="about.pageTitle">About me.</h1>
+      <div class="about-story-grid">
+        <aside class="about-story-note">
+          <span class="about-note-mark" aria-hidden="true">*</span>
+          <p data-i18n="about.note">Always curious.<br>Always creating.</p>
+          <a href="#creative-library" class="about-library-jump"><span data-i18n="about.libraryJump">Explore my creative library</span><svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></a>
+        </aside>
+        <div class="about-story-text">
+          <p class="about-story-lead" data-i18n="about.previewSummary">I'm Yente, a Digital Experience Design student exploring web design, 3D and UI/UX. I enjoy turning ideas into thoughtful digital experiences, with an eye for detail.</p>
+          <p data-i18n="about.personality">I'm an outgoing young guy who's always open to learning something new. I like trying things out, following an idea and seeing where it takes me.</p>
+          <p data-i18n="about.experiment">Experimenting is how I learn. Whether something works straight away or takes a few attempts, I want to keep improving and discovering what I can make next.</p>
+        </div>
+      </div>
+    </section>
+    <section class="about-offline" aria-labelledby="offline-title">
+      <div>
+        <p class="about-preview-eyebrow" data-i18n="about.offlineLabel">Away from the screen</p>
+        <h2 id="offline-title" data-i18n="about.offlineTitle">A little more<br>than pixels.</h2>
+      </div>
+      <div class="about-offline-text">
+        <p data-i18n="about.hobbies">In my free time, I enjoy going to the gym and riding my motorcycle. I like making time for both, alongside my creative work.</p>
+        <ul class="about-interest-list"><li data-i18n="about.gym">Gym</li><li data-i18n="about.motorcycle">Motorcycle rides</li></ul>
+      </div>
+    </section>
+    <section class="creative-library" id="creative-library" aria-labelledby="library-title">
+      <header class="library-header">
+        <p class="about-preview-eyebrow" data-i18n="about.libraryLabel">02 / The creative library</p>
+        <h2 id="library-title" data-i18n="about.libraryTitle">Room to<br>experiment.</h2>
+        <p data-i18n="about.libraryIntro">Between bigger projects, I also make smaller things just to try an idea out. This is where I'll share those experiments, mostly shaders and 3D scenes made in my free time.</p>
+      </header>
+      <div class="library-shelves">
+        <section class="library-shelf" aria-labelledby="shader-title">
+          <span class="library-shelf-index" aria-hidden="true">01</span>
+          <h3 id="shader-title">Shaders</h3>
+          <p data-i18n="about.shadersDescription">Experiments with light, materials and movement.</p>
+          <span class="library-soon" data-i18n="about.librarySoon">First experiments coming soon.</span>
+        </section>
+        <section class="library-shelf" aria-labelledby="scenes-title">
+          <span class="library-shelf-index" aria-hidden="true">02</span>
+          <h3 id="scenes-title" data-i18n="about.scenesTitle">3D scenes</h3>
+          <p data-i18n="about.scenesDescription">Small worlds, compositions and ideas in three dimensions.</p>
+          <span class="library-soon" data-i18n="about.librarySoon">First experiments coming soon.</span>
+        </section>
+      </div>
+    </section>
+    <a class="about-preview-link" href="index.html#about"><svg class="ui-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg><span data-i18n="about.backHome">Back to home</span></a>
   </main>
   <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
