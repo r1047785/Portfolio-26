@@ -111,9 +111,17 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <script type="importmap">
-      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+      }
     </script>
     <link rel="stylesheet" href="css/style.css" />
     <script>
@@ -157,91 +165,262 @@
       <section class="hero" id="hero">
         <div class="hero-signature reveal-up">YENTE VANHOUDT</div>
         <h1 class="hero-name reveal-up" aria-label="Yente Vanhoudt — Portfolio">
-          <svg class="hero-title-art" viewBox="0 0 920 220" aria-hidden="true" focusable="false">
-            <text class="hero-title-port" x="0" y="174" textLength="480" lengthAdjust="spacingAndGlyphs">Port</text>
-            <text class="hero-title-folio" x="505" y="190" textLength="410" lengthAdjust="spacingAndGlyphs">Folio</text>
+          <svg
+            class="hero-title-art"
+            viewBox="0 0 920 220"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <text
+              class="hero-title-port"
+              x="0"
+              y="174"
+              textLength="480"
+              lengthAdjust="spacingAndGlyphs"
+            >
+              Port
+            </text>
+            <text
+              class="hero-title-folio"
+              x="505"
+              y="190"
+              textLength="410"
+              lengthAdjust="spacingAndGlyphs"
+            >
+              Folio
+            </text>
           </svg>
         </h1>
-        <span class="hero-year" aria-hidden="true"><span>20</span><span>26</span><i></i><i></i><i></i><i></i></span>
-        <div class="hero-avatar-wrap" aria-label="Interactive 3D portrait of Yente Vanhoudt">
-          <canvas class="hero-avatar" id="heroAvatar" role="img" aria-label="Interactive 3D portrait of Yente Vanhoudt"></canvas>
+        <span class="hero-year" aria-hidden="true"
+          ><span>20</span><span>26</span><i></i><i></i><i></i><i></i
+        ></span>
+        <div
+          class="hero-avatar-wrap"
+          aria-label="Interactive 3D portrait of Yente Vanhoudt"
+        >
+          <canvas
+            class="hero-avatar"
+            id="heroAvatar"
+            role="img"
+            aria-label="Interactive 3D portrait of Yente Vanhoudt"
+          ></canvas>
           <span class="avatar-fallback" aria-hidden="true">YV</span>
         </div>
-        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">Web designer creating thoughtful websites, interfaces &amp; 3D experiences.</p>
+        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
+          Web designer creating thoughtful websites, interfaces &amp; 3D
+          experiences.
+        </p>
         <div class="hero-categories">
           <span data-i18n="service2.title">Web Design</span>
           <span data-i18n="service1.title">3D Design</span>
           <span data-i18n="service3.title">UI/UX Design</span>
         </div>
-        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue">Scroll down</a>
+        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue"
+          >Scroll down</a
+        >
       </section>
 
       <section class="about-preview" id="about">
-        <div class="about-avatar-destination" id="aboutAvatarDestination" aria-hidden="true"></div>
+        <div
+          class="about-avatar-destination"
+          id="aboutAvatarDestination"
+          aria-hidden="true"
+        ></div>
         <div class="about-preview-copy">
-          <p class="about-preview-eyebrow" data-i18n="about.previewLabel">A little introduction</p>
-          <h2 data-i18n="about.previewTitle">The person<br>behind the pixels.</h2>
-          <p class="about-preview-summary" data-i18n="about.previewSummary">I'm Yente, a Digital Experience Design student exploring web design, 3D and UI/UX. I enjoy turning ideas into thoughtful digital experiences, with an eye for detail.</p>
-          <a class="about-preview-link" href="about.html"><span data-i18n="about.previewLink">More about me</span><span aria-hidden="true">↗</span></a>
+          <p class="about-preview-eyebrow" data-i18n="about.previewLabel">
+            A little introduction
+          </p>
+          <h2 data-i18n="about.previewTitle">
+            The person<br />behind the pixels.
+          </h2>
+          <p class="about-preview-summary" data-i18n="about.previewSummary">
+            I'm Yente, a Digital Experience Design student exploring web design,
+            3D and UI/UX. I enjoy turning ideas into thoughtful digital
+            experiences, with an eye for detail.
+          </p>
+          <a class="about-preview-link" href="about.html"
+            ><span data-i18n="about.previewLink">More about me</span
+            ><span aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span></a
+          >
         </div>
       </section>
       <section class="toolkit" id="services" aria-labelledby="toolkit-title">
         <div class="toolkit-inner">
           <header class="toolkit-heading">
             <p class="toolkit-eyebrow" data-i18n="tools.eyebrow">My toolkit</p>
-            <h2 id="toolkit-title" data-i18n="tools.title">From idea<br>to creation.</h2>
-            <p class="toolkit-intro" data-i18n="tools.intro">The tools I work with for design, development and 3D.</p>
+            <h2 id="toolkit-title" data-i18n="tools.title">
+              From idea<br />to creation.
+            </h2>
+            <p class="toolkit-intro" data-i18n="tools.intro">
+              The tools I work with for design, development and 3D.
+            </p>
           </header>
           <ul class="tool-grid">
-            <li class="tool-tile"><img src="assets/icons/css3.svg" width="48" height="48" loading="lazy" alt="" /><span>CSS</span></li>
-            <li class="tool-tile"><img src="assets/icons/html5.svg" width="48" height="48" loading="lazy" alt="" /><span>HTML</span></li>
-            <li class="tool-tile"><img src="assets/icons/blender.svg" width="48" height="48" loading="lazy" alt="" /><span>Blender</span></li>
-            <li class="tool-tile"><img src="assets/icons/adobe.svg" width="48" height="48" loading="lazy" alt="" /><span>Adobe Creative Cloud</span></li>
-            <li class="tool-tile"><img src="assets/icons/github.svg" width="48" height="48" loading="lazy" alt="" /><span>GitHub</span></li>
-            <li class="tool-tile"><img src="assets/icons/openai.svg" width="48" height="48" loading="lazy" alt="" /><span>ChatGPT</span></li>
-            <li class="tool-tile"><img src="assets/icons/claude.svg" width="48" height="48" loading="lazy" alt="" /><span>Claude Code</span></li>
-            <li class="tool-tile"><img src="assets/icons/wordpress.svg" width="48" height="48" loading="lazy" alt="" /><span>WordPress</span></li>
-            <li class="tool-tile"><img src="assets/icons/javascript.svg" width="48" height="48" loading="lazy" alt="" /><span>JavaScript</span></li>
-            <li class="tool-tile"><img src="assets/icons/threedotjs.svg" width="48" height="48" loading="lazy" alt="" /><span>Three.js</span></li>
-            <li class="tool-tile"><img src="assets/icons/figma.svg" width="48" height="48" loading="lazy" alt="" /><span>Figma</span></li>
-            <li class="tool-tile"><img src="assets/icons/visualstudiocode.svg" width="48" height="48" loading="lazy" alt="" /><span>VS Code</span></li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/css3.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>CSS</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/html5.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>HTML</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/blender.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>Blender</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/adobe.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>Adobe Creative Cloud</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/github.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>GitHub</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/openai.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>ChatGPT</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/claude.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>Claude Code</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/wordpress.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>WordPress</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/javascript.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>JavaScript</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/threedotjs.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>Three.js</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/figma.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>Figma</span>
+            </li>
+            <li class="tool-tile">
+              <img
+                src="assets/icons/visualstudiocode.svg"
+                width="48"
+                height="48"
+                loading="lazy"
+                alt=""
+              /><span>VS Code</span>
+            </li>
           </ul>
         </div>
       </section>
 
-      <section class="selected-work" id="work" aria-labelledby="selected-work-title">
+      <section
+        class="selected-work"
+        id="work"
+        aria-labelledby="selected-work-title"
+      >
         <header class="selected-work-heading">
           <div>
-            <p class="selected-work-eyebrow" data-i18n="work.galleryLabel">Selected projects / 01—03</p>
-            <h2 id="selected-work-title" data-i18n="work.galleryTitle">A few things<br>I've made.</h2>
+            <p class="selected-work-eyebrow" data-i18n="work.galleryLabel">
+              Selected projects / 01—03
+            </p>
+            <h2 id="selected-work-title" data-i18n="work.galleryTitle">
+              A few things<br />I've made.
+            </h2>
           </div>
-          <p class="selected-work-intro" data-i18n="work.galleryIntro">From websites to 3D worlds. Explore the ideas and details behind my work.</p>
+          <p class="selected-work-intro" data-i18n="work.galleryIntro">
+            From websites to 3D worlds. Explore the ideas and details behind my
+            work.
+          </p>
         </header>
         <div class="project-gallery">
           <a class="work-card work-card--tennis" href="work-tennis.html">
-            <div class="work-card-media">
-              <img src="assets/work/tennis/styleframe-02.webp" loading="lazy" alt="" />
-              <span class="work-card-open" aria-hidden="true">↗</span>
+            <div class="work-card-media"><span class='work-card-number' aria-hidden='true'>01</span>
+
+              <span class="work-card-open" aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span>
             </div>
-            <div class="work-card-meta"><span>01</span><span data-i18n="work.category3d">3D &amp; Motion</span></div>
+            <div class="work-card-meta">
+              <span>01</span
+              ><span data-i18n="work.category3d">3D &amp; Motion</span>
+            </div>
             <h3 data-i18n="work.tennis">Tennis Blender Project</h3>
           </a>
           <a class="work-card work-card--next" href="work-next.html">
-            <div class="work-card-media">
-              <img src="assets/work/next/hero-collage.webp" loading="lazy" alt="" />
-              <span class="work-card-open" aria-hidden="true">↗</span>
+            <div class="work-card-media"><span class='work-card-number' aria-hidden='true'>02</span>
+
+              <span class="work-card-open" aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span>
             </div>
-            <div class="work-card-meta"><span>02</span><span data-i18n="work.categoryweb">Web Design &amp; Development</span></div>
+            <div class="work-card-meta">
+              <span>02</span
+              ><span data-i18n="work.categoryweb"
+                >Web Design &amp; Development</span
+              >
+            </div>
             <h3 data-i18n="work.next">NEXT</h3>
           </a>
           <a class="work-card work-card--ba" href="work-ba-app.html">
-            <div class="work-card-media work-card-apps">
-              <img src="assets/work/ba-app/webshop.webp" loading="lazy" alt="" />
-              <img src="assets/work/ba-app/campus.webp" loading="lazy" alt="" />
-              <img src="assets/work/ba-app/news.webp" loading="lazy" alt="" />
-              <span class="work-card-open" aria-hidden="true">↗</span>
+            <div class="work-card-media work-card-apps"><span class='work-card-number' aria-hidden='true'>03</span>
+
+              <span class="work-card-open" aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span>
             </div>
-            <div class="work-card-meta"><span>03</span><span data-i18n="work.categoryui">UI/UX &amp; App</span></div>
+            <div class="work-card-meta">
+              <span>03</span
+              ><span data-i18n="work.categoryui">UI/UX &amp; App</span>
+            </div>
             <h3 data-i18n="work.ba">BA App Development</h3>
           </a>
         </div>
@@ -269,7 +448,7 @@
             />
           </svg>
           <span>LinkedIn</span>
-          <span class="footer-social-arrow" aria-hidden="true">↗</span>
+          <span class="footer-social-arrow" aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span>
         </a>
         <a
           class="footer-social-link"
@@ -296,7 +475,7 @@
             />
           </svg>
           <span>Instagram</span>
-          <span class="footer-social-arrow" aria-hidden="true">↗</span>
+          <span class="footer-social-arrow" aria-hidden="true"><svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg></span>
         </a>
       </nav>
       <button
@@ -305,7 +484,14 @@
         class="footer-cookie-settings"
         aria-controls="cookie-preferences"
       >
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+        <svg
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
           <path d="M3 6h3m4 0h7M3 14h7m4 0h3" />
           <circle cx="8" cy="6" r="2" />
           <circle cx="12" cy="14" r="2" />

@@ -1997,3 +1997,33 @@ body[data-seo-page="home"] .avatar-travelling {
   .work-card-media > img, .work-card-open { transition:none; }
   .work-card:hover .work-card-media > img, .work-card:hover .work-card-open { transform:none; }
 }
+
+/* SVG arrows have the same linework on iOS, Android and desktop. */
+.ui-arrow { display:inline-block; width:1.2em; height:1.2em; vertical-align:-.2em; flex-shrink:0; }
+.work-card-open .ui-arrow { width:24px; height:24px; }
+
+/* Lightweight typographic project index while the final art direction develops. */
+.project-gallery { grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.work-card--next { margin-top:0; }
+.work-card--ba { grid-column:auto; }
+.work-card .work-card-media {
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio:1; padding:28px; background:#f4f4f4; border:1px solid #ddd;
+}
+.work-card-number { font-size:clamp(80px,11vw,160px); font-weight:400; letter-spacing:-.09em; color:#111; line-height:1; transition:transform .3s ease; }
+.work-card:nth-child(2) .work-card-media { background:#111; border-color:#111; }
+.work-card:nth-child(2) .work-card-number { color:#fff; }
+.work-card h3 { font-size:clamp(21px,2.2vw,32px); }
+.work-card-meta { font-size:9px; }
+@media(hover:hover) {
+  .work-card:hover .work-card-number { transform:translateY(-6px); }
+}
+@media(max-width:760px) {
+  .project-gallery { grid-template-columns:1fr; gap:32px; }
+  .work-card .work-card-media { aspect-ratio:2; }
+  .work-card-number { font-size:90px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .work-card-number { transition:none; }
+  .work-card:hover .work-card-number { transform:none; }
+}

@@ -7,9 +7,10 @@ const wrapper = canvas?.parentElement;
 if (!canvas || !wrapper) throw new Error("The hero avatar canvas is missing.");
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobileQuality = window.matchMedia("(pointer: coarse)").matches;
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
 // Supersample ordinary desktop screens as well as rendering sharply on Retina.
-renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio || 1, 1.5), 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobileQuality ? 1.5 : 2));
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -31,7 +32,8 @@ scene.add(new THREE.HemisphereLight(0xfff8ed, 0x7c7168, 0.5));
 const keyLight = new THREE.DirectionalLight(0xffeee0, 2.5);
 keyLight.position.set(-3.8, 5, 6);
 keyLight.castShadow = true;
-keyLight.shadow.mapSize.set(2048, 2048);
+const shadowSize = mobileQuality ? 1024 : 2048;
+keyLight.shadow.mapSize.set(shadowSize, shadowSize);
 Object.assign(keyLight.shadow.camera, {
   left: -2.2, right: 2.2, top: 2.2, bottom: -2.2, near: 0.1, far: 18,
 });
@@ -49,6 +51,9 @@ let avatar;
 let targetX = 0;
 let targetY = 0;
 let frame = 0;
+let avatarVisible = true;
+let wake = () => {};
+let layoutFrame = 0;
 
 // Keep a layout anchor in the hero while the one live canvas travels between sections.
 const destination = document.querySelector("#aboutAvatarDestination");
@@ -62,6 +67,7 @@ let journey;
 const measureJourney = () => {
   if (!destination) return;
   const start = origin.getBoundingClientRect();
+  if (!start.width || !start.height) return;
   const end = destination.getBoundingClientRect();
   const scroll = window.scrollY;
   const scale = Math.min(end.width / start.width, end.height / start.height);
@@ -74,6 +80,7 @@ const measureJourney = () => {
   };
   wrapper.style.width = `${start.width}px`;
   wrapper.style.height = `${start.height}px`;
+  positionAvatar();
 };
 const positionAvatar = () => {
   if (!journey) return;
@@ -83,11 +90,20 @@ const positionAvatar = () => {
   const y = THREE.MathUtils.lerp(journey.y, journey.endY, t) - window.scrollY;
   const scale = THREE.MathUtils.lerp(1, journey.scale, t);
   wrapper.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+  avatarVisible = y < window.innerHeight && y + wrapper.clientHeight * scale > 0;
+  wake();
 };
 measureJourney();
 positionAvatar();
 window.addEventListener("resize", measureJourney, { passive: true });
 document.fonts.ready.then(measureJourney);
+window.addEventListener("scroll", () => {
+  if (layoutFrame) return;
+  layoutFrame = requestAnimationFrame(() => {
+    layoutFrame = 0;
+    positionAvatar();
+  });
+}, { passive: true });
 
 const resize = () => {
   const width = wrapper.clientWidth;
@@ -96,6 +112,7 @@ const resize = () => {
   renderer.setSize(width, height, false);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
+  wake();
 };
 new ResizeObserver(resize).observe(wrapper);
 resize();
@@ -150,6 +167,7 @@ loader.load(
     avatar.add(model);
     scene.add(avatar);
     wrapper.classList.add("is-ready");
+    wake();
   },
   undefined,
   (error) => {
@@ -158,20 +176,38 @@ loader.load(
   },
 );
 
+let lastRender = -Infinity;
+const frameInterval = 1000 / (mobileQuality ? 30 : 60);
 const render = (time) => {
-  frame = requestAnimationFrame(render);
-  positionAvatar();
+  frame = 0;
+  if (document.hidden || !avatarVisible || !avatar) return;
+  if (!reducedMotion) frame = requestAnimationFrame(render);
+  if (time - lastRender < frameInterval - 1) return;
+  const blend = 1 - Math.exp(-2.8 * Math.min((time - lastRender) / 1000, 0.1));
+  lastRender = time;
   if (avatar && !reducedMotion) {
-    avatar.rotation.x += (targetX - avatar.rotation.x) * 0.045;
-    avatar.rotation.y += (targetY - avatar.rotation.y) * 0.045;
+    avatar.rotation.x += (targetX - avatar.rotation.x) * blend;
+    avatar.rotation.y += (targetY - avatar.rotation.y) * blend;
     avatar.position.y = Math.sin(time * 0.0008) * 0.035;
   }
   renderer.render(scene, camera);
 };
-render(0);
-
+wake = () => {
+  if (!frame && avatar && avatarVisible && !document.hidden) {
+    lastRender = -Infinity;
+    frame = requestAnimationFrame(render);
+  }
+};
+document.addEventListener("visibilitychange", () => {
+  cancelAnimationFrame(frame);
+  frame = 0;
+  wake();
+});
+// Keep the WebGL context intact when the browser stores the page for Back navigation.
 window.addEventListener("pagehide", () => {
   cancelAnimationFrame(frame);
-  renderer.dispose();
-  environment.dispose();
-}, { once: true });
+  cancelAnimationFrame(layoutFrame);
+  frame = 0;
+  layoutFrame = 0;
+});
+window.addEventListener("pageshow", () => { measureJourney(); wake(); });

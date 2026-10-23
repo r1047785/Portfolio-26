@@ -18,7 +18,7 @@ const translations = {
     "nav.work": "Work",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Let's talk",
-    "backlink": "&larr; Back to Work",
+    "backlink": "<svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M19 12H5m7-7-7 7 7 7'/></svg> Back to Work",
 
     "hero.tagline": "Web designer &amp; Digital Experience Design student<br>building thoughtful websites, interfaces &amp; 3D experiences.",
     "hero.scrollcue": "Scroll down",
@@ -34,7 +34,7 @@ const translations = {
     "work.label": "<strong>Work</strong><br>Latest Projects",
     "work.labelshort": "Selected work",
     "work.hint": "Choose a star to discover a project",
-    "work.open": "Explore project ↗",
+    "work.open": "Explore project <svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg>",
     "work.category3d": "3D &amp; Motion",
     "work.categoryweb": "Web Design &amp; Development",
     "work.categoryui": "UI/UX &amp; App",
@@ -79,7 +79,7 @@ const translations = {
     "next.approach_brief": "We already had hours of experience wrangling free CMS platforms and\n      knew exactly where they fall short. So instead, we built NEXT's\n      backend and admin panel ourselves — a real login, a real database,\n      and content controls tailored to what the client actually wanted to\n      change, not what a template allowed.",
     "next.live_label": "<strong>Live</strong><br>See it in action",
     "next.live_brief": "The site is live and deployed — built and shipped by the four of us,\n      start to finish.",
-    "next.cta": "Visit the live site &rarr;",
+    "next.cta": "Visit the live site <svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 12h14m-7-7 7 7-7 7'/></svg>",
     "next.cta_note": "Hosted on a free tier, so the first load can take a few seconds to spin up.",
 
     "ba.label": "<strong>Work</strong><br>BA App development",
@@ -112,7 +112,7 @@ const translations = {
     "nav.work": "Werk",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Laten we praten",
-    "backlink": "&larr; Terug naar Werk",
+    "backlink": "<svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M19 12H5m7-7-7 7 7 7'/></svg> Terug naar Werk",
 
     "hero.tagline": "Webdesigner en student Digital Experience Design<br>die doordachte websites, interfaces &amp; 3D ontwerpt.",
     "hero.scrollcue": "Scroll naar beneden",
@@ -128,7 +128,7 @@ const translations = {
     "work.label": "<strong>Werk</strong><br>Laatste Projecten",
     "work.labelshort": "Geselecteerd werk",
     "work.hint": "Kies een ster om een project te ontdekken",
-    "work.open": "Bekijk project ↗",
+    "work.open": "Bekijk project <svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 19 19 5M5 5h14v14'/></svg>",
     "work.category3d": "3D &amp; Beweging",
     "work.categoryweb": "Webdesign &amp; Development",
     "work.categoryui": "UI/UX &amp; App",
@@ -173,7 +173,7 @@ const translations = {
     "next.approach_brief": "We hadden al urenlange ervaring met gratis CMS-platformen en wisten\n      precies waar ze tekortschieten. Daarom bouwden we de backend en het\n      adminpaneel van NEXT helemaal zelf — een echte login, een echte\n      database en contentbeheer op maat van wat de klant écht wilde\n      aanpassen, niet wat een template toeliet.",
     "next.live_label": "<strong>Live</strong><br>Bekijk het in actie",
     "next.live_brief": "De site is live en online — door ons vieren zelf gebouwd en\n      opgeleverd, van begin tot eind.",
-    "next.cta": "Bezoek de live site &rarr;",
+    "next.cta": "Bezoek de live site <svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M5 12h14m-7-7 7 7-7 7'/></svg>",
     "next.cta_note": "Gehost op een gratis tier, dus de eerste keer laden kan enkele seconden duren.",
 
     "ba.label": "<strong>Werk</strong><br>BA App development",
