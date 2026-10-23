@@ -87,14 +87,14 @@ if (hero && starCanvas) {
       const alpha = Math.min(1, (0.24 + shimmer * star.twinkle + proximity * 0.45) * star.depth);
       const radius = star.radius + proximity * 1.4;
       context.beginPath();
-      context.fillStyle = `rgba(224, 231, 218, ${alpha})`;
+      context.fillStyle = `rgba(92, 88, 82, ${alpha * 0.64})`;
       context.arc(x, y, radius, 0, Math.PI * 2);
       context.fill();
 
       if (star.flare || proximity > 0.35) {
         const glow = context.createRadialGradient(x, y, 0, x, y, radius * 7);
-        glow.addColorStop(0, `rgba(203, 220, 196, ${alpha * (0.35 + proximity * 0.3)})`);
-        glow.addColorStop(1, "rgba(203, 220, 196, 0)");
+        glow.addColorStop(0, `rgba(133, 119, 103, ${alpha * (0.24 + proximity * 0.25)})`);
+        glow.addColorStop(1, "rgba(133, 119, 103, 0)");
         context.fillStyle = glow;
         context.beginPath();
         context.arc(x, y, radius * 7, 0, Math.PI * 2);
@@ -102,7 +102,7 @@ if (hero && starCanvas) {
       }
 
       if (star.flare && star.depth > 0.65) {
-        context.strokeStyle = `rgba(224, 231, 218, ${alpha * 0.35})`;
+        context.strokeStyle = `rgba(92, 88, 82, ${alpha * 0.27})`;
         context.lineWidth = 0.5;
         context.beginPath();
         context.moveTo(x - radius * 3, y);
@@ -118,7 +118,7 @@ if (hero && starCanvas) {
       if (pulse > 0) {
         const x = pointer.x * width;
         const y = pointer.y * height;
-        context.strokeStyle = `rgba(196, 214, 190, ${pulse * 0.14})`;
+        context.strokeStyle = `rgba(111, 99, 84, ${pulse * 0.16})`;
         context.lineWidth = 1;
         context.beginPath();
         context.arc(x, y, 14 + (1 - pulse) * 34, 0, Math.PI * 2);

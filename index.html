@@ -111,10 +111,10 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <script type="importmap">
+      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+    </script>
     <link rel="stylesheet" href="css/style.css" />
     <script>
       (function () {
@@ -139,14 +139,11 @@
     <div class="cursor-dot" id="cursorDot"></div>
 
     <header class="site-header reveal-up">
-      <a href="#" class="logo">YENTE<br />VANHOUDT</a>
+      <a href="#" class="logo" aria-label="Yente Vanhoudt home">YV</a>
       <nav class="main-nav">
         <a href="#about" data-i18n="nav.about">About</a>
-        <span>/</span>
         <a href="#services" data-i18n="nav.services">Services</a>
-        <span>/</span>
         <a href="#work" data-i18n="nav.work">Work</a>
-        <span>/</span>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="lang-switch">
@@ -158,157 +155,94 @@
 
     <main>
       <section class="hero" id="hero">
-        <canvas class="hero-stars" aria-hidden="true"></canvas>
-        <h1 class="hero-name">
-          <span class="reveal-up">Yente</span>
-          <span class="reveal-up">Vanhoudt</span>
+        <div class="hero-signature reveal-up">YENTE VANHOUDT</div>
+        <h1 class="hero-name reveal-up" aria-label="Yente Vanhoudt — Portfolio">
+          <svg class="hero-title-art" viewBox="0 0 920 220" aria-hidden="true" focusable="false">
+            <text class="hero-title-port" x="0" y="174" textLength="480" lengthAdjust="spacingAndGlyphs">Port</text>
+            <text class="hero-title-folio" x="505" y="190" textLength="410" lengthAdjust="spacingAndGlyphs">Folio</text>
+          </svg>
         </h1>
-
-        <div class="hero-photo reveal-up">
-          <img
-            src="assets/hero.webp"
-            data-i18n-alt="image.home_hero"
-            alt="Yente standing on a rock overlooking a mountain valley"
-          />
+        <span class="hero-year" aria-hidden="true"><span>20</span><span>26</span><i></i><i></i><i></i><i></i></span>
+        <div class="hero-avatar-wrap" aria-label="Interactive 3D portrait of Yente Vanhoudt">
+          <canvas class="hero-avatar" id="heroAvatar" role="img" aria-label="Interactive 3D portrait of Yente Vanhoudt"></canvas>
+          <span class="avatar-fallback" aria-hidden="true">YV</span>
         </div>
-
-        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
-          Web designer &amp; Digital Experience Design student<br />
-          building thoughtful websites, interfaces &amp; 3D experiences.
-        </p>
-
-        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue"
-          >Scroll down</a
-        >
+        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">Web designer creating thoughtful websites, interfaces &amp; 3D experiences.</p>
+        <div class="hero-categories">
+          <span data-i18n="service2.title">Web Design</span>
+          <span data-i18n="service1.title">3D Design</span>
+          <span data-i18n="service3.title">UI/UX Design</span>
+        </div>
+        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue">Scroll down</a>
       </section>
 
-      <section class="about" id="about">
-        <div class="about-photo">
-          <img
-            src="assets/about.webp"
-            data-i18n-alt="image.home_about"
-            alt="Silhouette of Yente looking across St Mark's Square in Venice at night"
-          />
+      <section class="about-preview" id="about">
+        <div class="about-avatar-destination" id="aboutAvatarDestination" aria-hidden="true"></div>
+        <div class="about-preview-copy">
+          <p class="about-preview-eyebrow" data-i18n="about.previewLabel">A little introduction</p>
+          <h2 data-i18n="about.previewTitle">The person<br>behind the pixels.</h2>
+          <p class="about-preview-summary" data-i18n="about.previewSummary">I'm Yente, a Digital Experience Design student exploring web design, 3D and UI/UX. I enjoy turning ideas into thoughtful digital experiences, with an eye for detail.</p>
+          <a class="about-preview-link" href="about.html"><span data-i18n="about.previewLink">More about me</span><span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="about-content">
-          <h2 class="about-statement" data-i18n="about.statement">
-            A drive to design digital experiences that feel thoughtful,
-            intuitive and alive.
-          </h2>
-        </div>
-
-        <p class="about-bio" data-i18n="about.bio">
-          As a Digital Experience Design student, I've built a broad foundation
-          across web design, graphic design and 3D design — learning to move
-          fluidly between screen, print and space while keeping every detail
-          intentional.
-        </p>
       </section>
-
-      <section class="services" id="services">
-        <h2 class="section-label services-label" data-i18n="services.label">
-          <strong>Services</strong><br />What I do
-        </h2>
-
-        <div class="services-inner">
-          <ul class="services-list">
-            <li class="service-item">
-              <span class="service-index">01</span>
-              <h3 data-i18n="service1.title">3D Design</h3>
-              <p data-i18n="service1.desc">
-                I love working with light and objects in Blender, building
-                scenes and renders that feel alive.
-              </p>
-            </li>
-            <li class="service-item">
-              <span class="service-index">02</span>
-              <h3 data-i18n="service2.title">Web Design</h3>
-              <p data-i18n="service2.desc">
-                I design and build websites that balance clean layout, smooth
-                interaction and considered front-end detail.
-              </p>
-            </li>
-            <li class="service-item">
-              <span class="service-index">03</span>
-              <h3 data-i18n="service3.title">UI/UX Design</h3>
-              <p data-i18n="service3.desc">
-                I design interfaces that are easy to use and pleasant to spend
-                time in, grounded in how people actually behave.
-              </p>
-            </li>
+      <section class="toolkit" id="services" aria-labelledby="toolkit-title">
+        <div class="toolkit-inner">
+          <header class="toolkit-heading">
+            <p class="toolkit-eyebrow" data-i18n="tools.eyebrow">My toolkit</p>
+            <h2 id="toolkit-title" data-i18n="tools.title">From idea<br>to creation.</h2>
+            <p class="toolkit-intro" data-i18n="tools.intro">The tools I work with for design, development and 3D.</p>
+          </header>
+          <ul class="tool-grid">
+            <li class="tool-tile"><img src="assets/icons/css3.svg" width="48" height="48" loading="lazy" alt="" /><span>CSS</span></li>
+            <li class="tool-tile"><img src="assets/icons/html5.svg" width="48" height="48" loading="lazy" alt="" /><span>HTML</span></li>
+            <li class="tool-tile"><img src="assets/icons/blender.svg" width="48" height="48" loading="lazy" alt="" /><span>Blender</span></li>
+            <li class="tool-tile"><img src="assets/icons/adobe.svg" width="48" height="48" loading="lazy" alt="" /><span>Adobe Creative Cloud</span></li>
+            <li class="tool-tile"><img src="assets/icons/github.svg" width="48" height="48" loading="lazy" alt="" /><span>GitHub</span></li>
+            <li class="tool-tile"><img src="assets/icons/openai.svg" width="48" height="48" loading="lazy" alt="" /><span>ChatGPT</span></li>
+            <li class="tool-tile"><img src="assets/icons/claude.svg" width="48" height="48" loading="lazy" alt="" /><span>Claude Code</span></li>
+            <li class="tool-tile"><img src="assets/icons/wordpress.svg" width="48" height="48" loading="lazy" alt="" /><span>WordPress</span></li>
+            <li class="tool-tile"><img src="assets/icons/javascript.svg" width="48" height="48" loading="lazy" alt="" /><span>JavaScript</span></li>
+            <li class="tool-tile"><img src="assets/icons/threedotjs.svg" width="48" height="48" loading="lazy" alt="" /><span>Three.js</span></li>
+            <li class="tool-tile"><img src="assets/icons/figma.svg" width="48" height="48" loading="lazy" alt="" /><span>Figma</span></li>
+            <li class="tool-tile"><img src="assets/icons/visualstudiocode.svg" width="48" height="48" loading="lazy" alt="" /><span>VS Code</span></li>
           </ul>
         </div>
       </section>
 
-      <section class="work" id="work">
-        <h2 class="section-label work-label" data-i18n="work.label">
-          <strong>Work</strong><br />Latest Projects
-        </h2>
-        <p class="work-hint" data-i18n="work.hint">
-          Choose a star to discover a project
-        </p>
-
-        <div class="star-map">
-          <svg
-            class="star-map-constellation"
-            viewBox="0 0 1000 500"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path d="M165 145 C290 160 405 315 535 325 S735 250 815 145" />
-            <circle cx="318" cy="220" r="1.5" />
-            <circle cx="425" cy="287" r="1.2" />
-            <circle cx="680" cy="301" r="1.4" />
-          </svg>
-          <span class="map-dust map-dust--one" aria-hidden="true"></span>
-          <span class="map-dust map-dust--two" aria-hidden="true"></span>
-          <span class="map-dust map-dust--three" aria-hidden="true"></span>
-          <span class="map-dust map-dust--four" aria-hidden="true"></span>
-          <span class="map-dust map-dust--five" aria-hidden="true"></span>
-
-          <a class="project-star project-star--tennis" href="work-tennis.html">
-            <span class="project-star-core" aria-hidden="true"></span>
-            <span class="project-star-label">
-              <span class="project-star-meta"
-                ><span>01</span
-                ><span data-i18n="work.category3d">3D &amp; Motion</span></span
-              >
-              <strong data-i18n="work.tennis">Tennis Blender Project</strong>
-              <span class="project-star-cta" data-i18n="work.open"
-                >Explore project ↗</span
-              >
-            </span>
+      <section class="selected-work" id="work" aria-labelledby="selected-work-title">
+        <header class="selected-work-heading">
+          <div>
+            <p class="selected-work-eyebrow" data-i18n="work.galleryLabel">Selected projects / 01—03</p>
+            <h2 id="selected-work-title" data-i18n="work.galleryTitle">A few things<br>I've made.</h2>
+          </div>
+          <p class="selected-work-intro" data-i18n="work.galleryIntro">From websites to 3D worlds. Explore the ideas and details behind my work.</p>
+        </header>
+        <div class="project-gallery">
+          <a class="work-card work-card--tennis" href="work-tennis.html">
+            <div class="work-card-media">
+              <img src="assets/work/tennis/styleframe-02.webp" loading="lazy" alt="" />
+              <span class="work-card-open" aria-hidden="true">↗</span>
+            </div>
+            <div class="work-card-meta"><span>01</span><span data-i18n="work.category3d">3D &amp; Motion</span></div>
+            <h3 data-i18n="work.tennis">Tennis Blender Project</h3>
           </a>
-
-          <a class="project-star project-star--next" href="work-next.html">
-            <span class="project-star-core" aria-hidden="true"></span>
-            <span class="project-star-label">
-              <span class="project-star-meta"
-                ><span>02</span
-                ><span data-i18n="work.categoryweb"
-                  >Web Design &amp; Development</span
-                ></span
-              >
-              <strong data-i18n="work.next">NEXT</strong>
-              <span class="project-star-cta" data-i18n="work.open"
-                >Explore project ↗</span
-              >
-            </span>
+          <a class="work-card work-card--next" href="work-next.html">
+            <div class="work-card-media">
+              <img src="assets/work/next/hero-collage.webp" loading="lazy" alt="" />
+              <span class="work-card-open" aria-hidden="true">↗</span>
+            </div>
+            <div class="work-card-meta"><span>02</span><span data-i18n="work.categoryweb">Web Design &amp; Development</span></div>
+            <h3 data-i18n="work.next">NEXT</h3>
           </a>
-
-          <a class="project-star project-star--ba" href="work-ba-app.html">
-            <span class="project-star-core" aria-hidden="true"></span>
-            <span class="project-star-label">
-              <span class="project-star-meta"
-                ><span>03</span
-                ><span data-i18n="work.categoryui">UI/UX &amp; App</span></span
-              >
-              <strong data-i18n="work.ba">BA App Development</strong>
-              <span class="project-star-cta" data-i18n="work.open"
-                >Explore project ↗</span
-              >
-            </span>
+          <a class="work-card work-card--ba" href="work-ba-app.html">
+            <div class="work-card-media work-card-apps">
+              <img src="assets/work/ba-app/webshop.webp" loading="lazy" alt="" />
+              <img src="assets/work/ba-app/campus.webp" loading="lazy" alt="" />
+              <img src="assets/work/ba-app/news.webp" loading="lazy" alt="" />
+              <span class="work-card-open" aria-hidden="true">↗</span>
+            </div>
+            <div class="work-card-meta"><span>03</span><span data-i18n="work.categoryui">UI/UX &amp; App</span></div>
+            <h3 data-i18n="work.ba">BA App Development</h3>
           </a>
         </div>
       </section>
@@ -382,6 +316,7 @@
 
     <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
+    <script type="module" src="js/avatar.js"></script>
 
     <!-- Cookiebanner -->
     <div

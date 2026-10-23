@@ -1,8 +1,20 @@
 const translations = {
   en: {
+    "work.galleryLabel": "Selected projects / 01—03",
+    "work.galleryTitle": "A few things<br>I've made.",
+    "work.galleryIntro": "From websites to 3D worlds. Explore the ideas and details behind my work.",
+    "about.previewLabel": "A little introduction",
+    "about.previewTitle": "The person<br>behind the pixels.",
+    "about.previewSummary": "I'm Yente, a Digital Experience Design student exploring web design, 3D and UI/UX. I enjoy turning ideas into thoughtful digital experiences, with an eye for detail.",
+    "about.previewLink": "More about me",
+    "about.pageTitle": "About me.",
+    "about.backHome": "Back to home",
     "footer.cookies": "Cookie settings",
     "nav.about": "About",
-    "nav.services": "Services",
+    "nav.services": "Toolkit",
+    "tools.eyebrow": "My toolkit",
+    "tools.title": "From idea<br>to creation.",
+    "tools.intro": "The tools I work with for design, development and 3D.",
     "nav.work": "Work",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Let's talk",
@@ -20,6 +32,7 @@ const translations = {
     "service3.title": "UI/UX Design",
     "service3.desc": "I design interfaces that are easy to use and pleasant\n            to spend time in, grounded in how people actually behave.",
     "work.label": "<strong>Work</strong><br>Latest Projects",
+    "work.labelshort": "Selected work",
     "work.hint": "Choose a star to discover a project",
     "work.open": "Explore project ↗",
     "work.category3d": "3D &amp; Motion",
@@ -81,9 +94,21 @@ const translations = {
   },
 
   nl: {
+    "work.galleryLabel": "Geselecteerde projecten / 01—03",
+    "work.galleryTitle": "Een selectie<br>van mijn werk.",
+    "work.galleryIntro": "Van websites tot 3D-werelden. Ontdek de ideeën en details achter mijn werk.",
+    "about.previewLabel": "Even voorstellen",
+    "about.previewTitle": "De persoon<br>achter de pixels.",
+    "about.previewSummary": "Ik ben Yente, student Digital Experience Design met een interesse in webdesign, 3D en UI/UX. Ik zet ideeën graag om in doordachte digitale ervaringen, met oog voor detail.",
+    "about.previewLink": "Meer over mij",
+    "about.pageTitle": "Over mij.",
+    "about.backHome": "Terug naar de homepage",
     "footer.cookies": "Cookie-instellingen",
     "nav.about": "Over mij",
-    "nav.services": "Diensten",
+    "nav.services": "Tools",
+    "tools.eyebrow": "Mijn tools",
+    "tools.title": "Van idee<br>naar creatie.",
+    "tools.intro": "De tools waarmee ik werk aan ontwerp, development en 3D.",
     "nav.work": "Werk",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Laten we praten",
@@ -101,6 +126,7 @@ const translations = {
     "service3.title": "UI/UX-ontwerp",
     "service3.desc": "Ik ontwerp interfaces die makkelijk in gebruik zijn en\n            prettig aanvoelen, gebaseerd op hoe mensen écht gedrag vertonen.",
     "work.label": "<strong>Werk</strong><br>Laatste Projecten",
+    "work.labelshort": "Geselecteerd werk",
     "work.hint": "Kies een ster om een project te ontdekken",
     "work.open": "Bekijk project ↗",
     "work.category3d": "3D &amp; Beweging",
@@ -222,6 +248,12 @@ const translations = {
     },
   };
 
+  pageSeo.about = {
+    path: "/about.html",
+    image: "/assets/about.webp",
+    en: { title: "About | Yente Vanhoudt", description: "About Yente Vanhoudt.", imageAlt: translations.en["image.home_about"] },
+    nl: { title: "Over mij | Yente Vanhoudt", description: "Over Yente Vanhoudt.", imageAlt: translations.nl["image.home_about"] },
+  };
   const page = pageSeo[document.body.dataset.seoPage] || pageSeo.home;
   const lang = new URLSearchParams(window.location.search).get("lang") === "nl" ? "nl" : "en";
 
