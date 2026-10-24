@@ -41,5 +41,44 @@
     controls.prepend(button);
     updateLabel();
     new MutationObserver(updateLabel).observe(root, { attributes: true, attributeFilter: ['lang'] });
+    if (document.body.dataset.seoPage !== 'home') return;
+    const hintKey = 'portfolio-theme-hint-seen';
+    try { if (sessionStorage.getItem(hintKey)) return; } catch {}
+    let scheduled = false;
+    const showHint = () => {
+      if (scheduled || !document.body.classList.contains('is-loaded')) return;
+      scheduled = true;
+      loadedObserver.disconnect();
+      setTimeout(() => {
+        if (root.dataset.theme !== 'light' || document.hidden || window.scrollY > 80) return;
+        try { sessionStorage.setItem(hintKey, '1'); } catch {}
+        const hint = document.createElement('span');
+        hint.className = 'theme-hint';
+        hint.setAttribute('role', 'status');
+        const label = () => {
+          hint.textContent = root.lang.startsWith('nl') ?
+            'Te licht? Swap hier naar dark mode' : 'Too bright? Switch to dark mode here';
+        };
+        label();
+        controls.classList.add('has-theme-hint');
+        controls.append(hint);
+        const dismiss = () => {
+          clearTimeout(timeout);
+          hint.remove();
+          hintObserver.disconnect();
+          window.removeEventListener('pagehide', dismiss);
+        };
+        const hintObserver = new MutationObserver(() => {
+          if (root.dataset.theme === 'dark') dismiss();
+          else label();
+        });
+        hintObserver.observe(root, { attributes: true, attributeFilter: ['lang', 'data-theme'] });
+        const timeout = setTimeout(dismiss, 5000);
+        window.addEventListener('pagehide', dismiss, { once: true });
+      }, 650);
+    };
+    const loadedObserver = new MutationObserver(showHint);
+    loadedObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    showHint();
   });
 })();

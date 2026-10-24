@@ -26,6 +26,45 @@ html[data-theme="dark"] .theme-toggle .theme-moon { display: none; }
 html[data-theme="dark"] .theme-toggle .theme-sun { display: block; }
 .lang-switch .theme-toggle:hover { border-color: var(--ink); }
 .lang-switch .theme-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.has-theme-hint { position: relative; }
+.lang-switch .theme-hint {
+  position: absolute;
+  top: calc(100% + 16px);
+  right: 0;
+  width: min(220px, calc(100vw - 40px));
+  padding: 14px 16px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font: 12px/1.5 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  box-shadow: 0 8px 24px #00000018;
+  pointer-events: none;
+  animation: theme-hint-appear 5s both;
+}
+.theme-hint::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 90px;
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+  transform: rotate(45deg);
+}
+@keyframes theme-hint-appear {
+  0% { opacity: 0; transform: translateY(-8px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lang-switch .theme-hint { animation: none; }
+}
 
 html[data-theme="dark"] body[data-seo-page="home"] .hero {
   --ink: #f2f2f2;
