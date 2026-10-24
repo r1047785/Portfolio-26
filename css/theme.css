@@ -1,0 +1,77 @@
+html { color-scheme: light; }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111;
+  --bg-alt: #1c1c1c;
+  --ink: #f2f2f2;
+  --ink-dim: #aaa;
+  --line: rgba(255,255,255,.2);
+}
+.lang-switch .theme-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--ink);
+}
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .theme-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-sun { display: block; }
+.lang-switch .theme-toggle:hover { border-color: var(--ink); }
+.lang-switch .theme-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+html[data-theme="dark"] body[data-seo-page="home"] .hero {
+  --ink: #f2f2f2;
+  background: #151515;
+  color: var(--ink);
+  border-color: #444;
+}
+html[data-theme="dark"] .hero-title-port { fill: var(--ink); }
+html[data-theme="dark"] .hero-title-folio { fill: #151515; stroke: var(--ink); }
+html[data-theme="dark"] body[data-seo-page="home"] .hero-name-script {
+  -webkit-text-stroke-color: var(--ink);
+}
+html[data-theme="dark"] .hero-year i { background: var(--ink); }
+html[data-theme="dark"] .main-nav { background: rgba(25,25,25,.9); border-color: var(--line); }
+html[data-theme="dark"] .main-nav a { color: var(--ink); }
+html[data-theme="dark"] .site-footer { background: var(--bg-alt); }
+html[data-theme="dark"] .selected-work,
+html[data-theme="dark"] .about-story-lead { color: var(--ink); }
+html[data-theme="dark"] .about-preview-summary,
+html[data-theme="dark"] .about-story-text p,
+html[data-theme="dark"] .library-header > p:last-child,
+html[data-theme="dark"] .selected-work-eyebrow,
+html[data-theme="dark"] .selected-work-intro,
+html[data-theme="dark"] .hero-tagline,
+html[data-theme="dark"] .about-photo-stack figcaption,
+html[data-theme="dark"] .intro-caption,
+html[data-theme="dark"] .intro-skip { color: var(--ink-dim); }
+html[data-theme="dark"] .about-story-text .about-story-lead { color: var(--ink); }
+html[data-theme="dark"] .creative-library,
+html[data-theme="dark"] .about-story-note { border-color: var(--line); }
+html[data-theme="dark"] .process-card { background: var(--bg-alt); }
+html[data-theme="dark"] .footer-cookie-settings:hover,
+html[data-theme="dark"] .footer-cookie-settings:focus-visible { background: #292929; }
+html[data-theme="dark"] .walking-loader { background: var(--bg); color: var(--ink); }
+html[data-theme="dark"] .intro-rail { background: #444; }
+html[data-theme="dark"] .intro-fill { background: var(--ink); }
+html[data-theme="dark"] .loader-spinner { border-color: #444; border-top-color: var(--ink); }
+html[data-theme="dark"] .cookie-banner { background: var(--bg-alt); color: var(--ink); border-color: #444; }
+html[data-theme="dark"] .cookie-banner p,
+html[data-theme="dark"] .cookie-settings { color: var(--ink-dim); }
+html[data-theme="dark"] .cookie-button { border-color: #888; }
+html[data-theme="dark"] .cookie-primary { background: #f2f2f2; color: #111; }
+html[data-theme="dark"] .cookie-secondary { background: transparent; color: var(--ink); }
+html[data-theme="dark"] .library-experiment:focus-visible,
+html[data-theme="dark"] .photo-shuffle:focus-visible { outline-color: var(--ink); }
+
+@media (max-width: 480px) {
+  .lang-switch .theme-toggle { margin-right: 4px; }
+}
