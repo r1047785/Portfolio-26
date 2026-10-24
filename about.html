@@ -30,7 +30,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/style.css?v=about-motion-2" />
+    <link rel="stylesheet" href="css/style.css?v=about-shuffle-1" />
   </head>
 
   <body data-seo-page="about">
@@ -56,29 +56,15 @@
 
         <div class="about-story-grid">
           <aside class="about-story-note">
-            <span class="about-note-mark" aria-hidden="true">*</span>
-
-            <p data-i18n="about.note">
-              Always curious.<br />
-              Always creating.
-            </p>
-
-            <a href="#creative-library" class="about-library-jump">
-              <span data-i18n="about.libraryJump">
-                Explore my creative library
-              </span>
-
-              <svg
-                class="ui-arrow"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path d="M12 5v14m-7-7 7 7 7-7" />
-              </svg>
-            </a>
+            <figure class="about-photo-stack">
+              <button class="photo-shuffle" type="button" aria-describedby="photo-shuffle-hint">
+                <span class="photo-shuffle-frame">
+                  <img src="assets/about/shuffel-uno.webp" width="1536" height="2048" loading="lazy" decoding="async" alt="Yente on a city trip at night" />
+                  <span class="photo-shuffle-footer"><span data-i18n="about.photoLabel">Life lately</span><span class="photo-shuffle-count" aria-hidden="true">01 / 05</span></span>
+                </span>
+              </button>
+              <figcaption id="photo-shuffle-hint" data-i18n="about.photoHint">Hover to shuffle · tap for the next photo</figcaption>
+            </figure>
           </aside>
 
           <div class="about-story-text">
@@ -99,32 +85,11 @@
               away or takes a few attempts, I want to keep improving and
               discovering what I can make next.
             </p>
+            <p data-i18n="about.hobbies">
+              In my free time, I enjoy going to the gym and riding my motorcycle.
+              I like making time for both, alongside my creative work.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- OFFLINE -->
-      <section class="about-offline" aria-labelledby="offline-title">
-        <div>
-          <p class="about-preview-eyebrow" data-i18n="about.offlineLabel">
-            Away from the screen
-          </p>
-
-          <h2 id="offline-title" data-i18n="about.offlineTitle">
-            A little more<br />than pixels.
-          </h2>
-        </div>
-
-        <div class="about-offline-text">
-          <p data-i18n="about.hobbies">
-            In my free time, I enjoy going to the gym and riding my motorcycle.
-            I like making time for both, alongside my creative work.
-          </p>
-
-          <ul class="about-interest-list">
-            <li data-i18n="about.gym">Gym</li>
-            <li data-i18n="about.motorcycle">Motorcycle rides</li>
-          </ul>
         </div>
       </section>
 
@@ -269,5 +234,6 @@
     <script src="js/script.js"></script>
     <script src="js/library.js"></script>
     <script src="js/about-motion.js?v=2"></script>
+    <script src="js/about-shuffle.js"></script>
   </body>
 </html>

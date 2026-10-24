@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    "about.photoLabel": "Life lately",
+    "about.photoHint": "Hover to shuffle · tap for the next photo",
     "library.nightDescription": "An interactive experiment with a 3D model, light and mouse trails.",
     "library.play": "Open interactive artwork",
     "library.close": "Close",
@@ -119,6 +121,8 @@ const translations = {
   },
 
   nl: {
+    "about.photoLabel": "Naast het scherm",
+    "about.photoHint": "Hover om te shuffelen · tik voor de volgende foto",
     "library.nightDescription": "Een interactief experiment met een 3D-model, licht en muissporen.",
     "library.play": "Open interactief werk",
     "library.close": "Sluiten",
