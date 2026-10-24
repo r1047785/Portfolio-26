@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    "hero.avatarLoading": "Loading 3D portrait",
+    "hero.avatarError": "3D portrait unavailable",
     "about.photoLabel": "Life lately",
     "about.photoHint": "Hover to shuffle · tap for the next photo",
     "library.nightDescription": "An interactive experiment with a 3D model, light and mouse trails.",
@@ -121,6 +123,8 @@ const translations = {
   },
 
   nl: {
+    "hero.avatarLoading": "3D-portret laden",
+    "hero.avatarError": "3D-portret niet beschikbaar",
     "about.photoLabel": "Naast het scherm",
     "about.photoHint": "Hover om te shuffelen · tik voor de volgende foto",
     "library.nightDescription": "Een interactief experiment met een 3D-model, licht en muissporen.",

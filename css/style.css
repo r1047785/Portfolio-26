@@ -1659,21 +1659,40 @@ body {
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  width: 70%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 28%, #ffffff, #e2e2e2 55%, #c4c4c4);
-  color: #727272;
-  font-size: 32px;
-  letter-spacing: -0.08em;
+  gap: 12px;
+  width: max-content;
+  max-width: 90%;
+  color: var(--ink-dim);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  pointer-events: none;
   transition: opacity 0.4s ease;
+}
+.avatar-loading-ring {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--line);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: avatar-loading-spin 1s linear infinite;
+}
+.avatar-error-label { display: none; }
+@keyframes avatar-loading-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .avatar-loading-ring { animation: none; }
 }
 .hero-avatar-wrap.is-ready .avatar-fallback {
   opacity: 0;
+  visibility: hidden;
 }
+.hero-avatar-wrap.is-ready .avatar-loading-ring { animation: none; }
 .hero-avatar-wrap.has-error .avatar-fallback {
   opacity: 1;
 }
+.hero-avatar-wrap.has-error .avatar-loading-ring,
+.hero-avatar-wrap.has-error .avatar-loading-label { display: none; }
+.hero-avatar-wrap.has-error .avatar-error-label { display: inline; }
 
 .hero-tagline {
   z-index: 3;

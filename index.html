@@ -267,7 +267,11 @@
             role="img"
             aria-label="Interactive 3D portrait of Yente Vanhoudt"
           ></canvas>
-          <span class="avatar-fallback" aria-hidden="true">YV</span>
+          <span class="avatar-fallback" role="status">
+            <span class="avatar-loading-ring" aria-hidden="true"></span>
+            <span class="avatar-loading-label" data-i18n="hero.avatarLoading">Loading 3D portrait</span>
+            <span class="avatar-error-label" data-i18n="hero.avatarError">3D portrait unavailable</span>
+          </span>
         </div>
         <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
           Web designer creating thoughtful websites, interfaces &amp; 3D
