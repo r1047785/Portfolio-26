@@ -3558,6 +3558,37 @@ html.is-nav-load .walking-loader {
 /* Responsive */
 
 /* The shader sits over the mockup and beneath the readable project title. */
+.selected-work .library-project-grid .experiment-card-copy {
+  width: calc(100% - 16px);
+  margin: 0 8px 8px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #111;
+}
+.selected-work .library-project-grid .experiment-name {
+  font-size: clamp(12px, 1.1vw, 16px);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.25;
+  gap: 10px;
+}
+.project-tile-plus {
+  display: grid;
+  place-items: center;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 25px;
+  background: #111;
+  color: #fff;
+}
+.project-tile-plus svg { width: 17px; height: 17px; }
+@media (max-width: 600px) {
+  .selected-work .library-project-grid .experiment-card-copy {
+    width: calc(100% - 12px);
+    margin: 0 6px 6px;
+    padding: 8px;
+  }
+}
 .selected-work .project-hover-canvas {
   position: absolute;
   inset: 0;
