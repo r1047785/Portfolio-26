@@ -1,7 +1,6 @@
 (() => {
   const root = document.documentElement;
   const key = 'portfolio-theme';
-  const system = matchMedia('(prefers-color-scheme: dark)');
   let preference = null;
   try { preference = localStorage.getItem(key); } catch {}
   if (!['light', 'dark'].includes(preference)) preference = null;
@@ -17,12 +16,11 @@
     button.setAttribute('aria-pressed', String(dark));
   };
   const apply = () => {
-    root.dataset.theme = preference || (system.matches ? 'dark' : 'light');
+    root.dataset.theme = preference || 'light';
     updateLabel();
   };
   // Runs in the head, before the page paints, to avoid a light flash.
   apply();
-  system.addEventListener('change', () => { if (!preference) apply(); });
   window.addEventListener('storage', (event) => {
     if (event.key !== key && event.key !== null) return;
     preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;
