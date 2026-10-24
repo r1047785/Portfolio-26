@@ -57,6 +57,10 @@ let layoutFrame = 0;
 
 // Keep a layout anchor in the hero while the one live canvas travels between sections.
 const destination = document.querySelector("#aboutAvatarDestination");
+const heroYear = document.querySelector(".hero-year");
+const yearParts = heroYear?.querySelectorAll(":scope > span");
+let yearJoinDistance = 0;
+let yearJoinFinish = 1;
 const origin = document.createElement("div");
 origin.className = "hero-avatar-wrap avatar-origin";
 origin.setAttribute("aria-hidden", "true");
@@ -70,6 +74,15 @@ const measureJourney = () => {
   if (!start.width || !start.height) return;
   const end = destination.getBoundingClientRect();
   const scroll = window.scrollY;
+  if (yearParts?.length === 2) {
+    // Measure the original split, including the stretched letterforms.
+    heroYear.style.setProperty("--year-shift", "0px");
+    const left = yearParts[0].getBoundingClientRect();
+    const right = yearParts[1].getBoundingClientRect();
+    yearJoinDistance = Math.max(0, (right.left - left.right) / 2);
+    // Join while the year is still visible, as the portrait leaves the hero.
+    yearJoinFinish = Math.max(1, (left.top + scroll) * 0.75);
+  }
   const scale = Math.min(end.width / start.width, end.height / start.height);
   journey = {
     x: start.left, y: start.top + scroll,
@@ -84,6 +97,12 @@ const measureJourney = () => {
 };
 const positionAvatar = () => {
   if (!journey) return;
+  if (heroYear) {
+    const yearProgress = THREE.MathUtils.clamp(window.scrollY / yearJoinFinish, 0, 1);
+    const yearEase = reducedMotion ? Number(yearProgress >= 0.5) :
+      yearProgress * yearProgress * (3 - 2 * yearProgress);
+    heroYear.style.setProperty("--year-shift", `${yearJoinDistance * yearEase}px`);
+  }
   const progress = THREE.MathUtils.clamp(window.scrollY / journey.finish, 0, 1);
   const t = reducedMotion ? Number(progress >= 0.5) : progress * progress * (3 - 2 * progress);
   const x = THREE.MathUtils.lerp(journey.x, journey.endX, t);

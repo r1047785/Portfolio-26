@@ -2179,7 +2179,10 @@ body[data-seo-page="home"] .hero-year {
   line-height: 1;
 }
 body[data-seo-page="home"] .hero-year > span {
-  transform: scaleX(1.25);
+  transform: translateX(var(--year-shift, 0px)) scaleX(1.25);
+}
+body[data-seo-page="home"] .hero-year > span:nth-child(2) {
+  transform: translateX(calc(-1 * var(--year-shift, 0px))) scaleX(1.25);
 }
 .hero-year i {
   position: absolute;
