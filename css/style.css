@@ -3363,6 +3363,18 @@ html.is-nav-load .walking-loader {
    CREATIVE LIBRARY — SQUARE PROJECT GRID
    ========================================= */
 
+@media (prefers-reduced-motion: no-preference) {
+  .about-page .about-scroll-pending {
+    opacity: 0;
+  }
+}
+
+@media print {
+  .about-page .about-scroll-pending {
+    opacity: 1;
+  }
+}
+
 .library-project-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
