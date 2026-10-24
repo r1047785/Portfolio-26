@@ -3557,6 +3557,20 @@ html.is-nav-load .walking-loader {
 
 /* Responsive */
 
+/* The shader sits over the mockup and beneath the readable project title. */
+.selected-work .project-hover-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.selected-work .library-project-grid .library-experiment:hover .experiment-poster,
+.selected-work .library-project-grid .library-experiment.has-project-shader .experiment-poster {
+  transform: none;
+}
+
 @media (max-width: 1000px) {
   .library-project-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
