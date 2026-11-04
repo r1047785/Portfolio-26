@@ -1,0 +1,78 @@
+.newsletter-open { overflow: hidden; }
+.newsletter-dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: clamp(26px, 6vw, 44px);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  overflow: auto;
+}
+.newsletter-dialog::backdrop { background: #0009; backdrop-filter: blur(5px); }
+/* Native dialogs sit above the custom cursor; restore the system cursor here. */
+body.newsletter-open,
+body.newsletter-open .newsletter-dialog,
+body.newsletter-open .newsletter-dialog *,
+body.newsletter-open .newsletter-dialog::backdrop { cursor: default !important; }
+body.newsletter-open .cursor-dot { visibility: hidden; }
+body.newsletter-open .newsletter-dialog button,
+body.newsletter-open .newsletter-dialog button *,
+body.newsletter-open .newsletter-dialog label,
+body.newsletter-open .newsletter-dialog label *,
+body.newsletter-open .newsletter-dialog input[type=checkbox] { cursor: pointer !important; }
+body.newsletter-open .newsletter-dialog input[type=email] { cursor: text !important; }
+body.newsletter-open .newsletter-dialog button:disabled { cursor: wait !important; }
+.newsletter-close { position: absolute; top: 12px; right: 12px; padding: 8px; border: 0; background: none; color: var(--ink); }
+.newsletter-close svg { display: block; width: 20px; height: 20px; }
+.newsletter-eyebrow { font-size: 10px; letter-spacing: .15em; margin-bottom: 24px; }
+.newsletter-dialog h2 { font-size: clamp(32px, 6vw, 44px); font-weight: 400; letter-spacing: -.05em; line-height: 1.1; margin-bottom: 20px; }
+.newsletter-dialog p { color: var(--ink-dim); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+.newsletter-email-label { display: block; font-size: 12px; margin: 24px 0 8px; }
+.newsletter-dialog input[type=email] { width: 100%; padding: 14px; border: 1px solid var(--line); background: var(--bg-alt); color: var(--ink); font: inherit; cursor: text !important; }
+.newsletter-dialog .checkbox { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0; font-size: 12px; line-height: 1.6; }
+.newsletter-dialog input[type=checkbox] { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; accent-color: var(--ink); }
+.newsletter-dialog .primary, .newsletter-dialog .loading { width: 100%; padding: 14px; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); font: 500 13px var(--font-body); }
+.newsletter-dialog button:disabled { opacity: .55; cursor: wait !important; }
+.newsletter-dialog .newsletter-privacy { font-size: 11px; margin: 16px 0 0; }
+.newsletter-dialog .newsletter-error { margin: 12px 0; font-size: 12px; }
+.newsletter-dialog :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.newsletter-dialog .ml-error input { border-color: var(--ink); outline: 1px solid var(--ink); }
+.newsletter-dialog .ml-error .label-description { text-decoration: underline; }
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.footer-actions > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  margin: 0;
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-dim);
+  font: 10px/1.4 var(--font-body);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: border-color .2s ease, color .2s ease;
+}
+.footer-actions > button svg { width: 14px; height: 14px; flex-shrink: 0; }
+.footer-actions > button:hover { color: var(--ink); border-color: var(--ink); transform: none; }
+.footer-actions > button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 480px) {
+  .footer-actions { gap: 8px; }
+  .footer-actions > button { padding: 10px; font-size: 9px; letter-spacing: .02em; }
+}
+@media (prefers-reduced-motion: reduce) { .footer-actions > button { transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .newsletter-dialog[open] { animation: newsletter-enter .35s ease-out; }
+  @keyframes newsletter-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+}

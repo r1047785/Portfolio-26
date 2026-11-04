@@ -142,6 +142,7 @@
       })();
     </script>
     <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/newsletter.css" />
   </head>
   <body data-seo-page="home">
     <div
@@ -565,6 +566,7 @@
           ></span>
         </a>
       </nav>
+      <div class="footer-actions">
       <button
         type="button"
         id="footer-cookie-settings"
@@ -585,8 +587,45 @@
         </svg>
         <span data-i18n="footer.cookies">Cookie settings</span>
       </button>
+      <button type="button" class="newsletter-footer-button" data-newsletter-open>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2"/><path d="m3 5 7 5 7-5"/></svg>
+        <span data-i18n="newsletter.open">Join my newsletter</span>
+      </button>
+      </div>
     </footer>
 
+    <dialog id="newsletter-dialog" class="newsletter-dialog" aria-labelledby="newsletter-title">
+      <button type="button" class="newsletter-close" data-newsletter-close aria-label="Close / Sluiten" autofocus><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <div class="newsletter-eyebrow">YENTE VANHOUDT / NEWSLETTER</div>
+      <div id="mlb2-48074188" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-48074188">
+        <div class="ml-form-align-center"><div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <div class="ml-form-embedContent">
+              <h2 id="newsletter-title" data-i18n="newsletter.title">New things.<br>In your inbox.</h2>
+              <p data-i18n="newsletter.intro">An occasional update with my newest projects, 3D experiments and portfolio news.</p>
+            </div>
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2712117/forms/203242346279601280/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent"><div class="ml-form-fieldRow ml-last-item"><div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                <label class="newsletter-email-label" for="newsletter-email" data-i18n="newsletter.email">Your email address</label>
+                <input id="newsletter-email" type="email" class="form-control" name="fields[email]" placeholder="you@example.com" autocomplete="email" required aria-required="true" />
+              </div></div></div>
+              <div class="ml-form-checkboxRow ml-validate-required"><label class="checkbox"><input type="checkbox" required aria-required="true" /><span class="label-description" data-i18n="newsletter.consent">Yes, I'd like to receive Yente's newsletter by email.</span></label></div>
+              <input type="hidden" name="ml-submit" value="1" />
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary" disabled data-i18n="newsletter.subscribe">Keep me posted</button>
+                <button disabled style="display:none" type="button" class="loading" data-i18n="newsletter.loading">Sending…</button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true" />
+              <p class="newsletter-privacy" data-i18n="newsletter.privacy">Your email is processed through MailerLite for this newsletter. You can unsubscribe using the link in any email.</p>
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none" tabindex="-1" role="status">
+            <div class="ml-form-successContent"><h2 data-i18n="newsletter.thanks">Thanks for joining!</h2><p data-i18n="newsletter.success">Your request has been received. Check your inbox: if you receive a confirmation email, click its link to complete your subscription.</p></div>
+          </div>
+        </div></div>
+      </div>
+      <p class="newsletter-error" role="alert" hidden data-i18n="newsletter.error">The form could not load. Close it and try again, or check whether your browser blocks MailerLite.</p>
+    </dialog>
     <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script type="module" src="js/avatar.js"></script>
@@ -841,5 +880,6 @@
       })();
     </script>
     <script src="js/project-hover.js"></script>
+    <script src="js/newsletter.js"></script>
   </body>
 </html>
