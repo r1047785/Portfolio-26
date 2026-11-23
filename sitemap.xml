@@ -61,4 +61,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/about.html" />
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/about.html?lang=nl" />
   </url>
+  <url>
+    <loc>https://yentevanhoudt.be/contact.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/contact.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/contact.html?lang=nl" />
+  </url>
+  <url>
+    <loc>https://yentevanhoudt.be/contact.html?lang=nl</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yentevanhoudt.be/contact.html" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://yentevanhoudt.be/contact.html?lang=nl" />
+  </url>
 </urlset>

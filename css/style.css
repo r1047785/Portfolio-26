@@ -3636,3 +3636,51 @@ html.is-nav-load .walking-loader {
     transition: none;
   }
 }
+
+/* ---------- Contact page ---------- */
+.contact-page .contact-lead {
+  max-width: 640px;
+  margin: 28px 0 36px;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.contact-page .footer-email {
+  display: inline-block;
+  color: var(--ink);
+  border-bottom: 1px solid currentColor;
+}
+.contact-page .contact-socials {
+  justify-content: flex-start;
+}
+.contact-page .contact-home {
+  display: inline-block;
+  margin-top: 56px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.contact-page .contact-home:hover,
+.contact-page .contact-home:focus-visible {
+  color: var(--ink);
+}
+.footer-contact-page {
+  margin-top: 24px;
+}
+
+/* Contact link next to the theme toggle */
+.lang-switch .nav-contact {
+  margin-right: 14px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+.lang-switch .nav-contact:hover,
+.lang-switch .nav-contact:focus-visible {
+  opacity: 0.6;
+}

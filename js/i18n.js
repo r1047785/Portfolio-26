@@ -58,6 +58,11 @@ const translations = {
     "nav.work": "Work",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Let's talk",
+    "contact.eyebrow": "03 / Contact",
+    "contact.title": "Let's talk.",
+    "contact.lead": "Looking for a student designer, curious about one of my projects, or just want to say hi? Send me a message, I'd love to hear from you.",
+    "contact.back": "← Back to my work",
+    "contact.open": "Contact page",
     "backlink": "<svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M19 12H5m7-7-7 7 7 7'/></svg> Back to Work",
 
     "hero.tagline": "Web designer &amp; Digital Experience Design student<br>building thoughtful websites, interfaces &amp; 3D experiences.",
@@ -192,6 +197,11 @@ const translations = {
     "nav.work": "Werk",
     "nav.contact": "Contact",
     "footer.label": "<strong>Contact</strong><br>Laten we praten",
+    "contact.eyebrow": "03 / Contact",
+    "contact.title": "Laten we praten.",
+    "contact.lead": "Op zoek naar een student designer, benieuwd naar een van mijn projecten, of gewoon even hallo zeggen? Stuur me een bericht, ik hoor graag van je.",
+    "contact.back": "← Terug naar mijn werk",
+    "contact.open": "Contactpagina",
     "backlink": "<svg class='ui-arrow' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M19 12H5m7-7-7 7 7 7'/></svg> Terug naar Werk",
 
     "hero.tagline": "Webdesigner en student Digital Experience Design<br>die doordachte websites, interfaces &amp; 3D ontwerpt.",
@@ -333,6 +343,12 @@ const translations = {
     image: "/assets/about.webp",
     en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_about"] },
     nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_about"] },
+  };
+  pageSeo.contact = {
+    path: "/contact.html",
+    image: "/assets/hero.webp",
+    en: { title: "Contact | Yente Vanhoudt", description: "Get in touch with Yente Vanhoudt, Digital Experience Design student, for internships, projects or a first introduction.", imageAlt: translations.en["image.home_hero"] },
+    nl: { title: "Contact | Yente Vanhoudt", description: "Neem contact op met Yente Vanhoudt, student Digital Experience Design, voor stages, projecten of een eerste kennismaking.", imageAlt: translations.nl["image.home_hero"] },
   };
   const page = pageSeo[document.body.dataset.seoPage] || pageSeo.home;
   const lang = new URLSearchParams(window.location.search).get("lang") === "nl" ? "nl" : "en";
