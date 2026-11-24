@@ -294,16 +294,16 @@ const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 /* Where a case floats, as a fraction of the hero. 0 = centre, 1 = next (top right), -1 = previous (bottom left). */
 const WIDE = [
   { o: -2, x: -0.40, y: 1.50, s: 1.10, rx: -0.55, ry: -0.90, rz: 0.60 },
-  { o: -1, x: 0.03, y: 1.00, s: 0.98, rx: -0.42, ry: -0.52, rz: 0.34 },
-  { o: 0, x: 0.50, y: 0.515, s: 1.00, rx: 0.30, ry: -0.40, rz: 0.15 },
-  { o: 1, x: 0.965, y: 0.18, s: 1.16, rx: 0.46, ry: -0.50, rz: 0.30 },
+  { o: -1, x: 0.035, y: 0.95, s: 0.86, rx: -0.42, ry: -0.52, rz: 0.34 },
+  { o: 0, x: 0.50, y: 0.50, s: 1.00, rx: 0.30, ry: -0.40, rz: 0.15 },
+  { o: 1, x: 0.955, y: 0.21, s: 1.0, rx: 0.46, ry: -0.50, rz: 0.30 },
   { o: 2, x: 1.42, y: -0.32, s: 1.40, rx: 0.60, ry: -0.85, rz: 0.60 },
 ];
 const TALL = [
   { o: -2, x: -1.10, y: 1.10, s: 1.00, rx: -0.50, ry: -0.90, rz: 0.60 },
-  { o: -1, x: -0.16, y: 0.86, s: 0.86, rx: -0.40, ry: -0.50, rz: 0.34 },
+  { o: -1, x: -0.10, y: 0.85, s: 0.82, rx: -0.40, ry: -0.50, rz: 0.34 },
   { o: 0, x: 0.50, y: 0.545, s: 1.00, rx: 0.28, ry: -0.36, rz: 0.14 },
-  { o: 1, x: 1.27, y: 0.44, s: 0.96, rx: 0.44, ry: -0.48, rz: 0.30 },
+  { o: 1, x: 1.17, y: 0.455, s: 0.92, rx: 0.44, ry: -0.48, rz: 0.30 },
   { o: 2, x: 2.00, y: 0.00, s: 1.10, rx: 0.60, ry: -0.85, rz: 0.60 },
 ];
 function slot(o, tall) {
@@ -391,7 +391,7 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
     }
     speed += ((reduce ? 0 : playing ? 1.5 : 0.12) - speed) * (1 - Math.exp(-2.2 * dt));
     const { heroH, scroll, t, dest } = getView(), tall = W / heroH < 1, px = worldH / H;
-    const D = tall ? Math.min(W * 0.74, heroH * 0.44) : Math.min(heroH * 0.67, W * 0.40);
+    const D = tall ? Math.min(W * 0.62, heroH * 0.37) : Math.min(heroH * 0.52, W * 0.30);
     let any = false;
     units.forEach((un, i) => {
       let o = mod(i - pos + N / 2) - N / 2;
