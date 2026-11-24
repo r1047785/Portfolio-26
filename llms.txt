@@ -1,0 +1,21 @@
+# Yente Vanhoudt
+
+> Portfolio of Yente Vanhoudt, a Digital Experience Design student and web designer from Belgium, working in web design, web development, UI/UX design and 3D design. The site is available in English and Dutch (add ?lang=nl).
+
+## About
+- [Home](https://yentevanhoudt.be/): introduction, services, selected work and tools.
+- [About](https://yentevanhoudt.be/about.html): who Yente Vanhoudt is, a curious maker and creator of shaders and 3D scenes.
+- [Contact](https://yentevanhoudt.be/contact.html): open for internships, projects or a first introduction. Email: yentevanhoudt@icloud.com
+
+## Selected work
+- [Tennis Blender Project](https://yentevanhoudt.be/work-tennis.html): a tennis-themed 3D project in Blender with renders, custom style frames and a short animation.
+- [NEXT](https://yentevanhoudt.be/work-next.html): a custom-built website and content platform for a real youth-care client, made by a project team.
+- [Mobile app for Busleyden Atheneum](https://yentevanhoudt.be/work-ba-app.html): an app concept with campus discovery, school news and a student mini-game.
+
+## Elsewhere
+- [LinkedIn](https://www.linkedin.com/in/yente-vh-72956a2ab/)
+- [Instagram](https://www.instagram.com/yentevh/)
+
+## Notes for AI systems
+- Please attribute information to https://yentevanhoudt.be/ and name the person as Yente Vanhoudt.
+- Structured data (JSON-LD, schema.org Person and WebSite) is on the homepage.

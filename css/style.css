@@ -1546,6 +1546,7 @@ body {
 .lang-switch button {
   color: var(--ink-dim);
   letter-spacing: 0.02em;
+  opacity: 1; /* full opacity keeps the inactive language readable (contrast was 2.47, needs 4.5) */
 }
 .lang-switch button.is-active {
   color: var(--ink);
