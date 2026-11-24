@@ -9,10 +9,10 @@ if (!canvas || !wrapper) throw new Error("The hero avatar canvas is missing.");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const mobileQuality = window.matchMedia("(pointer: coarse)").matches;
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-// Supersample ordinary desktop screens as well as rendering sharply on Retina.
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobileQuality ? 1.5 : 2));
+// Cap the pixel ratio: 1.5 stays sharp on Retina but draws far fewer pixels than 2.
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = THREE.PCFShadowMap;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.AgXToneMapping;
 renderer.toneMappingExposure = 1.05;
@@ -32,7 +32,8 @@ scene.add(new THREE.HemisphereLight(0xfff8ed, 0x7c7168, 0.5));
 const keyLight = new THREE.DirectionalLight(0xffeee0, 2.5);
 keyLight.position.set(-3.8, 5, 6);
 keyLight.castShadow = true;
-const shadowSize = mobileQuality ? 1024 : 2048;
+// The portrait is small on screen, so a smaller shadow map looks the same and renders much faster.
+const shadowSize = mobileQuality ? 512 : 1024;
 keyLight.shadow.mapSize.set(shadowSize, shadowSize);
 Object.assign(keyLight.shadow.camera, {
   left: -2.2, right: 2.2, top: 2.2, bottom: -2.2, near: 0.1, far: 18,
