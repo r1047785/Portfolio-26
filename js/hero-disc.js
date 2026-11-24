@@ -1,4 +1,4 @@
-import { createDiscStage, DISCS } from "./minidisc.js";
+import { DISCS } from "./discs.js";
 import { wordmark, wordmarkReady } from "./wordmark.js";
 
 const root = document.documentElement, hero = document.querySelector("#hero");
@@ -31,24 +31,28 @@ function measure() {
   disc?.wake();
 }
 
-/* ---------- the stage ---------- */
+/* ---------- the stage: a still image first, the live 3D takes over when it is ready ---------- */
 const wrap = document.createElement("div");
 wrap.className = "disc-stage";
 document.body.append(wrap);
+const still = document.querySelector(".disc-poster");
 let disc = null;
-tell(45);
-try {
-  disc = createDiscStage(wrap, { getView: () => view, onChange: update, onReady: () => { wrap.classList.add("is-ready"); tell(100, true); } });
-} catch (error) {
-  console.error("Could not start the 3D disc.", error);
-  $("discError").hidden = false;
-  $("discPlayer").hidden = true;
-  tell(100, true);
-}
-const begin = () => { if (!document.body.classList.contains("is-loaded")) return; loaded.disconnect(); disc?.start(); };
-const loaded = new MutationObserver(begin);
-loaded.observe(document.body, { attributes: true, attributeFilter: ["class"] });
-begin();
+tell(60);
+const picture = new Image();
+picture.onload = picture.onerror = () => tell(100, true);
+picture.src = `assets/disc-${root.dataset.theme === "dark" ? "dark" : "light"}.webp`;
+import("./minidisc.js")
+  .then(({ createDiscStage }) => createDiscStage(wrap, {
+    getView: () => view,
+    onChange: update,
+    onReady: () => { wrap.classList.add("is-ready"); still?.classList.add("is-done"); },
+  }))
+  .then((stage) => { disc = stage; syncTheme(); measure(); labels(); })
+  .catch((error) => {                                      // the still image stays
+    console.error("Could not start the 3D disc.", error);
+    $("discPlayer").hidden = true;
+  })
+  .finally(() => tell(100, true));
 
 /* ---------- player ---------- */
 const PLAY = "M7 4v16l14-8z", PAUSE = "M7 4.5h3.6v15H7zM13.4 4.5H17v15h-3.6z";

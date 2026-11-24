@@ -1,32 +1,13 @@
 import * as THREE from "three";
 import { paintCase, outline, ART, CENTER } from "./case-art.js";
 
-/* ------------------------------------------------------------------ */
-/* Plastic colours. deep = body, mid = colour of the glow, hi = glint. */
-/* ------------------------------------------------------------------ */
-export const CASES = {
-  clear:  { deep: [0.035, 0.045, 0.065], mid: [0.60, 0.66, 0.76], hi: [1.0, 1.0, 1.0], panel: [0.64, 0.68, 0.72], css: "#c9d2e0" },
-  ember:  { deep: [0.150, 0.022, 0.004], mid: [1.00, 0.25, 0.07], hi: [1.0, 0.88, 0.78], panel: [1.00, 0.42, 0.24], css: "#ff4a1c" },
-  violet: { deep: [0.060, 0.014, 0.170], mid: [0.48, 0.22, 1.00], hi: [0.95, 0.90, 1.0], panel: [0.55, 0.38, 0.98], css: "#7b3dff" },
-  aqua:   { deep: [0.000, 0.075, 0.100], mid: [0.02, 0.70, 0.82], hi: [0.86, 1.0, 1.0], panel: [0.22, 0.74, 0.82], css: "#12c4d8" },
-  amber:  { deep: [0.095, 0.060, 0.012], mid: [0.95, 0.62, 0.16], hi: [1.0, 0.96, 0.84], panel: [0.95, 0.70, 0.30], css: "#f0a22c" },
-  lime:   { deep: [0.035, 0.085, 0.000], mid: [0.56, 0.95, 0.06], hi: [0.96, 1.0, 0.84], panel: [0.60, 0.88, 0.20], css: "#9cf01a" },
-};
-/* The discs. Same case, different look. `track` gets an mp3 later on. */
-export const DISCS = [
-  { name: "Oil Slick", mode: 0, seed: 2.3, shell: "clear", track: null },
-  { name: "Prism", mode: 5, seed: 3.2, shell: "ember", track: null },
-  { name: "Ultraviolet", mode: 1, seed: 7.9, shell: "violet", track: null },
-  { name: "Cell Pour", mode: 2, seed: 4.1, shell: "aqua", track: null },
-  { name: "Engraved", mode: 3, seed: 1.0, shell: "amber", track: null },
-  { name: "Side A", mode: 4, seed: 5.5, shell: "lime", track: null },
-];
+import { CASES, DISCS } from "./discs.js";
 
 const PX = 1 / 324;                                   // 324 art pixels = half the case
 const PLANE = ART * PX;
 const DX = (CENTER.x - ART / 2) * PX, DY = (ART / 2 - CENTER.y) * PX;
 
-const layerVert = /* glsl */`varying vec2 vUv; varying vec2 vP; void main(){ vUv=uv; vP=position.xy; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`;
+const layerVert = /* glsl */`varying vec2 vUv; varying vec2 vP; void main(){ vUv=vec2(uv.x,1.-uv.y); vP=position.xy; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`;
 const layerFrag = /* glsl */`
   precision highp float; varying vec2 vUv; varying vec2 vP;
   uniform sampler2D uMap; uniform float uFade,uLight,uGain,uBody,uShadow; uniform vec2 uTilt; uniform vec3 uDeep,uMid,uHi,uPanel;
@@ -79,7 +60,7 @@ const discVert = /* glsl */`varying vec2 vUv; void main(){ vUv=uv; gl_Position=p
 const discFrag = /* glsl */`
   precision highp float;
   varying vec2 vUv;
-  uniform float uTime,uMode,uSeed,uSpin,uFade; uniform vec2 uTilt; uniform vec3 uTint; uniform sampler2D uPrint;
+  uniform float uTime,uSeed,uSpin,uFade; uniform vec2 uTilt; uniform vec3 uTint; uniform sampler2D uPrint;
 
   vec2 g2(vec2 p){ p=vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))); return -1.+2.*fract(sin(p)*43758.5453); }
   float gn(vec2 p){ vec2 i=floor(p),f=fract(p); vec2 u=f*f*f*(f*(f*6.-15.)+10.);
@@ -219,12 +200,19 @@ const discFrag = /* glsl */`
     vec2 p=(vUv*2.-1.)*1.02; float r=length(p); if(r>1.01)discard;
     float a=atan(p.y,p.x), tilt=dot(uTilt,p); vec2 pr=rot(uSpin)*p; float t=uTime;
     vec3 c; float mask=1.; float metal=0.;
-    if(uMode<.5) c=oil(pr,t,tilt*2.);
-    else if(uMode<1.5) c=ultra(pr,t,tilt*2.);
-    else if(uMode<2.5) c=cells(pr,t,tilt*2.);
-    else if(uMode<3.5){ c=engraved(pr,t,tilt,p); metal=.6; }
-    else if(uMode<4.5){ c=saw(pr,tilt,p,mask); metal=1.; }
-    else { c=prism(p,pr,t); metal=.6; }
+    #if MODE==0
+      c=oil(pr,t,tilt*2.);
+    #elif MODE==1
+      c=ultra(pr,t,tilt*2.);
+    #elif MODE==2
+      c=cells(pr,t,tilt*2.);
+    #elif MODE==3
+      c=engraved(pr,t,tilt,p); metal=.6;
+    #elif MODE==4
+      c=saw(pr,tilt,p,mask); metal=1.;
+    #else
+      c=prism(p,pr,t); metal=.6;
+    #endif
 
     // grooves + print rotate with the disc
     float gr=gn(vec2(r*190.,1.))*.5+gn(vec2(r*520.,7.))*.5;
@@ -312,12 +300,32 @@ function slot(o, tall) {
   return r;
 }
 
+/* paint the plastic in a worker, so the page keeps running */
+function paintMaps(size) {
+  const here = () => paintCase(size);
+  if (!("OffscreenCanvas" in window) || !("Worker" in window)) return Promise.resolve(here());
+  return new Promise((done) => {
+    let worker, over = false;
+    const finish = (maps) => { if (over) return; over = true; clearTimeout(timer); worker?.terminate(); done(maps); };
+    const timer = setTimeout(() => finish(here()), 6000);
+    try {
+      worker = new Worker(new URL("./case-worker.js", import.meta.url), { type: "module" });
+      worker.onmessage = (e) => finish(e.data);
+      worker.onerror = () => finish(here());
+      worker.postMessage(size);
+    } catch { finish(here()); }
+  });
+}
+const idle = () => new Promise((ok) => ("requestIdleCallback" in window ? requestIdleCallback(ok, { timeout: 400 }) : setTimeout(ok, 60)));
+
 /* getView() -> { heroH, scroll, t, dest: { x, y, size } }  (page pixels) */
-export function createDiscStage(container, { getView, onChange = () => {}, onReady = null } = {}) {
+export async function createDiscStage(container, { getView, onChange = () => {}, onReady = null } = {}) {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const coarse = matchMedia("(pointer: coarse)").matches;
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, coarse ? 1.5 : 1.75));
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  const ratio = Math.min(devicePixelRatio || 1, coarse ? 1.5 : 1.75);
+  renderer.debug.checkShaderErrors = false;               // asking for the log makes the browser wait for the compiler
+  renderer.setPixelRatio(ratio);
   renderer.setClearColor(0x000000, 0);
   renderer.outputColorSpace = THREE.LinearSRGBColorSpace; // colours above are picked in display space
   renderer.domElement.setAttribute("aria-hidden", "true");
@@ -326,20 +334,23 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
   camera.position.z = 9;
   const worldH = 2 * 9 * Math.tan((12 * Math.PI) / 180);
 
-  const art = paintCase(coarse && Math.min(innerWidth, innerHeight) < 600 ? 1024 : 1536), maps = {};
+  const need = Math.min(innerHeight * 0.52, innerWidth * 0.62) * 1.136 * ratio, maps = {};
+  const painted = paintMaps(need > 900 ? 1536 : 1024);
   for (const k of ["front", "mid"]) {
-    maps[k] = new THREE.CanvasTexture(art[k]);
+    maps[k] = new THREE.Texture();
+    maps[k].flipY = false;
     maps[k].anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
     maps[k].generateMipmaps = true; maps[k].minFilter = THREE.LinearMipmapLinearFilter;
   }
   const plane = new THREE.PlaneGeometry(PLANE, PLANE), discGeo = new THREE.PlaneGeometry(1.644, 1.644), wallGeo = wallGeometry();
   const light = { value: 0 }, flat = { transparent: true, depthWrite: false, depthTest: false, ...OVER };
 
-  const units = DISCS.map((d, i) => {
-    const k = CASES[d.shell], root = new THREE.Group(), parts = [];
+  const units = DISCS.map(() => null);
+  function build(i) {
+    const d = DISCS[i], k = CASES[d.shell], root = new THREE.Group(), parts = [];
     const fadeU = { value: 1 }, tiltU = { value: new THREE.Vector2() }, v = (a) => ({ value: new THREE.Vector3(...a) });
     const tint = { uDeep: v(k.deep), uMid: v(k.mid), uHi: v(k.hi), uPanel: v(k.panel) };
-    const u = { uTime: { value: 0 }, uMode: { value: d.mode }, uSeed: { value: d.seed }, uSpin: { value: 0 }, uFade: fadeU, uTilt: tiltU, uTint: v(k.hi), uPrint: { value: makePrint(i, d.name) } };
+    const u = { uTime: { value: 0 }, uSeed: { value: d.seed }, uSpin: { value: 0 }, uFade: fadeU, uTilt: tiltU, uTint: v(k.hi), uPrint: { value: makePrint(i, d.name) } };
     const add = (mesh, order) => { mesh.userData.order = order; parts.push(mesh); root.add(mesh); };
     const layer = (map, z, order, gain, body, shadow = 0) => {
       const mesh = new THREE.Mesh(plane, new THREE.ShaderMaterial({ vertexShader: layerVert, fragmentShader: layerFrag, side: THREE.DoubleSide, ...flat,
@@ -347,18 +358,24 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
       mesh.position.z = z; add(mesh, order);
     };
     layer(maps.front, -0.09, 0, 0.3, 0.75, 1);            // the back half of the case, seen through the plastic
-    const disc = new THREE.Mesh(discGeo, new THREE.ShaderMaterial({ vertexShader: discVert, fragmentShader: discFrag, ...flat, uniforms: u }));
+    const disc = new THREE.Mesh(discGeo, new THREE.ShaderMaterial({ vertexShader: discVert, fragmentShader: discFrag, defines: { MODE: d.mode }, ...flat, uniforms: u }));
     disc.position.set(DX, DY, 0); add(disc, 1);
     layer(maps.mid, 0.035, 2, 1.12, 0.35);
     add(new THREE.Mesh(wallGeo, new THREE.ShaderMaterial({ vertexShader: wallVert, fragmentShader: wallFrag, side: THREE.DoubleSide, ...flat, uniforms: { uFade: fadeU, uLight: light, ...tint } })), 3);
     layer(maps.front, 0.09, 4, 1.16, 0.2);
-    root.visible = false; scene.add(root);
-    return { root, parts, u, tiltU, fadeU, spin: d.mode >= 4 ? -0.1 : i * 0.7, px: null };
-  });
-  document.fonts && Promise.all([document.fonts.load('900 40px "Bodoni Moda"'), document.fonts.load("700 18px Archivo")]).then(() => { units.forEach((un, i) => { un.u.uPrint.value.dispose(); un.u.uPrint.value = makePrint(i, DISCS[i].name); }); wake(); }).catch(() => {});
+    root.visible = false;
+    return { root, parts, u, tiltU, fadeU, born: 0, spin: d.mode >= 4 ? -0.1 : i * 0.7, px: null };
+  }
+  async function prepare(i, first) {
+    const un = build(i);
+    await Promise.all([renderer.compileAsync(un.root, camera, scene), first ? painted.then((art) => { for (const k of ["front", "mid"]) { maps[k].image = art[k]; maps[k].needsUpdate = true; } }) : null]);
+    un.born = first ? -9 : performance.now() / 1000;
+    scene.add(un.root); units[i] = un;
+    return un;
+  }
 
   /* ---------- state ---------- */
-  let pos = reduce ? 0 : -0.75, vel = 0, target = 0, started = reduce, drag = null, playing = false, speed = 0.1;
+  let pos = 0, vel = 0, target = 0, drag = null, playing = false, speed = 0.1, t0 = 0, alive = false;
   const mod = (a) => ((a % N) + N) % N;
   const current = () => mod(Math.round(target));
   function aim(t) { const before = current(); target = t; if (current() !== before) onChange(current()); wake(); }
@@ -377,13 +394,15 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
   new ResizeObserver(resize).observe(container);
   document.addEventListener("visibilitychange", () => wake());
   let raf = 0, last = 0;
-  function wake() { if (!raf && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(tick); } }
+  function wake() { if (alive && !raf && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(tick); } }
 
   function tick(now) {
     raf = 0; if (document.hidden) return;
     const real = Math.min(Math.max(0, now - last) / 1000, 0.5), dt = Math.min(real, 0.05), time = now / 1000; last = now;
+    if (!t0) t0 = time;
+    const calmStart = reduce ? 0 : clamp((time - t0) / 1.6);  // start exactly like the still image, then begin to float
     const k = 1 - Math.exp(-4.5 * dt); ry += (tx - ry) * k; rx += (ty - rx) * k;
-    if (started && !drag) {                                  // critically damped spring
+    if (!drag) {                                              // critically damped spring
       if (reduce) pos = target;
       else for (let left = real; left > 0; left -= 1 / 120) {  // same speed on a slow phone as on a fast screen
         const h = Math.min(left, 1 / 120), w = 7.2, x = pos - target; vel += (-w * w * x - 2 * w * vel) * h; pos += vel * h;
@@ -394,24 +413,26 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
     const D = tall ? Math.min(W * 0.62, heroH * 0.37) : Math.min(heroH * 0.52, W * 0.30);
     let any = false;
     units.forEach((un, i) => {
-      let o = mod(i - pos + N / 2) - N / 2;
+      if (!un) return;
+      const o = mod(i - pos + N / 2) - N / 2;
       const p = slot(o, tall), near = clamp(1 - Math.abs(o)), keep = near * t;            // only the middle case travels on to the about section
+      const age = reduce ? 1 : clamp((time - un.born) / 0.9), appear = 1 - Math.pow(1 - age, 3);
       let x = p.x * W, y = p.y * heroH, size = p.s * D;
       const out = (1 - near) * clamp(scroll / (heroH * 0.38));                             // the others drift away while you scroll
-      x += Math.sign(o || 1) * out * W * 0.3;
+      x += Math.sign(o || 1) * (out * 0.3 + (1 - appear) * (1 - near) * 0.06) * W;
       x = lerp(x, dest.x, keep); y = lerp(y, dest.y, keep) - scroll; size = lerp(size, dest.size, keep);
-      const fade = clamp(2 - Math.abs(o)) * (1 - out), r = size * 0.8;
-      const seen = fade > 0.01 && x > -r && x < W + r && y > -r && y < H + r;
+      const fade = clamp(2 - Math.abs(o)) * (1 - out) * appear, r = size * 0.8;
+      const seen = fade > 0.005 && x > -r && x < W + r && y > -r && y < H + r;
       un.root.visible = seen; un.px = seen && near + (1 - out) > 0.5 ? { x, y, size } : null;
       if (!seen) return;
       any = true;
-      const sway = reduce ? 0 : 1, calm = 1 - 0.55 * keep, ph = i * 1.7;
+      const sway = calmStart, calm = 1 - 0.55 * keep, ph = i * 1.7;
       un.root.position.set((x - W / 2) * px, (H / 2 - y) * px + sway * Math.sin(time * 0.7 + ph) * 0.018, 0);
       un.root.scale.setScalar((size * px) / 2);
       const ax = p.rx * calm + sway * (rx * 0.22 + Math.sin(time * 0.5 + ph) * 0.035), ay = p.ry * calm + sway * (ry * 0.34 + Math.cos(time * 0.42 + ph) * 0.045);
       un.root.rotation.set(ax, ay, p.rz * calm + sway * Math.sin(time * 0.33 + ph) * 0.02);
       un.tiltU.value.set(ay * 1.3, ax * 1.3); un.fadeU.value = fade;
-      un.spin += (near > 0.5 ? speed : 0.06 * sway) * dt; un.u.uSpin.value = un.spin; un.u.uTime.value = time;
+      un.spin += (near > 0.5 ? speed : 0.06) * sway * dt; un.u.uSpin.value = un.spin; un.u.uTime.value = 14 + (reduce ? 0 : time - t0);
       const base = Math.round((3 - Math.abs(o)) * 10) * 10;
       for (const m of un.parts) m.renderOrder = base + m.userData.order;
     });
@@ -421,12 +442,20 @@ export function createDiscStage(container, { getView, onChange = () => {}, onRea
     if (any) raf = requestAnimationFrame(tick);              // nothing on screen: stop until you scroll back
   }
   resize();
+  await prepare(0, true);                                    // only the case in the middle holds up the first frame
+  renderer.initTexture(maps.front); renderer.initTexture(maps.mid);
+  alive = true; wake();
+  (async () => {
+    for (const i of [1, N - 1, 2, N - 2, 3]) { await idle(); await prepare(i); wake(); }
+    await Promise.all([document.fonts?.load('900 40px "Bodoni Moda"'), document.fonts?.load("700 18px Archivo")]).catch(() => {});
+    const i = DISCS.findIndex((d) => d.name === "Prism"), un = units[i];
+    if (un) { un.u.uPrint.value.dispose(); un.u.uPrint.value = makePrint(i, "Prism"); wake(); }
+  })();
   return {
     go, goTo, dragBy, dragEnd, wake,
-    start() { started = true; wake(); },
     setPlaying(v) { playing = v; wake(); },
     setTheme(dark) { light.value = dark ? 0 : 1; wake(); },
-    hit(x, y) { let best = -1, d = 1; units.forEach((un, i) => { if (!un.px) return; const q = Math.max(Math.abs(x - un.px.x), Math.abs(y - un.px.y)) / (un.px.size * 0.52); if (q < d) { d = q; best = i; } }); return best; },
+    hit(x, y) { let best = -1, d = 1; units.forEach((un, i) => { if (!un?.px) return; const q = Math.max(Math.abs(x - un.px.x), Math.abs(y - un.px.y)) / (un.px.size * 0.52); if (q < d) { d = q; best = i; } }); return best; },
     get index() { return current(); }, get playing() { return playing; },
   };
 }

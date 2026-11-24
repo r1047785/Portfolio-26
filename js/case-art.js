@@ -16,13 +16,12 @@ export function outline() {
   return p;
 }
 
-export function paintCase(size) {
+export function paintCase(size, canvas = (n) => Object.assign(document.createElement("canvas"), { width: n, height: n })) {
   let seed = 20260;
   const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
   const make = () => {
-    const cv = document.createElement("canvas");
-    cv.width = cv.height = size;
-    const c = cv.getContext("2d");
+    const cv = canvas(size);
+    const c = cv.getContext("2d", { willReadFrequently: true }); // drawn on the processor, leaves the graphics card free
     c.fillStyle = "#000";
     c.fillRect(0, 0, size, size);
     c.scale(size / ART, size / ART);

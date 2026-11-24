@@ -1,20 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Start Wingify Async V3.0 SmartCode -->
-    <link rel="preconnect" href="https://edge.wingify.net"/>
-    <script type="text/javascript">
-    window._wingify_code || (function() {
-        var account_id = 1300212,
-            version = 3.0,
-            settings_tolerance = 2000,
-            hide_element = 'body',
-            hide_element_style =
-            'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important';
-        /* DO NOT EDIT BELOW THIS LINE */
-        var n=window,i=document;if(-1<i.URL.indexOf('__wingify_disable__')||n._wingify_code)return;var t=!1,r=i.currentScript,nonce=r&&r.nonce,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(e,JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')))}catch(e){}var code={script:r,nonce:nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!t&&(t=!0,e=i.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return t},addScript:function(e){var t=i.createElement('script');t.src=e,nonce&&t.setAttribute('nonce',nonce),t.fetchPriority='high',i.head.appendChild(t)},init:function(){n._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e,t=this.hide_element();t&&((e=i.createElement('style')).id='_vis_opt_path_hides',nonce&&e.setAttribute('nonce',nonce),e.textContent=t+this.hide_element_style(),i.head.appendChild(e)),this.addScript('https://edge.wingify.net/tag/'+account_id+'.js')}};n._wingify_code=code;code.init();})();
-    </script>
-    <!--End Wingify Async SmartCode -->
     <script src="js/theme.js"></script>
     <meta charset="UTF-8" />
     <script>
@@ -129,11 +115,19 @@
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js",
           "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
         }
       }
     </script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js" />
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.min.js" />
+    <link rel="modulepreload" href="js/hero-disc.js" />
+    <link rel="modulepreload" href="js/discs.js" />
+    <link rel="modulepreload" href="js/wordmark.js" />
+    <link rel="modulepreload" href="js/minidisc.js" />
+    <link rel="modulepreload" href="js/case-art.js" />
     <link rel="stylesheet" href="css/style.css" />
     <script>
       (function () {
@@ -244,7 +238,7 @@
             <div><dt data-i18n="hero.year">Year</dt><dd>2026</dd></div>
           </dl>
         </div>
-        <p class="hero-disc-error" id="discError" data-i18n="hero.discError" hidden>The 3D disc could not load.</p>
+        <div class="disc-poster" aria-hidden="true"></div>
         <div class="disc-player" id="discPlayer" role="group" aria-label="Disc player">
           <button type="button" id="discPrev" aria-label="Previous disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h1.6v14H5zM19 5v14L8.5 12z" /></svg></button>
           <button type="button" id="discPlay" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l14-8z" /></svg></button>

@@ -44,19 +44,21 @@ if (!playIntro) {
   };
   window.addEventListener("avatar-progress", onProgress);
   document.fonts.ready.then(() => { target = Math.max(target, 25); });
-  const deadline = setTimeout(finish, 6000);
+  const deadline = setTimeout(finish, 3000);
   skip.addEventListener("click", finish);
+  let before = start;
   const tick = (now) => {
-    const elapsed = now - start;
+    const elapsed = now - start, frames = Math.min(12, Math.max(0, now - before) / 16.7);
+    before = now;
     // These are loading-stage percentages, not a total byte measurement.
-    const goal = ready && elapsed >= (reduced ? 0 : 1800) ? 100 : Math.min(94, target);
-    value = Math.min(goal, value + Math.max(0.35, (goal - value) * 0.055));
+    const goal = ready && elapsed >= (reduced ? 0 : 500) ? 100 : Math.min(94, target);
+    value = Math.min(goal, value + Math.max(1.2, (goal - value) * 0.09) * frames);
     const shown = Math.floor(value);
     count.textContent = shown;
     progress.setAttribute("aria-valuenow", shown);
     walker.style.left = reduced ? "50%" : `${value}%`;
     fill.style.transform = `scaleX(${value / 100})`;
-    if (value >= 100) completionTimer = setTimeout(finish, reduced ? 0 : 300);
+    if (value >= 100) completionTimer = setTimeout(finish, reduced ? 0 : 120);
     else raf = requestAnimationFrame(tick);
   };
   raf = requestAnimationFrame(tick);
