@@ -21,8 +21,8 @@ const f = (n) => Math.round(n * 100) / 100;
 /* four-pointed sparkle */
 const sparkle = (x, y, r, s = 1) => { const k = r * 0.1; return `M${f(x)} ${f(y - r * s)}C${f(x + k)} ${f(y - k * 2)} ${f(x + k * 2)} ${f(y - k)} ${f(x + r)} ${f(y)}C${f(x + k * 2)} ${f(y + k)} ${f(x + k)} ${f(y + k * 2)} ${f(x)} ${f(y + r * s)}C${f(x - k)} ${f(y + k * 2)} ${f(x - k * 2)} ${f(y + k)} ${f(x - r)} ${f(y)}C${f(x - k * 2)} ${f(y - k)} ${f(x - k)} ${f(y - k * 2)} ${f(x)} ${f(y - r * s)}Z`; };
 
-export function wordmark(name) {
-  const mark = MARKS[name] || { l: [...name].filter((c) => c !== " ").map((c, i) => [c, 1.4, i ? 1.05 : 1.2, 0, 6, 0]) };
+export function wordmark(name, own) {
+  const mark = own || MARKS[name] || { l: [...name].filter((c) => c !== " ").map((c, i) => [c, 1.4, i ? 1.05 : 1.2, 0, 6, 0]) };
   let x = 0, out = "", box = { l: 1e9, r: -1e9, t: 1e9, b: -1e9 };
   const cells = [];
   mark.l.forEach(([ch, sx, sy, slant, overlap, dy = 0, weight = 900], i) => {

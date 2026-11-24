@@ -88,7 +88,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA App Development",
 
-    "image.home_hero": "Yente standing on a rock overlooking a mountain valley",
+    "image.home_hero": "Yente Vanhoudt in Y2K lettering next to a glowing orange MiniDisc case with a rainbow disc",
     "image.home_about": "Silhouette of Yente looking across St Mark's Square in Venice at night",
     "image.tennis_style2": "Style frame of a tennis ball lit by a single warm light source on a clay court",
     "image.tennis_style1": "Style frame of two tennis rackets pinching a tennis ball, shot from above on a clay court",
@@ -228,7 +228,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA Appontwikkeling",
 
-    "image.home_hero": "Yente staat op een rots en kijkt uit over een bergdal",
+    "image.home_hero": "Yente Vanhoudt in Y2K-letters naast een gloeiend oranje MiniDisc-hoesje met een regenboogdisc",
     "image.home_about": "Silhouet van Yente op het San Marcoplein in Venetië bij nacht",
     "image.tennis_style2": "Stijlbeeld van een tennisbal op een gravelbaan, belicht met één warme lichtbron",
     "image.tennis_style1": "Stijlbeeld van twee tennisrackets met een tennisbal ertussen, van bovenaf gefotografeerd op gravel",
@@ -284,7 +284,7 @@ const translations = {
   const pageSeo = {
     home: {
       path: "/",
-      image: "/assets/hero.webp",
+      image: "/assets/og-minidisc.jpg",
       en: {
         title: "Yente Vanhoudt | Web Design, UI/UX & 3D Portfolio",
         description: "Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code.",
@@ -342,13 +342,13 @@ const translations = {
 
   pageSeo.about = {
     path: "/about.html",
-    image: "/assets/about.webp",
-    en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_about"] },
-    nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_about"] },
+    image: "/assets/og-minidisc.jpg",
+    en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_hero"] },
+    nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_hero"] },
   };
   pageSeo.contact = {
     path: "/contact.html",
-    image: "/assets/hero.webp",
+    image: "/assets/og-minidisc.jpg",
     en: { title: "Contact | Yente Vanhoudt", description: "Get in touch with Yente Vanhoudt, Digital Experience Design student, for internships, projects or a first introduction.", imageAlt: translations.en["image.home_hero"] },
     nl: { title: "Contact | Yente Vanhoudt", description: "Neem contact op met Yente Vanhoudt, student Digital Experience Design, voor stages, projecten of een eerste kennismaking.", imageAlt: translations.nl["image.home_hero"] },
   };
