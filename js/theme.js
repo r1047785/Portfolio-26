@@ -16,7 +16,7 @@
     button.setAttribute('aria-pressed', String(dark));
   };
   const apply = () => {
-    root.dataset.theme = preference || 'light';
+    root.dataset.theme = preference || 'dark';
     updateLabel();
   };
   // Runs in the head, before the page paints, to avoid a light flash.

@@ -120,7 +120,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Bodoni+Moda:opsz,wght@28,600..900&family=Archivo:wdth,wght@125,500..700&display=swap"
       rel="stylesheet"
     />
     <script type="importmap">
@@ -147,6 +147,7 @@
     </script>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/newsletter.css" />
+    <link rel="stylesheet" href="css/hero-disc.css" />
   </head>
   <body data-seo-page="home">
     <div
@@ -217,13 +218,13 @@
     <header class="site-header reveal-up">
       <a href="#" class="logo" aria-label="Yente Vanhoudt home">YV</a>
       <nav class="main-nav">
+        <a href="#" class="nav-logo" id="navLogo" aria-label="Yente Vanhoudt home">YV</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="nav-contact" id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="lang-switch">
-        <a class="nav-contact" id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
         <button type="button" data-lang="en">EN</button>
         <span>/</span>
         <button type="button" data-lang="nl">NL</button>
@@ -232,65 +233,20 @@
 
     <main>
       <section class="hero" id="hero">
-        <div class="hero-signature reveal-up">YENTE VANHOUDT</div>
-        <h1 class="hero-name reveal-up" aria-label="Yente Vanhoudt — Portfolio">
-          <svg
-            class="hero-title-art"
-            viewBox="0 0 920 220"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <text
-              class="hero-title-port"
-              x="0"
-              y="174"
-              textLength="480"
-              lengthAdjust="spacingAndGlyphs"
-            >
-              Port
-            </text>
-            <text
-              class="hero-title-folio"
-              x="505"
-              y="190"
-              textLength="410"
-              lengthAdjust="spacingAndGlyphs"
-            >
-              Folio
-            </text>
-          </svg>
-        </h1>
-        <span class="hero-year" aria-hidden="true"
-          ><span>20</span><span>26</span><i></i><i></i><i></i><i></i
-        ></span>
-        <div
-          class="hero-avatar-wrap"
-          aria-label="Interactive 3D portrait of Yente Vanhoudt"
-        >
-          <canvas
-            class="hero-avatar"
-            id="heroAvatar"
-            role="img"
-            aria-label="Interactive 3D portrait of Yente Vanhoudt"
-          ></canvas>
-          <span class="avatar-fallback" role="status">
-            <span class="avatar-loading-ring" aria-hidden="true"></span>
-            <span class="avatar-loading-label" data-i18n="hero.avatarLoading">Loading 3D portrait</span>
-            <span class="avatar-error-label" data-i18n="hero.avatarError">3D portrait unavailable</span>
-          </span>
+        <h1 class="hero-name visually-hidden" data-i18n="hero.heading">Yente Vanhoudt: web, UI/UX and 3D design portfolio</h1>
+        <div class="disc-info">
+          <p class="disc-title"><span class="visually-hidden" id="discName" aria-live="polite">Oil Slick</span><span id="discMark" aria-hidden="true"></span></p>
+          <dl>
+            <div><dt>Portfolio</dt><dd>Yente Vanhoudt</dd></div>
+            <div><dt data-i18n="hero.year">Year</dt><dd>2026</dd></div>
+          </dl>
         </div>
-        <p class="hero-tagline reveal-up" data-i18n="hero.tagline">
-          Web designer creating thoughtful websites, interfaces &amp; 3D
-          experiences.
-        </p>
-        <div class="hero-categories">
-          <span data-i18n="service2.title">Web Design</span>
-          <span data-i18n="service1.title">3D Design</span>
-          <span data-i18n="service3.title">UI/UX Design</span>
+        <p class="hero-disc-error" id="discError" data-i18n="hero.discError" hidden>The 3D disc could not load.</p>
+        <div class="disc-player" id="discPlayer" role="group" aria-label="Disc player">
+          <button type="button" id="discPrev" aria-label="Previous disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h1.6v14H5zM19 5v14L8.5 12z" /></svg></button>
+          <button type="button" id="discPlay" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l14-8z" /></svg></button>
+          <button type="button" id="discNext" aria-label="Next disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.4 5H19v14h-1.6zM5 5v14l10.5-7z" /></svg></button>
         </div>
-        <a href="#about" class="scroll-cue reveal-up" data-i18n="hero.scrollcue"
-          >Scroll down</a
-        >
       </section>
 
       <section class="about-preview" id="about">
@@ -634,7 +590,7 @@
     </dialog>
     <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
-    <script type="module" src="js/avatar.js"></script>
+    <script type="module" src="js/hero-disc.js"></script>
     <script src="js/project-hover.js"></script>
     <script src="js/newsletter.js"></script>
       <script src="js/consent.js"></script>
