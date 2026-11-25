@@ -82,7 +82,7 @@ export function createOrb(canvas, hero) {
     last = now;
     if (!reduced) {
       time += dt;
-      if (form < 1) { form = Math.min(1, form + dt / 1.5); if (form > 0.82) formed(); }
+      if (form < 1) { form = Math.min(1, form + dt / 1.05); if (form > 0.66) formed(); }
       const near = mouse.on ? Math.max(0, 1 - Math.max(0, Math.hypot(mouse.x - x, mouse.y - y) - R * 0.75) / (R * 0.75)) : 0;
       hover += (near - hover) * e(near > hover ? 4.5 : 2.2);
       push += ((mouse.on ? 1 : 0) - push) * e(5);

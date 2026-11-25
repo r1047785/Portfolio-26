@@ -1,7 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="js/theme.js"></script>
+    <script>
+      /* the theme before the first paint; js/theme.js adds the button */
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("portfolio-theme"); } catch (e) {}
+        document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+      })();
+    </script>
+    <script defer src="js/theme.js"></script>
     <meta charset="UTF-8" />
     <script>
       (function () {
@@ -109,8 +117,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tektur:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tektur:wght@500&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <link rel="modulepreload" href="js/walkers.js" />
     <link rel="modulepreload" href="js/terminal.js" />
@@ -130,7 +140,7 @@
       })();
     </script>
     <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/newsletter.css" />
+    <link rel="stylesheet" href="css/newsletter.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="css/floor.css" />
   </head>
   <body data-seo-page="home">
@@ -139,6 +149,7 @@
     <header class="site-header reveal-up">
       <a href="#" class="logo" aria-label="Yente Vanhoudt home">YV</a>
       <div class="lang-switch">
+        <button type="button" class="help-open" id="helpOpen" aria-haspopup="dialog">?</button>
         <button type="button" data-lang="en">EN</button>
         <span>/</span>
         <button type="button" data-lang="nl">NL</button>
@@ -164,6 +175,7 @@
           </nav>
           <label class="prompt"><span aria-hidden="true">&gt; <span id="typed"></span><i class="caret"></i></span><input id="field" type="text" maxlength="22" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-label="Command, type help for a list" /></label>
         </div>
+        <a class="code code-scroll" id="scrollCue" href="#about"><span data-i18n="hero.scrollcue">Scroll down</span><svg viewBox="0 0 7 8" aria-hidden="true"><path d="M3 0h1v5h1V4h1v1H5v1H4v1H3V6H2V5H1V4h1v1h1z" /></svg></a>
         <ol class="code code-log" id="log" aria-hidden="true"></ol>
         <p class="visually-hidden" id="reply" aria-live="polite"></p>
       </section>
@@ -470,6 +482,19 @@
       </div>
     </footer>
 
+    <dialog class="help" id="help" aria-labelledby="helpTitle">
+      <button type="button" class="help-close" id="helpClose">x</button>
+      <h2 id="helpTitle" data-i18n="help.title">What is this?</h2>
+      <p data-i18n="help.what">Everyone who has this page open right now is a person on the floor. The bright one is you. When somebody joins, they fall out of the orb. When they leave, they crawl back in. You can see each other, live.</p>
+      <p data-i18n="help.move">Move your mouse to walk, click to jump. On a phone: tap where you want to go, tap yourself to jump.</p>
+      <h3 data-i18n="help.say">Say something</h3>
+      <div class="help-words" id="helpSay"></div>
+      <h3 data-i18n="help.do">Do something</h3>
+      <div class="help-words" id="helpDo"></div>
+      <h3 data-i18n="help.ask">Ask me something</h3>
+      <div class="help-words" id="helpAsk"></div>
+      <p class="help-small" data-i18n="help.small">Press a word here or type it on the page. Others only see these words, your moves and where you stand. This live room uses no names and no cookies, and keeps nothing.</p>
+    </dialog>
     <dialog id="newsletter-dialog" class="newsletter-dialog" aria-labelledby="newsletter-title">
       <button type="button" class="newsletter-close" data-newsletter-close aria-label="Close / Sluiten" autofocus><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
       <div class="newsletter-eyebrow">YENTE VANHOUDT / NEWSLETTER</div>
@@ -503,10 +528,10 @@
       <p class="newsletter-error" role="alert" hidden data-i18n="newsletter.error">The form could not load. Close it and try again, or check whether your browser blocks MailerLite.</p>
     </dialog>
     <script src="js/i18n.js"></script>
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
     <script type="module" src="js/walkers.js"></script>
-    <script src="js/project-hover.js"></script>
-    <script src="js/newsletter.js"></script>
-      <script src="js/consent.js"></script>
+    <script defer src="js/project-hover.js"></script>
+    <script defer src="js/newsletter.js"></script>
+      <script defer src="js/consent.js"></script>
   </body>
 </html>

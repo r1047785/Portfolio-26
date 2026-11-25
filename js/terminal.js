@@ -23,6 +23,7 @@ export const ACTS = ["wave", "dance", "sit", "sleep"];
 const EXTRA = {
   en: {
     say: (w) => `says ${w}`, wave: "waves", dance: "dances", me: { say: (w) => `say ${w}`, wave: "wave", dance: "dance" }, sit: "sat down", sleep: "fell asleep",
+    words: { say: "hi hello lol haha nice cool wow love thanks yes no bye", act: "jump wave dance sit sleep boom", ask: "who school where stack hobby projects stage cv why mail" }, legend: "Help: what is this?", close: "Close",
     help: ["go: about toolkit work contact", "say: hi lol nice wow bye", "do: jump wave dance sit sleep", "ask: who school where stack hobby stage cv mail"],
     who: "I'm Yente. I make websites, interfaces and 3D.", school: "Student Digital Experience Design.", where: "Mechelen, Belgium.",
     stack: "HTML, CSS, JavaScript, Three.js, Figma, Blender.", hobby: "The gym and motorcycle rides.",
@@ -31,6 +32,7 @@ const EXTRA = {
   },
   nl: {
     say: (w) => `zegt ${w}`, wave: "zwaait", dance: "danst", sit: "ging zitten", sleep: "viel in slaap",
+    words: { say: "hoi hallo lol haha nice cool wow love merci ja nee doei", act: "spring zwaai dans zit slaap boom", ask: "wie school waar stack hobby projecten stage cv waarom mail" }, legend: "Hulp: wat is dit?", close: "Sluiten",
     help: ["ga: over tools werk contact", "zeg: hoi lol nice wow doei", "doe: spring zwaai dans zit slaap", "vraag: wie school waar stack hobby stage cv mail"],
     who: "Ik ben Yente. Ik maak websites, interfaces en 3D.", school: "Student Digital Experience Design.", where: "Mechelen, België.",
     stack: "HTML, CSS, JavaScript, Three.js, Figma, Blender.", hobby: "Gymmen en motorrijden.",
@@ -130,7 +132,7 @@ export function startTerminal({ hop, say, act, pulse }) {
     light: () => theme(false), licht: () => theme(false), dark: () => theme(true), donker: () => theme(true),
     nl: () => language("nl"), en: () => language("en"),
     boom: () => pulse(1.1),
-    help: () => answer(...t().help), "?": () => answer(...t().help),
+    help: () => answer(...t().help), "?": () => openHelp(), legend: () => openHelp(), legende: () => openHelp(),
     clear: () => { $("log").textContent = ""; lastKey = ""; },
   };
   const alias = (names, f) => { for (const n of names.split(" ")) DO[n] = f; };
@@ -143,6 +145,26 @@ export function startTerminal({ hop, say, act, pulse }) {
   alias("instagram insta", () => visit("Instagram", "https://www.instagram.com/yentevh/"));
   alias("mail email", () => { answer(t().mail); location.href = "mailto:yentevanhoudt@icloud.com"; });
   for (const [names, page] of [["tennis", "work-tennis"], ["next", "work-next"], ["busleyden app ba", "work-ba-app"]]) alias(names, () => { const a = document.querySelector(`a[href*="${page}"]`); if (a) a.click(); else location.href = `${page}.html`; });
+
+  /* the legend: what this is, and every word as a button */
+  const help = $("help"), list = t().words;
+  const openHelp = () => { if (!help.open) help.showModal(); };
+  $("helpOpen").setAttribute("aria-label", t().legend);
+  $("helpClose").setAttribute("aria-label", t().close);
+  $("helpOpen").addEventListener("click", openHelp);
+  $("helpClose").addEventListener("click", () => help.close());
+  help.addEventListener("click", (e) => { if (e.target === help) help.close(); });   // next to the box
+  for (const [id, words] of [["helpSay", list.say], ["helpDo", list.act], ["helpAsk", list.ask]]) for (const w of words.split(" ")) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.textContent = w;
+    b.addEventListener("click", () => { help.close(); scrollTo({ top: 0 }); DO[w]?.(); });
+    $(id).append(b);
+  }
+
+  const cue = $("scrollCue"), seen = () => cue.classList.toggle("is-gone", scrollY > 60);
+  addEventListener("scroll", seen, { passive: true });
+  seen();
 
   let buffer = "";
   const field = $("field");
