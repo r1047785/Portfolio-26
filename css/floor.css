@@ -1,0 +1,148 @@
+/* ---------- Homepage: an empty room, one floor, and everybody who is here ---------- */
+body[data-seo-page="home"] {
+  --font-hack: "Tektur", "Eurostile", "Arial Narrow", sans-serif;
+  --code: clamp(15px, 1.2vw, 21px);
+  --person: clamp(72px, 12.5svh, 116px);
+  --paper: #efefee;
+}
+html[data-theme="dark"] body[data-seo-page="home"] { --paper: #070708; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* top right: theme and language */
+body[data-seo-page="home"] .site-header {
+  z-index: 20;
+  top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 24px;
+  pointer-events: none;
+}
+body[data-seo-page="home"] .site-header > * { pointer-events: auto; }
+body[data-seo-page="home"] .site-header .logo { display: none; }
+body[data-seo-page="home"] .lang-switch button,
+body[data-seo-page="home"] .lang-switch span,
+.walker-you,
+.walker-say,
+.walker.pose-sleep::after,
+.code {
+  font: 700 var(--code) / 1.03 var(--font-hack);
+  letter-spacing: -0.075em;
+  word-spacing: 0.14em;
+  text-transform: uppercase;
+}
+body[data-seo-page="home"] .lang-switch { align-items: baseline; }
+body[data-seo-page="home"] .lang-switch .theme-toggle { display: block; width: auto; height: auto; margin: 0 14px 0 0; padding: 0; border: 0; border-radius: 0; background: none; color: var(--ink); }
+body[data-seo-page="home"] .theme-toggle svg { display: none !important; }
+body[data-seo-page="home"] .theme-toggle::after { content: "Dark"; }
+html[data-theme="dark"] body[data-seo-page="home"] .theme-toggle::after { content: "Light"; }
+body[data-seo-page="home"] .lang-switch button:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* the room */
+body[data-seo-page="home"] .hero {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  max-height: none;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  color: var(--ink);
+  --ink: #0b0b0c;
+  background: linear-gradient(180deg, var(--paper) 62%, var(--bg) 100%);
+  touch-action: pan-y;
+  user-select: none;
+}
+html[data-theme="dark"] body[data-seo-page="home"] .hero { --ink: #f3f3f4; background: linear-gradient(180deg, var(--paper) 62%, var(--bg) 100%); }
+
+/* source text, scattered */
+.code { position: absolute; z-index: 6; margin: 0; padding: 0; color: var(--ink); list-style: none; text-align: left; }
+.code p { margin: 0; }
+.code-name { top: 24px; left: 24px; }
+.code-who { top: 24px; left: 64vw; padding-left: 14px; border-left: 7px solid currentColor; min-height: 3.1em; }
+.code-who[hidden] { display: none; }
+.code-menu { left: 24px; bottom: calc(var(--person) + 74px); }
+.code-nav a { display: table; padding: 0 0.28em; margin-left: -0.28em; color: inherit; text-decoration: none; }
+.code-nav a:hover, .code-nav a:focus-visible { background: var(--ink); color: var(--paper); outline: 0; }
+.prompt { position: relative; display: table; min-width: 10em; margin-top: 0.5em; cursor: text; }
+.prompt input { position: absolute; inset: -8px 0; width: 100%; padding: 0; border: 0; opacity: 0; font-size: 16px; user-select: text; -webkit-user-select: text; }
+.prompt:focus-within { outline: 1px dashed currentColor; outline-offset: 5px; }
+.prompt .is-hint { opacity: 0.62; }
+.caret { display: inline-block; width: 0.5em; height: 0.86em; margin-left: 0.22em; vertical-align: -0.06em; background: currentColor; animation: caret 1.1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.code-log { left: 64vw; bottom: calc(var(--person) + 74px); max-width: calc(36vw - 24px); pointer-events: none; }
+.code-log li { opacity: 0.6; }
+.code-log li:nth-last-child(2) { opacity: 0.8; }
+.code-log li:last-child { opacity: 1; }
+
+/* the sphere of dots: people come out of it */
+.orb { position: absolute; z-index: 4; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* the floor and the people */
+.walkers {
+  position: absolute;
+  z-index: 5;
+  left: 24px;
+  right: 24px;
+  bottom: 10px;
+  height: var(--person);
+  pointer-events: none;
+}
+.walker { position: absolute; left: 0; bottom: 0; height: 100%; aspect-ratio: 2 / 3; color: #8b8e95; transform-origin: 50% 100%; will-change: transform; }
+.walker.is-me { color: var(--ink); z-index: 2; }
+.walker-hop, .walker-turn { width: 100%; height: 100%; transform-origin: 50% 100%; }
+.walker svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.walker:not(.is-walking) :is(.walker-body, .walker-arm, .walker-leg) { animation: none; }
+.walker.is-walking :is(.walker-body, .walker-arm, .walker-leg) { animation-duration: 0.4s; }
+.walker.is-running :is(.walker-body, .walker-arm, .walker-leg) { animation-duration: 0.24s; }
+.walker.is-air .walker-arm-front { transform: rotate(-128deg); }
+.walker.is-air .walker-arm-back { transform: rotate(118deg); }
+.walker.is-air .walker-leg-front { transform: rotate(-24deg); }
+.walker.is-air .walker-leg-back { transform: rotate(26deg); }
+.walker.is-air .walker-you, .walker:has(.walker-say) .walker-you, .walker.pose-sleep .walker-you { visibility: hidden; }
+/* what people say and do */
+.walker-say { position: absolute; z-index: 3; left: 50%; bottom: calc(100% + 8px); translate: -50% 0; padding: 0.12em 0.4em 0.16em 0.36em; background: var(--ink); color: var(--paper); white-space: nowrap; animation: walker-say 3.4s ease both; }
+@keyframes walker-say { 0% { opacity: 0; transform: translateY(8px) scale(0.7); } 6%, 88% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+.walker.pose-wave .walker-arm-front { animation: pose-wave 0.34s ease-in-out infinite alternate; transform: rotate(-118deg); }
+@keyframes pose-wave { from { transform: rotate(-136deg); } to { transform: rotate(-92deg); } }
+.walker.pose-dance .walker-body { animation: pose-bob 0.26s ease-in-out infinite alternate; }
+.walker.pose-dance .walker-arm-front { animation: pose-arm 0.52s ease-in-out infinite alternate; }
+.walker.pose-dance .walker-arm-back { animation: pose-arm 0.52s ease-in-out -0.52s infinite alternate-reverse; }
+.walker.pose-dance .walker-leg-front { animation: pose-leg 0.52s ease-in-out infinite alternate; }
+.walker.pose-dance .walker-leg-back { animation: pose-leg 0.52s ease-in-out infinite alternate-reverse; }
+.walker.pose-dance svg { animation: pose-sway 0.52s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes pose-bob { to { transform: translateY(-9px); } }
+@keyframes pose-arm { from { transform: rotate(-150deg); } to { transform: rotate(-30deg); } }
+@keyframes pose-leg { from { transform: rotate(-16deg); } to { transform: rotate(14deg); } }
+@keyframes pose-sway { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+.walker.pose-sit .walker-body { transform: translateY(43px); }
+.walker.pose-sit .walker-leg { transform: rotate(-84deg); }
+.walker.pose-sit .walker-arm { transform: rotate(-14deg); }
+.walker.pose-sleep svg { transform: translate(74%, -13%) rotate(-90deg); transform-origin: 50% 100%; transition: transform 0.5s cubic-bezier(0.5, 0, 0.6, 1); }
+.walker.pose-sleep::after { content: "zzz"; position: absolute; left: 50%; bottom: 46%; translate: -50% 0; animation: pose-zzz 2.4s ease-in-out infinite; }
+@keyframes pose-zzz { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
+.walker-you { position: absolute; left: 50%; bottom: calc(100% + 8px); translate: -50% 0; animation: walker-you 7s ease both; }
+@keyframes walker-you { 0%, 12% { opacity: 0; } 20%, 82% { opacity: 1; } 100% { opacity: 0; } }
+
+/* the about section no longer has a picture next to it */
+body[data-seo-page="home"] .about-preview { grid-template-columns: minmax(0, 720px); justify-content: center; }
+
+@media (max-width: 620px) {
+  .code-who { top: 84px; left: 24px; }
+  .prompt { min-width: 7.5em; }
+  .code-log { left: 46vw; right: 24px; max-width: none; font-size: 13px; }
+  .code-nav a { padding-block: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .walker-you, .walker-say, .caret, .walker[class*="pose-"] *, .walker.pose-sleep::after { animation: none !important; }
+}

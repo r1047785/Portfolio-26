@@ -74,6 +74,11 @@
         Noodzakelijke functies van de website blijven actief. Je kunt optionele
         metingen (Google Analytics en Microsoft Clarity) toestaan of weigeren.
       </p>
+      <p>
+        De homepage toont live hoeveel bezoekers er zijn. Daarvoor maakt je
+        browser verbinding met een server bij Cloudflare. Die gebruikt geen
+        cookies en bewaart niets over jou.
+      </p>
       <label class="cookie-toggle">
         <input type="checkbox" id="analytics-consent" />
         Analytische metingen toestaan

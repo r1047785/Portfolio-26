@@ -12,7 +12,6 @@ const translations = {
     "newsletter.error": "The form could not load. Close it and try again, or check whether your browser blocks MailerLite.",
     "newsletter.open": "Join my newsletter",
     "hero.heading": "Yente Vanhoudt: web, UI/UX and 3D design portfolio",
-    "hero.year": "Year",
     "about.photoLabel": "Life lately",
     "about.photoHint": "Hover to shuffle · tap for the next photo",
     "library.nightDescription": "An interactive experiment with a 3D model, light and mouse trails.",
@@ -87,7 +86,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA App Development",
 
-    "image.home_hero": "Yente Vanhoudt in Y2K lettering next to a glowing orange MiniDisc case with a rainbow disc",
+    "image.home_hero": "A person jumping out of a sphere of white dots, with other visitors standing on the floor below",
     "image.home_about": "Silhouette of Yente looking across St Mark's Square in Venice at night",
     "image.tennis_style2": "Style frame of a tennis ball lit by a single warm light source on a clay court",
     "image.tennis_style1": "Style frame of two tennis rackets pinching a tennis ball, shot from above on a clay court",
@@ -151,7 +150,6 @@ const translations = {
     "newsletter.error": "Het formulier kon niet laden. Sluit het en probeer opnieuw, of kijk of je browser MailerLite blokkeert.",
     "newsletter.open": "Schrijf je in voor mijn nieuwsbrief",
     "hero.heading": "Yente Vanhoudt: portfolio in web-, UI/UX- en 3D-design",
-    "hero.year": "Jaar",
     "about.photoLabel": "Naast het scherm",
     "about.photoHint": "Hover om te shuffelen · tik voor de volgende foto",
     "library.nightDescription": "Een interactief experiment met een 3D-model, licht en muissporen.",
@@ -226,7 +224,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA Appontwikkeling",
 
-    "image.home_hero": "Yente Vanhoudt in Y2K-letters naast een gloeiend oranje MiniDisc-hoesje met een regenboogdisc",
+    "image.home_hero": "Een mannetje springt uit een bol van witte puntjes, met andere bezoekers eronder",
     "image.home_about": "Silhouet van Yente op het San Marcoplein in Venetië bij nacht",
     "image.tennis_style2": "Stijlbeeld van een tennisbal op een gravelbaan, belicht met één warme lichtbron",
     "image.tennis_style1": "Stijlbeeld van twee tennisrackets met een tennisbal ertussen, van bovenaf gefotografeerd op gravel",
@@ -282,7 +280,7 @@ const translations = {
   const pageSeo = {
     home: {
       path: "/",
-      image: "/assets/og-minidisc.jpg",
+      image: "/assets/og-people.jpg",
       en: {
         title: "Yente Vanhoudt | Web Design, UI/UX & 3D Portfolio",
         description: "Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code.",
@@ -340,13 +338,13 @@ const translations = {
 
   pageSeo.about = {
     path: "/about.html",
-    image: "/assets/og-minidisc.jpg",
+    image: "/assets/og-people.jpg",
     en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_hero"] },
     nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_hero"] },
   };
   pageSeo.contact = {
     path: "/contact.html",
-    image: "/assets/og-minidisc.jpg",
+    image: "/assets/og-people.jpg",
     en: { title: "Contact | Yente Vanhoudt", description: "Get in touch with Yente Vanhoudt, Digital Experience Design student, for internships, projects or a first introduction.", imageAlt: translations.en["image.home_hero"] },
     nl: { title: "Contact | Yente Vanhoudt", description: "Neem contact op met Yente Vanhoudt, student Digital Experience Design, voor stages, projecten of een eerste kennismaking.", imageAlt: translations.nl["image.home_hero"] },
   };

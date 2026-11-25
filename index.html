@@ -46,14 +46,14 @@
     <meta property="og:url" content="https://yentevanhoudt.be/" />
     <meta
       property="og:image"
-      content="https://yentevanhoudt.be/assets/og-minidisc.jpg"
+      content="https://yentevanhoudt.be/assets/og-people.jpg"
     />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Yente Vanhoudt in Y2K lettering next to a glowing orange MiniDisc case with a rainbow disc"
+      content="A person jumping out of a sphere of white dots, with other visitors standing on the floor below"
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="nl_BE" />
@@ -68,11 +68,11 @@
     />
     <meta
       name="twitter:image"
-      content="https://yentevanhoudt.be/assets/og-minidisc.jpg"
+      content="https://yentevanhoudt.be/assets/og-people.jpg"
     />
     <meta
       name="twitter:image:alt"
-      content="Yente Vanhoudt in Y2K lettering next to a glowing orange MiniDisc case with a rainbow disc"
+      content="A person jumping out of a sphere of white dots, with other visitors standing on the floor below"
     />
     <script type="application/ld+json">
       {
@@ -109,25 +109,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Bodoni+Moda:opsz,wght@28,600..900&family=Archivo:wdth,wght@125,500..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tektur:wght@700&display=swap"
       rel="stylesheet"
     />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-        }
-      }
-    </script>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js" />
-    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.min.js" />
-    <link rel="modulepreload" href="js/hero-disc.js" />
-    <link rel="modulepreload" href="js/discs.js" />
-    <link rel="modulepreload" href="js/wordmark.js" />
-    <link rel="modulepreload" href="js/minidisc.js" />
-    <link rel="modulepreload" href="js/case-art.js" />
+    <link rel="modulepreload" href="js/walkers.js" />
+    <link rel="modulepreload" href="js/terminal.js" />
+    <link rel="modulepreload" href="js/orb.js" />
     <link rel="stylesheet" href="css/style.css" />
     <script>
       (function () {
@@ -144,83 +131,13 @@
     </script>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/newsletter.css" />
-    <link rel="stylesheet" href="css/hero-disc.css" />
+    <link rel="stylesheet" href="css/floor.css" />
   </head>
   <body data-seo-page="home">
-    <div
-      class="loader walking-loader"
-      id="loader"
-      aria-label="Portfolio loading"
-    >
-      <span class="intro-name">YENTE VANHOUDT</span>
-      <div class="intro-stage">
-        <p class="intro-title" aria-hidden="true">On my way.</p>
-        <div class="intro-track">
-          <div class="intro-walker" aria-hidden="true">
-            <svg viewBox="0 0 100 150" fill="currentColor">
-              <g class="walker-body">
-                <g class="walker-arm walker-arm-back">
-                  <path
-                    d="M48 47Q35 47 33 61L30 91Q31 100 38 98L43 70 56 59Z"
-                  />
-                </g>
-                <g class="walker-leg walker-leg-back">
-                  <path
-                    d="M43 86Q36 93 40 108L44 134Q39 142 43 146L64 146Q68 140 56 134L56 108 59 89Z"
-                  />
-                </g>
-                <path
-                  d="M39 43Q31 53 35 73L40 94Q49 102 62 92L62 66Q65 48 55 43Z"
-                />
-                <path
-                  d="M43 36L35 34 40 27 33 21 42 19 40 10 48 14 53 5 57 15 66 12 63 22 71 27 62 31 64 38 56 37 55 44 46 44Z"
-                />
-                <g class="walker-leg walker-leg-front">
-                  <path
-                    d="M43 87Q39 98 44 112L45 134Q40 141 45 146L65 146Q71 140 57 133L58 109 61 88Z"
-                  />
-                </g>
-                <g class="walker-arm walker-arm-front">
-                  <path
-                    d="M54 46Q62 44 65 55L69 76 78 90Q80 98 73 99L61 84Q58 80 56 70L48 56Z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </div>
-          <div class="intro-rail"><span class="intro-fill"></span></div>
-        </div>
-        <div class="intro-progress-row">
-          <span class="intro-caption" data-i18n="intro.caption"
-            >A little walk before we begin.</span
-          >
-          <span
-            class="intro-progress"
-            role="progressbar"
-            aria-label="Loading"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-            ><span class="intro-count">0</span><span>%</span></span
-          >
-        </div>
-      </div>
-      <button class="intro-skip" type="button" data-i18n="intro.skip">
-        Skip intro
-      </button>
-    </div>
-
     <div class="cursor-dot" id="cursorDot"></div>
 
     <header class="site-header reveal-up">
       <a href="#" class="logo" aria-label="Yente Vanhoudt home">YV</a>
-      <nav class="main-nav">
-        <a href="#" class="nav-logo" id="navLogo" aria-label="Yente Vanhoudt home">YV</a>
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#services" data-i18n="nav.services">Services</a>
-        <a href="#work" data-i18n="nav.work">Work</a>
-        <a class="nav-contact" id="nav-contact" href="contact.html" data-i18n="nav.contact">Contact</a>
-      </nav>
       <div class="lang-switch">
         <button type="button" data-lang="en">EN</button>
         <span>/</span>
@@ -231,27 +148,27 @@
     <main>
       <section class="hero" id="hero">
         <h1 class="hero-name visually-hidden" data-i18n="hero.heading">Yente Vanhoudt: web, UI/UX and 3D design portfolio</h1>
-        <div class="disc-info">
-          <p class="disc-title"><span class="visually-hidden" id="discName" aria-live="polite">Oil Slick</span><span id="discMark" aria-hidden="true"></span></p>
-          <dl>
-            <div><dt>Portfolio</dt><dd>Yente Vanhoudt</dd></div>
-            <div><dt data-i18n="hero.year">Year</dt><dd>2026</dd></div>
-          </dl>
+        <p class="code code-name" aria-hidden="true"><span id="name">Yente Vanhoudt</span><br /><span id="role"></span><i class="caret"></i></p>
+        <div class="code code-who" id="who" hidden>
+          <p aria-hidden="true"><span id="whoAsk"></span><br /><span id="whoYou"></span><br /><span id="whoRest"></span></p>
+          <p class="visually-hidden" id="whoLive" aria-live="polite"></p>
         </div>
-        <div class="disc-poster" aria-hidden="true"></div>
-        <div class="disc-player" id="discPlayer" role="group" aria-label="Disc player">
-          <button type="button" id="discPrev" aria-label="Previous disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h1.6v14H5zM19 5v14L8.5 12z" /></svg></button>
-          <button type="button" id="discPlay" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l14-8z" /></svg></button>
-          <button type="button" id="discNext" aria-label="Next disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.4 5H19v14h-1.6zM5 5v14l10.5-7z" /></svg></button>
+        <canvas class="orb" id="orb" aria-hidden="true"></canvas>
+        <div class="walkers" id="walkers" aria-hidden="true"></div>
+        <div class="code code-menu">
+          <nav class="code-nav">
+            <a href="#about"><span data-i18n="nav.about">About</span></a>
+            <a href="#services"><span data-i18n="nav.services">Services</span></a>
+            <a href="#work"><span data-i18n="nav.work">Work</span></a>
+            <a class="nav-contact" id="nav-contact" href="contact.html"><span data-i18n="nav.contact">Contact</span></a>
+          </nav>
+          <label class="prompt"><span aria-hidden="true">&gt; <span id="typed"></span><i class="caret"></i></span><input id="field" type="text" maxlength="22" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-label="Command, type help for a list" /></label>
         </div>
+        <ol class="code code-log" id="log" aria-hidden="true"></ol>
+        <p class="visually-hidden" id="reply" aria-live="polite"></p>
       </section>
 
       <section class="about-preview" id="about">
-        <div
-          class="about-avatar-destination"
-          id="aboutAvatarDestination"
-          aria-hidden="true"
-        ></div>
         <div class="about-preview-copy">
           <p class="about-preview-eyebrow" data-i18n="about.previewLabel">
             A little introduction
@@ -587,7 +504,7 @@
     </dialog>
     <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
-    <script type="module" src="js/hero-disc.js"></script>
+    <script type="module" src="js/walkers.js"></script>
     <script src="js/project-hover.js"></script>
     <script src="js/newsletter.js"></script>
       <script src="js/consent.js"></script>
