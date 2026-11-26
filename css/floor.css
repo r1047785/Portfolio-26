@@ -187,3 +187,83 @@ body[data-seo-page="home"] .about-preview { grid-template-columns: minmax(0, 720
 @media (prefers-reduced-motion: reduce) {
   .code-scroll svg, .walker-you, .walker-say, .caret, .walker[class*="pose-"] *, .walker.pose-sleep::after { animation: none !important; }
 }
+
+/* ---------- The portrait of dust: a quiet first screen with my name, my work and nothing else ---------- */
+body[data-seo-page="home"] { --m: clamp(20px, 4.6vw, 80px); }
+html[data-theme="dark"] body[data-seo-page="home"] { --paper: #27262b; }
+body[data-seo-page="home"] .hero-dust { background: var(--paper); }
+html[data-theme="dark"] body[data-seo-page="home"] .hero-dust { background: linear-gradient(180deg, var(--paper) 80%, var(--bg) 100%); }
+.dust { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.dust-side, .dust-nav a, .dust-menu, .dust-scroll,
+body[data-seo-page="home"] .lang-switch button,
+body[data-seo-page="home"] .lang-switch span {
+  font: 400 clamp(15px, 1.3vw, 21px) / 1.2 "DM Sans", Arial, sans-serif;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+}
+.dust-side { position: absolute; z-index: 2; top: 50%; margin: 0; translate: 0 -50%; }
+.dust-name { left: var(--m); }
+.dust-role { right: var(--m); text-align: right; }
+.dust-nav { position: absolute; z-index: 3; top: clamp(20px, 3vw, 40px); left: var(--m); display: flex; gap: 1.4em; }
+body[data-seo-page="home"] .site-header { top: clamp(20px, 3vw, 40px); padding: 0 var(--m); }
+.dust-nav a, .dust-scroll { text-decoration: none; opacity: 0.62; transition: opacity 0.25s ease; }
+.dust-nav a:hover, .dust-nav a:focus-visible, .dust-scroll:hover, .dust-scroll:focus-visible { opacity: 1; outline: 0; text-decoration: underline; text-underline-offset: 4px; }
+body[data-seo-page="home"] .lang-switch button { opacity: 0.62; }
+body[data-seo-page="home"] .lang-switch button.is-active, body[data-seo-page="home"] .lang-switch button:hover { opacity: 1; }
+.dust-scroll { position: absolute; z-index: 3; bottom: clamp(20px, 3vw, 40px); right: var(--m); }
+@media (max-width: 700px) {
+  .dust-side { top: 96px; translate: none; }
+  .dust-scroll { right: auto; left: 50%; translate: -50% 0; bottom: 20px; }
+}
+.hero-dust .dust-side, .hero-dust .dust-nav, .hero-dust .dust-scroll, body[data-seo-page="home"] .site-header { transition: opacity 0.9s ease; }
+.hero-dust.is-intro:not(.is-ready) :is(.dust-side, .dust-nav, .dust-scroll) { opacity: 0; }
+html[data-theme="dark"] body[data-seo-page="home"] .hero-dust { --ink: #e8e8ea; }
+/* the menu: one word, a short list under it */
+.dust-nav { display: block; }
+.dust-menu { display: inline-flex; gap: 0.5em; padding: 0; border: 0; background: none; cursor: pointer; opacity: 0.62; transition: opacity 0.25s ease; }
+.dust-menu span { display: inline-block; width: 0.7em; text-align: center; }
+.dust-menu:hover, .dust-menu:focus-visible, .dust-menu[aria-expanded="true"] { opacity: 1; outline: 0; }
+.dust-menu:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.dust-list { margin: 0.7em 0 0; padding: 0; list-style: none; display: grid; gap: 0.35em; animation: dust-list 0.35s ease both; }
+.dust-list[hidden] { display: none; }
+.dust-list a { opacity: 0.62; }
+@keyframes dust-list { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .dust-list { animation: none; } }
+.dust-list, .dust-list li { text-align: left; justify-items: start; }
+.dust-list li { margin: 0; padding: 0; }
+@media (max-width: 700px) {
+  /* on a phone the list falls over the name: the name steps aside while it is open */
+  .dust-nav:has(.dust-list:not([hidden])) ~ .dust-side { opacity: 0; }
+}
+
+/* ---------- About: one big sentence that lights up while you scroll, three small facts ---------- */
+body[data-seo-page="home"] .about-statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: clamp(28px, 6vw, 110px);
+  align-items: start;
+  max-width: none;
+  padding: clamp(110px, 16vh, 200px) var(--m) clamp(90px, 13vh, 160px);
+  background: #27262b;
+  color: #e8e8ea;
+}
+.about-label { margin: 0.6em 0 0; font: 400 clamp(13px, 1vw, 15px) / 1.3 "DM Sans", Arial, sans-serif; letter-spacing: -0.01em; color: rgba(232, 232, 234, 0.55); }
+.about-num { margin-right: 0.4em; }
+.about-big { max-width: 22ch; margin: 0; font: 400 clamp(30px, 4.3vw, 68px) / 1.12 "DM Sans", Arial, sans-serif; letter-spacing: -0.04em; color: #e8e8ea; }
+.about-big.is-split .w { opacity: calc(0.16 + 0.84 * var(--lit, 0)); transition: opacity 0.15s linear; }
+.about-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--m); margin: clamp(56px, 8vh, 96px) 0 0; padding-top: 18px; border-top: 1px solid rgba(232, 232, 234, 0.16); }
+.about-facts div { margin: 0; }
+.about-facts dt { margin-bottom: 6px; font-size: 13px; color: rgba(232, 232, 234, 0.5); }
+.about-facts dd { margin: 0; font-size: clamp(15px, 1.2vw, 18px); color: #e8e8ea; }
+body[data-seo-page="home"] .about-statement .about-preview-link { margin-top: clamp(40px, 6vh, 64px); color: #e8e8ea; }
+@media (max-width: 700px) {
+  body[data-seo-page="home"] .about-statement { grid-template-columns: 1fr; gap: 24px; }
+  .about-big { max-width: none; }
+  .about-facts { grid-template-columns: 1fr; gap: 16px; }
+}
+.about-statement :is(.about-facts, .about-preview-link, .about-big, .about-label) { text-shadow: none; word-spacing: normal; }
+.about-statement :is(.about-facts, .about-preview-link) { letter-spacing: -0.005em; }
+html[data-theme="dark"] body[data-seo-page="home"] .hero-dust { background: #27262b; }   /* one surface with the about section below */
+.dust-online { margin-top: 0.5em !important; padding-top: 0.55em !important; border-top: 1px solid rgba(232, 232, 234, 0.16); font: 400 clamp(13px, 1vw, 15px) / 1.2 "DM Sans", Arial, sans-serif; color: rgba(232, 232, 234, 0.55); }
+.dust-online #onlineCount { color: #e8e8ea; font-variant-numeric: tabular-nums; }

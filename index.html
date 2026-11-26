@@ -1,14 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      /* the theme before the first paint; js/theme.js adds the button */
-      (function () {
-        var t = null;
-        try { t = localStorage.getItem("portfolio-theme"); } catch (e) {}
-        document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
-      })();
-    </script>
+    <script>document.documentElement.dataset.theme = "dark";</script>
     <script defer src="js/theme.js"></script>
     <meta charset="UTF-8" />
     <script>
@@ -117,14 +110,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tektur:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
-    <link rel="modulepreload" href="js/walkers.js" />
-    <link rel="modulepreload" href="js/terminal.js" />
-    <link rel="modulepreload" href="js/orb.js" />
+    <link rel="modulepreload" href="js/portrait.js" />
+    <link rel="modulepreload" href="js/visitors.js" />
     <link rel="stylesheet" href="css/style.css" />
     <script>
       (function () {
@@ -149,7 +141,6 @@
     <header class="site-header reveal-up">
       <a href="#" class="logo" aria-label="Yente Vanhoudt home">YV</a>
       <div class="lang-switch">
-        <button type="button" class="help-open" id="helpOpen" aria-haspopup="dialog">?</button>
         <button type="button" data-lang="en">EN</button>
         <span>/</span>
         <button type="button" data-lang="nl">NL</button>
@@ -157,42 +148,32 @@
     </header>
 
     <main>
-      <section class="hero" id="hero">
+      <section class="hero hero-dust" id="hero">
         <h1 class="hero-name visually-hidden" data-i18n="hero.heading">Yente Vanhoudt: web, UI/UX and 3D design portfolio</h1>
-        <p class="code code-name" aria-hidden="true"><span id="name">Yente Vanhoudt</span><br /><span id="role"></span><i class="caret"></i></p>
-        <div class="code code-who" id="who" hidden>
-          <p aria-hidden="true"><span id="whoAsk"></span><br /><span id="whoYou"></span><br /><span id="whoRest"></span></p>
-          <p class="visually-hidden" id="whoLive" aria-live="polite"></p>
-        </div>
-        <canvas class="orb" id="orb" aria-hidden="true"></canvas>
-        <div class="walkers" id="walkers" aria-hidden="true"></div>
-        <div class="code code-menu">
-          <nav class="code-nav">
-            <a href="#about"><span data-i18n="nav.about">About</span></a>
-            <a href="#services"><span data-i18n="nav.services">Services</span></a>
-            <a href="#work"><span data-i18n="nav.work">Work</span></a>
-            <a class="nav-contact" id="nav-contact" href="contact.html"><span data-i18n="nav.contact">Contact</span></a>
-          </nav>
-          <label class="prompt"><span aria-hidden="true">&gt; <span id="typed"></span><i class="caret"></i></span><input id="field" type="text" maxlength="22" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-label="Command, type help for a list" /></label>
-        </div>
-        <a class="code code-scroll" id="scrollCue" href="#about"><span data-i18n="hero.scrollcue">Scroll down</span><svg viewBox="0 0 7 8" aria-hidden="true"><path d="M3 0h1v5h1V4h1v1H5v1H4v1H3V6H2V5H1V4h1v1h1z" /></svg></a>
-        <ol class="code code-log" id="log" aria-hidden="true"></ol>
-        <p class="visually-hidden" id="reply" aria-live="polite"></p>
+        <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+        <nav class="dust-nav" aria-label="Main">
+          <button type="button" class="dust-menu" id="dustMenu" aria-expanded="false" aria-controls="dustList">Menu <span aria-hidden="true">+</span></button>
+          <ul class="dust-list" id="dustList" hidden>
+            <li><a href="#about"><span data-i18n="nav.about">About</span></a></li>
+            <li><a href="#work"><span data-i18n="nav.work">Work</span></a></li>
+            <li><a class="nav-contact" id="nav-contact" href="contact.html"><span data-i18n="nav.contact">Contact</span></a></li>
+            <li class="dust-online"><span data-i18n="nav.online">Online users:</span> <span id="onlineCount">1</span></li>
+          </ul>
+        </nav>
+        <p class="dust-side dust-name">Yente Vanhoudt</p>
+        <p class="dust-side dust-role" data-i18n="hero.role">Web, UI/UX &amp; 3D designer</p>
+        <a class="dust-scroll" id="scrollCue" href="#about" data-i18n="hero.scrollcue">Scroll down</a>
       </section>
 
-      <section class="about-preview" id="about">
-        <div class="about-preview-copy">
-          <p class="about-preview-eyebrow" data-i18n="about.previewLabel">
-            A little introduction
-          </p>
-          <h2 data-i18n="about.previewTitle">
-            The person<br />behind the pixels.
-          </h2>
-          <p class="about-preview-summary" data-i18n="about.previewSummary">
-            I'm Yente, a Digital Experience Design student exploring web design,
-            3D and UI/UX. I enjoy turning ideas into thoughtful digital
-            experiences, with an eye for detail.
-          </p>
+      <section class="about-preview about-statement" id="about">
+        <h2 class="about-label"><span class="about-num">(01)</span> <span data-i18n="about.previewLabel">A little introduction</span></h2>
+        <div class="about-body">
+          <p class="about-big" id="aboutBig" data-i18n="about.previewSummary">I'm Yente, a Digital Experience Design student exploring web design, 3D and UI/UX. I enjoy turning ideas into thoughtful digital experiences, with an eye for detail.</p>
+          <dl class="about-facts">
+            <div><dt data-i18n="about.factBased">Based in</dt><dd data-i18n="about.factBasedValue">Mechelen, Belgium</dd></div>
+            <div><dt data-i18n="about.factStudy">Studying</dt><dd>Digital Experience Design</dd></div>
+            <div><dt data-i18n="about.factFocus">Focus</dt><dd>Web, UI/UX &amp; 3D</dd></div>
+          </dl>
           <a class="about-preview-link" href="about.html"
             ><span data-i18n="about.previewLink">More about me</span
             ><span aria-hidden="true"
@@ -482,19 +463,6 @@
       </div>
     </footer>
 
-    <dialog class="help" id="help" aria-labelledby="helpTitle">
-      <button type="button" class="help-close" id="helpClose">x</button>
-      <h2 id="helpTitle" data-i18n="help.title">What is this?</h2>
-      <p data-i18n="help.what">Everyone who has this page open right now is a person on the floor. The bright one is you. When somebody joins, they fall out of the orb. When they leave, they crawl back in. You can see each other, live.</p>
-      <p data-i18n="help.move">Move your mouse to walk, click to jump. On a phone: tap where you want to go, tap yourself to jump.</p>
-      <h3 data-i18n="help.say">Say something</h3>
-      <div class="help-words" id="helpSay"></div>
-      <h3 data-i18n="help.do">Do something</h3>
-      <div class="help-words" id="helpDo"></div>
-      <h3 data-i18n="help.ask">Ask me something</h3>
-      <div class="help-words" id="helpAsk"></div>
-      <p class="help-small" data-i18n="help.small">Press a word here or type it on the page. Others only see these words, your moves and where you stand. This live room uses no names and no cookies, and keeps nothing.</p>
-    </dialog>
     <dialog id="newsletter-dialog" class="newsletter-dialog" aria-labelledby="newsletter-title">
       <button type="button" class="newsletter-close" data-newsletter-close aria-label="Close / Sluiten" autofocus><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
       <div class="newsletter-eyebrow">YENTE VANHOUDT / NEWSLETTER</div>
@@ -529,7 +497,43 @@
     </dialog>
     <script src="js/i18n.js"></script>
     <script defer src="js/script.js"></script>
-    <script type="module" src="js/walkers.js"></script>
+    <script type="module">
+      import { createPortrait } from "./js/portrait.js";
+      import { watchVisitors } from "./js/visitors.js";
+      const portrait = createPortrait(document.getElementById("dust"), document.getElementById("hero"));
+      // everybody on the page right now is a light around my head; the menu counts them
+      const online = document.getElementById("onlineCount");
+      watchVisitors(({ me, others }) => {
+        const ids = [me || "you", ...others];
+        portrait?.visitors(ids, me || "you");
+        online.textContent = ids.length;
+      });
+      // the introduction lights up word by word while it scrolls through the screen
+      const big = document.getElementById("aboutBig");
+      if (big && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        big.innerHTML = big.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(" ");
+        const words = [...big.querySelectorAll(".w")];
+        let queued = false;
+        const light = () => {
+          queued = false;
+          const r = big.getBoundingClientRect(), vh = innerHeight;
+          const p = Math.min(1, Math.max(0, (vh * 0.88 - r.top) / (r.height + vh * 0.38)));
+          const lit = p * words.length;
+          words.forEach((w, i) => w.style.setProperty("--lit", Math.min(1, Math.max(0, lit - i)).toFixed(2)));
+        };
+        addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(light); } }, { passive: true });
+        addEventListener("resize", light);
+        big.classList.add("is-split");
+        light();
+      }
+      // the menu: one word that opens a short list
+      const menu = document.getElementById("dustMenu"), list = document.getElementById("dustList");
+      const show = (open) => { list.hidden = !open; menu.setAttribute("aria-expanded", open); menu.lastElementChild.textContent = open ? "−" : "+"; };
+      menu.addEventListener("click", () => show(list.hidden));
+      list.addEventListener("click", (e) => { if (e.target.closest("a")) show(false); });
+      addEventListener("keydown", (e) => { if (e.key === "Escape" && !list.hidden) { show(false); menu.focus(); } });
+      addEventListener("click", (e) => { if (!list.hidden && !e.target.closest(".dust-nav")) show(false); });
+    </script>
     <script defer src="js/project-hover.js"></script>
     <script defer src="js/newsletter.js"></script>
       <script defer src="js/consent.js"></script>
