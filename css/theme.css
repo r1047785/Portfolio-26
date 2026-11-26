@@ -114,3 +114,8 @@ html[data-theme="dark"] .photo-shuffle:focus-visible { outline-color: var(--ink)
 @media (max-width: 480px) {
   .lang-switch .theme-toggle { margin-right: 4px; }
 }
+
+/* copyright, at the very bottom of every page */
+.site-copyright { margin: 56px 0 0; font-size: 12px; letter-spacing: 0.02em; opacity: 0.5; text-align: center; }
+.site-copyright-bar { padding: 28px var(--edge, 24px) 32px; }
+.site-copyright-bar .site-copyright { margin: 0; }

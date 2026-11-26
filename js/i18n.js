@@ -68,6 +68,7 @@ const translations = {
     "nav.work": "Work",
     "nav.contact": "Contact",
     "nav.online": "Online users:",
+    "footer.rights": "All rights reserved.",
     "footer.label": "<strong>Contact</strong><br>Let's talk",
     "contact.eyebrow": "03 / Contact",
     "contact.title": "Let's talk.",
@@ -99,7 +100,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA App Development",
 
-    "image.home_hero": "A person falling out of a sphere of white dots, with visitors below saying hello, waving and sitting",
+    "image.home_hero": "A portrait of Yente made of thousands of white dots, with small lights circling the head",
     "image.home_about": "Silhouette of Yente looking across St Mark's Square in Venice at night",
     "image.tennis_style2": "Style frame of a tennis ball lit by a single warm light source on a clay court",
     "image.tennis_style1": "Style frame of two tennis rackets pinching a tennis ball, shot from above on a clay court",
@@ -219,6 +220,7 @@ const translations = {
     "nav.work": "Werk",
     "nav.contact": "Contact",
     "nav.online": "Nu online:",
+    "footer.rights": "Alle rechten voorbehouden.",
     "footer.label": "<strong>Contact</strong><br>Laten we praten",
     "contact.eyebrow": "03 / Contact",
     "contact.title": "Laten we praten.",
@@ -250,7 +252,7 @@ const translations = {
     "work.next": "NEXT",
     "work.ba": "BA Appontwikkeling",
 
-    "image.home_hero": "Een mannetje valt uit een bol van witte puntjes, met bezoekers eronder die hallo zeggen, zwaaien en zitten",
+    "image.home_hero": "Een portret van Yente uit duizenden witte puntjes, met kleine lichtjes die rond het hoofd zweven",
     "image.home_about": "Silhouet van Yente op het San Marcoplein in Venetië bij nacht",
     "image.tennis_style2": "Stijlbeeld van een tennisbal op een gravelbaan, belicht met één warme lichtbron",
     "image.tennis_style1": "Stijlbeeld van twee tennisrackets met een tennisbal ertussen, van bovenaf gefotografeerd op gravel",
@@ -306,7 +308,7 @@ const translations = {
   const pageSeo = {
     home: {
       path: "/",
-      image: "/assets/og-room.jpg",
+      image: "/assets/og-portrait.jpg",
       en: {
         title: "Yente Vanhoudt | Web Design, UI/UX & 3D Portfolio",
         description: "Explore Yente Vanhoudt's portfolio in web design, UI/UX and 3D, with thoughtful digital experiences shaped from concept to code.",
@@ -364,13 +366,13 @@ const translations = {
 
   pageSeo.about = {
     path: "/about.html",
-    image: "/assets/og-room.jpg",
+    image: "/assets/og-portrait.jpg",
     en: { title: "About | Yente Vanhoudt", description: "Meet Yente Vanhoudt: Digital Experience Design student, curious maker and creator of shaders and 3D scenes.", imageAlt: translations.en["image.home_hero"] },
     nl: { title: "Over mij | Yente Vanhoudt", description: "Leer Yente Vanhoudt kennen: student Digital Experience Design, nieuwsgierige maker en ontwerper van shaders en 3D-scenes.", imageAlt: translations.nl["image.home_hero"] },
   };
   pageSeo.contact = {
     path: "/contact.html",
-    image: "/assets/og-room.jpg",
+    image: "/assets/og-portrait.jpg",
     en: { title: "Contact | Yente Vanhoudt", description: "Get in touch with Yente Vanhoudt, Digital Experience Design student, for internships, projects or a first introduction.", imageAlt: translations.en["image.home_hero"] },
     nl: { title: "Contact | Yente Vanhoudt", description: "Neem contact op met Yente Vanhoudt, student Digital Experience Design, voor stages, projecten of een eerste kennismaking.", imageAlt: translations.nl["image.home_hero"] },
   };
@@ -438,6 +440,7 @@ const translations = {
   };
 
   applyLang(lang);
+  document.querySelectorAll(".copy-year").forEach((el) => { el.textContent = new Date().getFullYear(); });   // the copyright year stays current
 
   document.querySelectorAll("[data-lang]").forEach((btn) => {
     btn.addEventListener("click", () => {
