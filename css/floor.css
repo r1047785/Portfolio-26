@@ -267,3 +267,12 @@ body[data-seo-page="home"] .about-statement .about-preview-link { margin-top: cl
 html[data-theme="dark"] body[data-seo-page="home"] .hero-dust { background: #27262b; }   /* one surface with the about section below */
 .dust-online { margin-top: 0.5em !important; padding-top: 0.55em !important; border-top: 1px solid rgba(232, 232, 234, 0.16); font: 400 clamp(13px, 1vw, 15px) / 1.2 "DM Sans", Arial, sans-serif; color: rgba(232, 232, 234, 0.55); }
 .dust-online #onlineCount { color: #e8e8ea; font-variant-numeric: tabular-nums; }
+
+/* ---------- Toolkit and selected projects: their own design, only the colours of the homepage ---------- */
+body[data-seo-page="home"] :is(.toolkit, .selected-work) { background: #27262b; color: #e8e8ea; }
+body[data-seo-page="home"] :is(.toolkit-heading h2, .selected-work-heading h2, .selected-work-title, .tool-tile span) { color: #e8e8ea; }
+body[data-seo-page="home"] :is(.toolkit-eyebrow, .toolkit-intro, .selected-work-eyebrow) { color: rgba(232, 232, 234, 0.58); }
+html[data-theme="dark"] body[data-seo-page="home"], html[data-theme="dark"] body[data-seo-page="home"] main { background: #27262b; }   /* no darker strips beside narrower sections */
+/* each chapter a shade apart, so you feel where one stops and the next begins */
+body[data-seo-page="home"] .toolkit { background: #1c1c1c; }   /* the colour of the footer */
+html[data-theme="dark"] body[data-seo-page="home"], html[data-theme="dark"] body[data-seo-page="home"] main, body[data-seo-page="home"] .selected-work { background: #222126; }
